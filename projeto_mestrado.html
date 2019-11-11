@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+* {
+  box-sizing: border-box;
+}
+.menu {
+  float: left;
+  width: 20%;
+
+}
+.menuitem {
+  padding: 8px;
+  margin-top: 7px;
+  border-bottom: 1px solid #f1f1f1;
+
+}
+.main {
+  float: left;
+  width: 60%;
+  padding: 0 20px;
+  overflow: hidden;
+
+}
+.right {
+  background-color: lightblue;
+  float: left;
+  width: 20%;
+  padding: 10px 15px;
+  margin-top: 7px;
+}
+.forms{
+	padding: 14px;
+	text-align: justify;
+}
+
+@media only screen and (max-width:800px) {
+  /* For tablets: */
+  .main {
+    width: 80%;
+    padding: 0;
+  }
+  .right {
+    width: 100%;
+  }
+}
+@media only screen and (max-width:500px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<script type="text/javascript" src="jspdf.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="script.js">	</script>
+<script>
+	
+	$(document).ready(function(){
+	    $('input[type="radio"]').click(function(){
+	    	$('#c1','#c2','#c3','#c4','#c5','#c6').show();
+	        var inputValue = $(this).attr("value");
+	        var targetBox = $("." + inputValue);
+	        $(".box").not(targetBox).hide();
+	        $(targetBox).show();
+	    });
+	});
+
+
+	$(document).ready(function() {
+  		$('#geraPDF11').hide();
+  		$('#geraPDF12').hide();
+  		$('#geraPDF13').hide();
+  
+  		$('#uripython1').mouseup(function() {
+    		$('#geraPDF11').toggle();
+  		});
+  		$('#uricodeboard1').mouseup(function() {
+    		$('#geraPDF12').toggle();
+
+  		});
+  		$('#uri1').mouseup(function() {
+    		$('#geraPDF13').toggle();
+
+  		});
+  		
+	});
+
+</script>
+
+
+
+<body style="font-family:Verdana;">
+	
+
+<div style="background-color:#e0e0d1;padding:15px;text-align:center;">
+  <h1>Metodologia de Suporte a Aprendizagem de Programação</h1>
+  <h4>Plataforma criada para geração automática de Guiões de Atividades aos professores de Programação I, com ensino da Linguagem C.</h4>
+</div>
+<br>
+<div class="panel panel-default">
+<div class="forms">
+<h5>Preencha o formulário de acordo com o Guião de Atividades que desejas obter:</h5>
+<div>1) Aplicação da atividade:</div><br>
+<form>
+  <input type="radio" name="df" value="dentro" > Dentro de sala de aula<br>
+  <input type="radio" name="df" value="fora"> Fora de sala de aula<br>
+ 
+</form><br>
+<div>2) Matéria:</div><br>
+<form>
+  <input type="radio" name="materia" value="um" > Dados de tipo elementar<br>
+  <input type="radio" name="materia" value="dois" > Testes e condições<br>
+  <input type="radio" name="materia" value="tres" > Instruções de iteração<br>
+  <input type="radio" name="materia" value="quatro" > Funções<br>
+  <input type="radio" name="materia" value="cinco" > Vetores<br>
+  <input type="radio" name="materia" value="seis" > String<br>
+ 
+</form><br>
+<div>3) Plataforma:</div><br>
+<form>
+  <!--<input type="radio" name="plataforma" value="learnc"> Learn-C<br>-->
+  	
+	
+	  <div class="um box" id="c1" style="display: none">	
+	  	<input type="checkbox" name="plataforma" value="uripython" id="uripython1" >1 - URI e PythonTutor<br>
+	  	<input type="checkbox" name="plataforma" value="uricodeboard" id="uricodeboard1">2 - URI e Codeboard<br>
+	  	<input type="checkbox" name="plataforma" value="uricodeboard" id="uri1">3 - URI Online Judge<br>
+	  </div>
+
+	  <div class="dois box" id="c2" style="display: none">
+	  	<input type="checkbox" name="plataforma" value="uripython" id="uripython2">1 - URI e PythonTutor<br>
+	  	<input type="checkbox" name="plataforma" value="uricodeboard" id="uricodeboard2">2 - URI e Codeboard<br>
+	  	<input type="checkbox" name="plataforma" value="uricodeboard" id="uri2">3 - URI Online Judge<br>
+	  </div>
+
+	  <div class="tres box" id="c3" style="display: none">
+	  	<input type="checkbox" name="plataforma" value="cpuzzlespython" id="cpuzzlespython3">1 - CPuzzles e PythonTutor<br>
+	    <input type="checkbox" name="plataforma" value="cpuzzlescodeboard" id="cpuzzlescodeboard3">2 - CPuzzles e Codeboard<br>
+	    <input type="checkbox" name="plataforma" value="cpro" id="cpro3">3 - CProgramming<br>
+	    <input type="checkbox" name="plataforma" value="codinGame" id="codingame3">4 - CodinGame<br>
+	    <!--<input type="radio" name="plataforma" value="codewars"> Codewars<br>-->
+	    <input type="checkbox" name="plataforma" value="coderbyte" id="coderbyte3">5 - Coderbyte<br>
+	  </div>
+
+	  <div class="quatro box" id="c4" style="display: none">
+	  	<input type="checkbox" name="plataforma" value="cpuzzlespython" id="cpuzzlespython4">1 - CPuzzles e PythonTutor<br>
+	    <input type="checkbox" name="plataforma" value="cpuzzlescodeboard" id="cpuzzlescodeboard4">2 - CPuzzles e Codeboard<br>
+	    <input type="checkbox" name="plataforma" value="cpro" id="cpro4">3 - CProgramming<br>
+	    <input type="checkbox" name="plataforma" value="codinGame" id="codingame4">4 - CodinGame<br>
+	    <!--<input type="radio" name="plataforma" value="codewars"> Codewars<br>-->
+	    <input type="checkbox" name="plataforma" value="coderbyte" id="coderbyte4">5 - Coderbyte<br>
+	  </div>
+
+	  <div class="cinco box" id="c5" style="display: none">
+	  	<input type="checkbox" name="plataforma" value="cpuzzlespython" id="cpuzzlespython5">1 - CPuzzles e PythonTutor<br>
+	    <input type="checkbox" name="plataforma" value="cpuzzlescodeboard" id="cpuzzlescodeboard5">2 - CPuzzles e Codeboard<br>
+	    <input type="checkbox" name="plataforma" value="cpro" id="cpro5">3 - CProgramming<br>
+	    <input type="checkbox" name="plataforma" value="codinGame" id="codingame5">4 - CodinGame<br>
+	    <!--<input type="radio" name="plataforma" value="codewars"> Codewars<br>-->
+	    <input type="checkbox" name="plataforma" value="coderbyte" id="coderbyte5">5 - Coderbyte<br>
+	  </div>
+
+	  <div class="seis box" id="c6" style="display: none">
+	  	<input type="checkbox" name="plataforma" value="cpuzzlespython" id="cpuzzlespython6">1 - CPuzzles e PythonTutor<br>
+	    <input type="checkbox" name="plataforma" value="cpuzzlescodeboard" id="cpuzzlescodeboard6">2 - CPuzzles e Codeboard<br>
+	    <input type="checkbox" name="plataforma" value="cpro" id="cpro6">3 - CProgramming<br>
+	    <input type="checkbox" name="plataforma" value="codinGame" id="codingame6">4 - CodinGame<br>
+	    <!--<input type="radio" name="plataforma" value="codewars"> Codewars<br>-->
+	    <input type="checkbox" name="plataforma" value="coderbyte" id="coderbyte6">5 - Coderbyte<br>
+	  </div>
+
+   
+
+ 
+ 
+</form><br>
+<div style="text-align:center;">
+<input type="button" value="Gerar PDF 1" id="geraPDF11" onclick="generatePDF11()" class="btn btn-primary" />
+<input type="button" value="Gerar PDF 2" id="geraPDF12" onclick="generatePDF12()" class="btn btn-primary" />
+<input type="button" value="Gerar PDF 3" id="geraPDF13" onclick="generatePDF13()" class="btn btn-primary"/>
+</div>
+</div>
+</div><br>
+<div style="background-color:#e0e0d1;text-align:center;padding:10px;margin-top:7px;font-size:12px; "> Proposta de Trabalho referente ao Mestrado em Sistemas de Informação pelo Instituto Politécnico de Bragança - IPB.<br>Autora: Marcela Viana Pereira de Almeida</div>
+
+
+</body>
+</html>
+<!-- 
+	if(dentro de sala de aula)
+		Cpuzzles
+		Uri
+		coderbyte
+		codingame
+
+	else if(fora de sala de aula)
+		coderbyte e codeboard
+		uri e codeboard
+		cpuzzles e codeboard
+		uri e pythontutor
+		cpuzzles e pythontutor
+		coderbyte e pythontutor
+
+
+
+	if(dados de tipo elementar)
+		uri e codeboard
+		uri
+		uri e python tutor
+	if(testes e condições)
+		uri e codeboard
+		uri
+		uri e python tutor
+	if(loop)
+		uri e codeboard
+		uri
+		uri e python tutor
+		cpuzzles e codeboard
+		cpuzzles e python tutor
+		codingame
+		
+	if(funcoes)
+		coderbyte (Alphabet Soup problem )
+		coderbyte (First Factorial)
+		codingame
+	if(Vetores)
+		codingame
+		cpuzzles
+		uri
+	if(string)
+		uri
+		cpuzzles
+		coderbyte
+	obs: se ele escolher codeboard e python tutor, ele precisa escolher uri ou cpuzzles para os exercicios
+
+
+	
+   -->
