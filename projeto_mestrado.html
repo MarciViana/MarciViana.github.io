@@ -19,7 +19,7 @@
 .menuitem {
   padding: 8px;
   margin-top: 7px;
-  border-bottom: 1px solid #f5f5f5;
+  border-bottom: 1px solid #99ccff;
 
 
 }
@@ -48,7 +48,8 @@
 	padding-left: 70px;
 	padding-right: 70px;
 
-	background-color: #f5f5f5 !important;
+	background-color: #b3ccff !important;
+
 }
 
 @media only screen and (max-width:800px) {
@@ -111,21 +112,24 @@
 
 
 
-<body style="font-family:Verdana; background-color: #f5f5f5;">
+<body style="font-family:Verdana; background-color: #b3ccff;">
 	
 
-<div style="background-color:#f5f5f5;padding:30px;text-align:center;">
+<div style="background-color:#b3ccff;padding:30px;text-align:center;">
   <h1>Metodologia de Suporte a Aprendizagem de Programação</h1>
   <h4>Plataforma criada para geração automática de Guiões de Atividades aos professores de Programação I, com ensino da Linguagem C.</h4>
 </div>
 
 <div class="container">
 <div class="forms">
-<h5>Preencha o formulário de acordo com o Guião de Atividades que desejas obter:</h5>
+<h5 style="text-align:center;">Preencha o formulário de acordo com o Guião de Atividades que desejas obter:</h5>
 <div>1) Aplicação da atividade:</div><br>
 <form>
-  <input type="radio" name="df" value="dentro" > Dentro de sala de aula<br>
-  <input type="radio" name="df" value="fora"> Fora de sala de aula<br>
+  <select id="dentroFora" class="form-control">
+        <option selected>Escolha...</option>
+        <option>Dentro de sala de aula</option>
+        <option>Fora de sala de aula</option>
+      </select>
  
 </form><br>
 <div>2) Matéria:</div><br>
@@ -189,21 +193,30 @@
 	    <input type="checkbox" name="plataforma" value="codinGame" id="codingame6">4 - CodinGame<br>
 	    <!--<input type="radio" name="plataforma" value="codewars"> Codewars<br>-->
 	    <input type="checkbox" name="plataforma" value="coderbyte" id="coderbyte6">5 - Coderbyte<br>
-	  </div>
-
-   
-
- 
+	  </div> 
  
 </form><br>
+<div>4) Quantidade de Exercícios: </div>
+<form>
+	<select id="quantidade" class="form-control">
+        <option selected>Escolha...</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+</form>
+<br>
 <div style="text-align:center;">
-<input type="button" value="Gerar PDF 1" id="geraPDF11" onclick="generatePDF11()" class="btn btn-primary" />
-<input type="button" value="Gerar PDF 2" id="geraPDF12" onclick="generatePDF12()" class="btn btn-primary" />
-<input type="button" value="Gerar PDF 3" id="geraPDF13" onclick="generatePDF13()" class="btn btn-primary"/>
+	<input type="button" value="Gerar Guião 1" id="geraPDF11" onclick="generatePDF11()" class="btn btn-primary" />
+	<input type="button" value="Gerar Guião 2" id="geraPDF12" onclick="generatePDF12()" class="btn btn-primary" />
+	<input type="button" value="Gerar Guião 3" id="geraPDF13" onclick="generatePDF13()" class="btn btn-primary"/>
 </div>
 </div>
+
 </div><br>
-<div style="background-color:#e0e0d1;text-align:center;padding:10px;margin-top:7px;font-size:12px; "> Proposta de Trabalho referente ao Mestrado em Sistemas de Informação pelo Instituto Politécnico de Bragança - IPB.<br>Autora: Marcela Viana Pereira de Almeida</div>
+<div style="background-color:#80aaff;text-align:center;padding:10px;margin-top:7px;font-size:12px; "> Proposta de Trabalho referente ao Mestrado em Sistemas de Informação pelo Instituto Politécnico de Bragança - IPB.<br>Autora: Marcela Viana Pereira de Almeida</div>
 
 
 </body>
