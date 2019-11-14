@@ -142,7 +142,19 @@
   <input type="radio" name="materia" value="seis" > String<br>
  
 </form><br>
-<div>3) Plataforma:</div><br>
+<div>3) Quantidade de Exercícios: </div>
+<form>
+	<select id="quantidade" class="form-control">
+        <option selected>Escolha...</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+</form>
+<br>
+<div>4) Plataforma:</div><br>
 <form>
   <!--<input type="radio" name="plataforma" value="learnc"> Learn-C<br>-->
   	
@@ -196,18 +208,8 @@
 	  </div> 
  
 </form><br>
-<div>4) Quantidade de Exercícios: </div>
-<form>
-	<select id="quantidade" class="form-control">
-        <option selected>Escolha...</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-      </select>
-</form>
-<br>
+
+
 <div style="text-align:center;">
 	<input type="button" value="Gerar Guião 1" id="geraPDF11" onclick="generatePDF11()" class="btn btn-primary" />
 	<input type="button" value="Gerar Guião 2" id="geraPDF12" onclick="generatePDF12()" class="btn btn-primary" />
