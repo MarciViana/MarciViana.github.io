@@ -145,19 +145,16 @@
 	$(document).ready(function() {
   		$('#geraPDF11').hide();
   		$('#geraPDF12').hide();
-  		$('#geraPDF13').hide();
+  		
   
-  		$('#uripython1').mouseup(function() {
+  		$('#uri1').mouseup(function() {
     		$('#geraPDF11').toggle();
   		});
   		$('#uricodeboard1').mouseup(function() {
     		$('#geraPDF12').toggle();
 
   		});
-  		$('#uri1').mouseup(function() {
-    		$('#geraPDF13').toggle();
-
-  		});
+  		
   		
 	});
 
@@ -204,8 +201,8 @@
 	
 	  <div class="um box" id="c1" style="display: none">	
 	 <!-- 	<input type="checkbox" name="plataforma" value="uri1" id="uripython1" >1 - URI e PythonTutor<br>-->
-	  	<input type="checkbox" class="um" name="plataforma" value="uri1" id="uricodeboard1" onchange="umChange(this)">1.0 - URI Online Judge e Codeboard<br>
-	  	<input type="checkbox" class="um" name="plataforma" value="uri1" id="uri1" onchange="umChange(this)">2.0 - URI Online Judge<br>
+	  	<input type="checkbox" class="um" name="plataforma" value="uri1" id="uri1" onchange="umChange(this)">1.0 - URI Online Judge<br>
+	  	<input type="checkbox" class="um" name="plataforma" value="uri1" id="uricodeboard1" onchange="umChange(this)">2.0 - URI Online Judge e Codeboard<br>
 	  </div>
 
 	  <div class="dois box" id="c2" style="display: none">
@@ -356,11 +353,13 @@
 <div style="text-align:center;">
 	<input type="button" value="Gerar Guião 1" id="geraPDF11" onclick="generatePDF11()" class="btn btn-primary" />
 	<input type="button" value="Gerar Guião 2" id="geraPDF12" onclick="generatePDF12()" class="btn btn-primary" />
-	<input type="button" value="Gerar Guião 3" id="geraPDF13" onclick="generatePDF13()" class="btn btn-primary"/>
 </div>
 </div>
 
 </div><br>
+
+
+
 <div style="background-color:#80aaff;text-align:center;padding:10px;margin-top:7px;font-size:12px; "> Proposta de Trabalho referente ao Mestrado em Sistemas de Informação pelo Instituto Politécnico de Bragança - IPB.<br>Autora: Marcela Viana Pereira de Almeida</div>
 
 
