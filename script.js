@@ -63,7 +63,7 @@ function generatePDF12(){
 		doc2.save('guiao1_aluno.pdf');
 
 		//redireciona aos códigos base
-		window.location.href = "codigo_guia1.0.html";
+		window.location.href = "https://marciviana.github.io/codigo_guia1.0.html";
 	}
 
 function generatePDF21(){
