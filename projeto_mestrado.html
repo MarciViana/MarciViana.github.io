@@ -78,48 +78,7 @@
 <script type="text/javascript" src="script.js">	</script>
 <script>
 	
-	function umChange(obj) {
-    var cbs = document.getElementsByClassName("um");
-    for (var i = 0; i < cbs.length; i++) {
-        cbs[i].checked = false;
-    }
-    obj.checked = true;
-	}
-	function doisChange(obj) {
-    var cbs = document.getElementsByClassName("dois");
-    for (var i = 0; i < cbs.length; i++) {
-        cbs[i].checked = false;
-    }
-    obj.checked = true;
-	}
-	function tresChange(obj) {
-    var cbs = document.getElementsByClassName("tres");
-    for (var i = 0; i < cbs.length; i++) {
-        cbs[i].checked = false;
-    }
-    obj.checked = true;
-	}
-	function quatroChange(obj) {
-    var cbs = document.getElementsByClassName("quatro");
-    for (var i = 0; i < cbs.length; i++) {
-        cbs[i].checked = false;
-    }
-    obj.checked = true;
-	}
-	function cincoChange(obj) {
-    var cbs = document.getElementsByClassName("cinco");
-    for (var i = 0; i < cbs.length; i++) {
-        cbs[i].checked = false;
-    }
-    obj.checked = true;
-	}
-	function seisChange(obj) {
-    var cbs = document.getElementsByClassName("seis");
-    for (var i = 0; i < cbs.length; i++) {
-        cbs[i].checked = false;
-    }
-    obj.checked = true;
-	}
+	
 
 	$(document).ready(function(){
 	    $('input[type="checkbox"]').click(function(){
@@ -151,7 +110,9 @@
     		$('#geraPDF11').toggle();
   		});
   		$('#uricodeboard1').mouseup(function() {
-    		$('#geraPDF12').toggle();
+    		$('#uri11').mouseup(function() {
+    			$('#geraPDF12').toggle();
+    		});
 
   		});
   		
@@ -201,149 +162,160 @@
 	
 	  <div class="um box" id="c1" style="display: none">	
 	 <!-- 	<input type="checkbox" name="plataforma" value="uri1" id="uripython1" >1 - URI e PythonTutor<br>-->
-	  	<input type="checkbox" class="um" name="plataforma" value="uri1" id="uri1" onchange="umChange(this)">1.0 - URI Online Judge<br>
-	  	<input type="checkbox" class="um" name="plataforma" value="uri1" id="uricodeboard1" onchange="umChange(this)">2.0 - URI Online Judge e Codeboard<br>
+	  	<input type="checkbox" class="um" name="plataforma" value="uri1" id="uri1">1.0 - URI Online Judge<br>
+	  	<input type="checkbox" class="um" name="plataforma" value="uri1" id="uricodeboard1" >2.0 - URI Online Judge e Codeboard<br>
 	  </div>
 
 	  <div class="dois box" id="c2" style="display: none">
 	 <!-- 	<input type="checkbox" name="plataforma" value="uri2" id="uripython2">1.1 - URI e PythonTutor<br>-->
-	  	<input type="checkbox" class="dois" name="plataforma" value="uri2" id="uricodeboard2" onchange="doisChange(this)">1.1 - URI Online Judge e Codeboard<br>
-	  	<input type="checkbox" class="dois" name="plataforma" value="uri2" id="uri2" onchange="doisChange(this)">2.1 - URI Online Judge<br>
+	  	<input type="checkbox" class="dois" name="plataforma" value="uri2" id="uricodeboard2" >1.1 - URI Online Judge e Codeboard<br>
+	  	<input type="checkbox" class="dois" name="plataforma" value="uri2" id="uri2" >2.1 - URI Online Judge<br>
 	  </div>
 
 	  <div class="tres box" id="c3" style="display: none">
-	  	<input type="checkbox" class="tres" name="plataforma" value="uri3" id="uricodeboard3" onchange="tresChange(this)">1.2 - URI Online Judge e Codeboard<br>
-	  	<input type="checkbox" class="tres" name="plataforma" value="uri3" id="uri3" onchange="tresChange(this)">2.2 - URI Online Judge<br>
-	  	<input type="checkbox" class="tres" name="plataforma" value="cpuzzles3" id="cpuzzlespython3" onchange="tresChange(this)">3 - CPuzzles e PythonTutor<br>
-	    <input type="checkbox" class="tres" name="plataforma" value="cpuzzles3" id="cpuzzlescodeboard3" onchange="tresChange(this)">4 - CPuzzles e Codeboard<br>
+	  	<input type="checkbox" class="tres" name="plataforma" value="uri3" id="uricodeboard3" >1.2 - URI Online Judge e Codeboard<br>
+	  	<input type="checkbox" class="tres" name="plataforma" value="uri3" id="uri3">2.2 - URI Online Judge<br>
+	  	<input type="checkbox" class="tres" name="plataforma" value="cpuzzles3" id="cpuzzlespython3" >3 - CPuzzles e PythonTutor<br>
+	    <input type="checkbox" class="tres" name="plataforma" value="cpuzzles3" id="cpuzzlescodeboard3" >4 - CPuzzles e Codeboard<br>
 	    
-	    <input type="checkbox" class="tres" name="plataforma" value="codingame3" id="codingame3" onchange="tresChange(this)">5 - CodinGame<br>
+	    <input type="checkbox" class="tres" name="plataforma" value="codingame3" id="codingame3" >5 - CodinGame<br>
 	    <!--<input type="radio" name="plataforma" value="codewars"> Codewars<br>-->
-	    <input type="checkbox" class="tres" name="plataforma" value="coderbyte3" id="coderbyte3" onchange="tresChange(this)">6 - Coderbyte<br>
+	    <input type="checkbox" class="tres" name="plataforma" value="coderbyte3" id="coderbyte3" >6 - Coderbyte<br>
 	  </div>
 
 	  <div class="quatro box" id="c4" style="display: none">    
-	    <input type="checkbox" class="quatro" name="plataforma" value="codingame4" id="codingame4" onchange="quatroChange(this)">1 - CodinGame<br>
+	    <input type="checkbox" class="quatro" name="plataforma" value="codingame4" id="codingame4" >1 - CodinGame<br>
 	    <!--<input type="radio" name="plataforma" value="codewars"> Codewars<br>-->
-	    <input type="checkbox" class="quatro" name="plataforma" value="coderbyte4" id="coderbyte4" onchange="quatroChange(this)">2 - Coderbyte<br>
+	    <input type="checkbox" class="quatro" name="plataforma" value="coderbyte4" id="coderbyte4" >2 - Coderbyte<br>
 	  </div>
 
 	  <div class="cinco box" id="c5" style="display: none">
-	  <input type="checkbox" class="cinco" name="plataforma" value="uri5" id="uricodeboard3" onchange="cincoChange(this)">1 - URI Online Judge e Codeboard<br>
-	  	<input type="checkbox" class="cinco" name="plataforma" value="uri5" id="uripython3" onchange="cincoChange(this)">2 - URI Online Judge e PythonTutor<br>
-	  	<input type="checkbox" class="cinco" name="plataforma" value="uri5" id="uri3" onchange="cincoChange(this)">3 - URI Online Judge<br>
-	  	<input type="checkbox" class="cinco" name="plataforma" value="cpuzzlespython5" id="cpuzzlespython5" onchange="cincoChange(this)">4 - CPuzzles e PythonTutor<br>
+	  <input type="checkbox" class="cinco" name="plataforma" value="uri5" id="uricodeboard3" >1 - URI Online Judge e Codeboard<br>
+	  	<input type="checkbox" class="cinco" name="plataforma" value="uri5" id="uripython3">2 - URI Online Judge e PythonTutor<br>
+	  	<input type="checkbox" class="cinco" name="plataforma" value="uri5" id="uri3">3 - URI Online Judge<br>
+	  	<input type="checkbox" class="cinco" name="plataforma" value="cpuzzlespython5" id="cpuzzlespython5">4 - CPuzzles e PythonTutor<br>
 	    
-	    <input type="checkbox" class="cinco" name="plataforma" value="codingame5" id="codingame5" onchange="cincoChange(this)">5 - CodinGame<br>
+	    <input type="checkbox" class="cinco" name="plataforma" value="codingame5" id="codingame5" >5 - CodinGame<br>
 	    <!--<input type="radio" name="plataforma" value="codewars"> Codewars<br>-->
 	 <!--   <input type="checkbox" name="plataforma" value="coderbyte5" id="coderbyte5">6 - Coderbyte<br>-->
 	  </div>
 
 	  <div class="seis box" id="c6" style="display: none">
-	  	<input type="checkbox" class="seis" name="plataforma" value="uri6" id="uripython6" onchange="seisChange(this)">1 - URI Online Judge e PythonTutor<br>
-	  	<input type="checkbox" class="seis" name="plataforma" value="uri6" id="uri6" onchange="seisChange(this)">2 - URI Online Judge<br>
-	  	<input type="checkbox" class="seis" name="plataforma" value="cpuzzles6" id="cpuzzlespython6" onchange="seisChange(this)">3 - CPuzzles e PythonTutor<br>
-	    <input type="checkbox" class="seis" name="plataforma" value="cpuzzles6" id="cpuzzlescodeboard6" onchange="seisChange(this)">4 - CPuzzles e Codeboard<br>
+	  	<input type="checkbox" class="seis" name="plataforma" value="uri6" id="uripython6" >1 - URI Online Judge e PythonTutor<br>
+	  	<input type="checkbox" class="seis" name="plataforma" value="uri6" id="uri6" >2 - URI Online Judge<br>
+	  	<input type="checkbox" class="seis" name="plataforma" value="cpuzzles6" id="cpuzzlespython6" >3 - CPuzzles e PythonTutor<br>
+	    <input type="checkbox" class="seis" name="plataforma" value="cpuzzles6" id="cpuzzlescodeboard6" >4 - CPuzzles e Codeboard<br>
 	    <!--<input type="radio" name="plataforma" value="codewars"> Codewars<br>-->
-	    <input type="checkbox" class="seis" name="plataforma" value="coderbyte6" id="coderbyte6" onchange="seisChange(this)">5 - Coderbyte<br>
+	    <input type="checkbox" class="seis" name="plataforma" value="coderbyte6" id="coderbyte6" >5 - Coderbyte<br>
 	  </div> 
  
 </form><br>
 
-<div>4) Exercícios: <font color="red">(funcionalidade ainda não disponível)</font></div><br>
+<div>4) Número de Exercícios:</div><br>
+<form>
+	<select id="qtdExercicios" class="form-control">
+    <option selected>Escolha...</option>
+    <option id="qtd1">1</option>
+    <option id="qtd2">2</option>
+    <option id="qtd3">3</option>
+    <option id="qtd4">4</option>
+  </select>
+</form>
+<br>
+<div>5) Exercícios: <font color="red">(funcionalidade ainda não disponível)</font></div><br>
 <form>
 	<div class="uri1 caixa" id="e1" style="display: none">
 	<select multiple class="form-control" id="e1">
-      <option>Área do Círculo - Estimativa: 10 minutos</option>
-      <option>Produto Simples - Estimativa: 10 minutos</option>
-      <option>Média 1 - Estimativa: 10 minutos</option>
-      <option>Média 2 - Estimativa: 10 minutos</option>
-      <option>Diferença - Estimativa: 10 minutos</option>
-      <option>Esfera - Estimativa: 10 minutos</option>
+      <option id="uri11">Área do Círculo - Estimativa: 10 minutos</option>
+      <option id="uri12">Produto Simples - Estimativa: 10 minutos</option>
+      <option id="uri13">Média 1 - Estimativa: 10 minutos</option>
+      <option id="uri14">Média 2 - Estimativa: 10 minutos</option>
+      <option id="uri15">Diferença - Estimativa: 10 minutos</option>
+      <option id="uri16">Esfera - Estimativa: 10 minutos</option>
     </select>
 	</div>
 
     <div class="uri2 caixa" id="e2" style="display: none">
 	<select multiple class="form-control" id="e2">
-      <option>Média 3 - Estimativa: 10 minutos</option>
-      <option>Coordenadas de um Ponto - Estimativa: 10 minutos</option>
-      <option>Sort Simples - Estimativa: 10 minutos</option>
-      <option>Múltiplos - Estimativa: 10 minutos</option>
-      <option>Tempo de Jogo - Estimativa: 10 minutos</option>
-      <option>Aumento de Salário - Estimativa: 10 minutos</option>
+      <option id="uri21">Média 3 - Estimativa: 10 minutos</option>
+      <option id="uri22">Coordenadas de um Ponto - Estimativa: 10 minutos</option>
+      <option id="uri23">Sort Simples - Estimativa: 10 minutos</option>
+      <option id="uri24">Múltiplos - Estimativa: 10 minutos</option>
+      <option id="uri25">Tempo de Jogo - Estimativa: 10 minutos</option>
+      <option id="uri26">Aumento de Salário - Estimativa: 10 minutos</option>
     </select>
 	</div>
 
 	<div class="uri3 caixa" id="e3" style="display: none">
 	<select multiple class="form-control" id="e3">
-      <option>Números Positivos - Estimativa: 10 minutos</option>
-      <option>Positivos e Média - Estimativa: 10 minutos</option>
-      <option>Quadrado de Pares - Estimativa: 10 minutos</option>
+      <option id="uri31">Números Positivos - Estimativa: 10 minutos</option>
+      <option id="uri32">Positivos e Média - Estimativa: 10 minutos</option>
+      <option id="uri33">Quadrado de Pares - Estimativa: 10 minutos</option>
     </select>
 	</div>
 
 	<div class="cpuzzles3 caixa" id="e4" style="display: none">
 	<select multiple class="form-control" id="e4">
-      <option>Print the integers 0, 2, 4, …, 20 one per line - Estimativa: 10 minutos</option>
-      <option>Print the integers from -7 to 7, one per line - Estimativa: 10 minutos</option>
-      <option>Print the ODD integers from 1 to 99, one per line - Estimativa: 10 minutos</option>
+      <option id="cpuzzles31">Print the integers 0, 2, 4, …, 20 one per line - Estimativa: 10 minutos</option>
+      <option id="cpuzzles32">Print the integers from -7 to 7, one per line - Estimativa: 10 minutos</option>
+      <option id="cpuzzles33">Print the ODD integers from 1 to 99, one per line - Estimativa: 10 minutos</option>
     </select>
 	</div>
 
 	<div class="codingame3 caixa" id="e5" style="display: none">
 	<select multiple class="form-control" id="e5">
-      <option>Temperatures - Estimativa: 15 minutos</option>
+      <option id="codingame31">Temperatures - Estimativa: 15 minutos</option>
     </select>
 	</div>
 
 	<div class="codingame4 caixa" id="e6" style="display: none">
 	<select multiple class="form-control" id="e6">
-      <option>The River i. - Estimativa: 15 minutos</option>
+      <option id="codingame41">The River i. - Estimativa: 15 minutos</option>
     </select>
 	</div>
 
 	<div class="coderbyte4 caixa" id="e7" style="display: none">
 	<select multiple class="form-control" id="e7">
-      <option>Check Nums - Estimativa: 10 minutos</option>
-      <option>Time Convert - Estimativa: 10 minutos</option>
-      <option>Alphabet Soup Problem - Estimativa: 10 minutos</option>
-      <option>First Factorial - Estimativa: 10 minutos</option>
+      <option id="coderbyte41">Check Nums - Estimativa: 10 minutos</option>
+      <option id="coderbyte42">Time Convert - Estimativa: 10 minutos</option>
+      <option id="coderbyte43">Alphabet Soup Problem - Estimativa: 10 minutos</option>
+      <option id="coderbyte44">First Factorial - Estimativa: 10 minutos</option>
     </select>
 	</div>
 
 	<div class="uri5 caixa" id="e8" style="display: none">
 	<select multiple class="form-control" id="e8">
-      <option>Preenchimento de Vetor I - Estimativa: 10 minutos</option>
-      <option>Seleção em Vetor I - Estimativa: 10 minutos</option>
-      <option>Troca em Vetor - Estimativa: 10 minutos</option>
-      <option>Preenchimento de Vetor II - Estimativa: 10 minutos</option>
+      <option id="uri51">Preenchimento de Vetor I - Estimativa: 10 minutos</option>
+      <option id="uri52">Seleção em Vetor I - Estimativa: 10 minutos</option>
+      <option id="uri53">Troca em Vetor - Estimativa: 10 minutos</option>
+      <option id="uri54">Preenchimento de Vetor II - Estimativa: 10 minutos</option>
     </select>
 	</div>
 
 	<div class="cpuzzlespython5 caixa" id="e9" style="display: none">
 	<select multiple class="form-control" id="e9">
-      <option>Puzzle C01 – Print each element in an array of ints, one per line - Estimativa: 10 minutos</option>
-      <option>Puzzle C03 – Fill an array by making each element the same integer x - Estimativa: 10 minutos</option>
+      <option id="cpuzzlespython51">Puzzle C01 – Print each element in an array of ints, one per line - Estimativa: 10 minutos</option>
+      <option id="cpuzzlespython52">Puzzle C03 – Fill an array by making each element the same integer x - Estimativa: 10 minutos</option>
     </select>
 	</div>
 
 	<div class="codingame5 caixa" id="e10" style="display: none">
 	<select multiple class="form-control" id="e10">
-      <option>The Descent - Estimativa: 10 minutos</option>
+      <option id="codingame51">The Descent - Estimativa: 10 minutos</option>
     </select>
 	</div>
 
 	<div class="cpuzzles6 caixa" id="e11" style="display: none">
 	<select multiple class="form-control" id="e11">
-      <option>Puzzle S01 – Is a character upper case? - Estimativa: 10 minutos</option>
-      <option>Puzzle S03 – Convert to lower case - Estimativa: 10 minutos</option>
+      <option id="cpuzzles61">Puzzle S01 – Is a character upper case? - Estimativa: 10 minutos</option>
+      <option id="cpuzzles62">Puzzle S03 – Convert to lower case - Estimativa: 10 minutos</option>
     </select>
 	</div>
 
 	<div class="coderbyte6 caixa" id="e12" style="display: none">
 	<select multiple class="form-control" id="e12">
-      <option>First Reverse - Estimativa: 15 minutos</option>
-      <option>Letter Changes - Estimativa: 15 minutos</option>
+      <option id="coderbyte61">First Reverse - Estimativa: 15 minutos</option>
+      <option id="coderbyte62">Letter Changes - Estimativa: 15 minutos</option>
     </select>
 	</div>
 
