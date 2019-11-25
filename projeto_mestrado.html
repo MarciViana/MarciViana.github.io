@@ -74,12 +74,11 @@
 </style>
 </head>
 <script type="text/javascript" src="jspdf.min.js"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
 <script type="text/javascript" src="script.js">	</script>
 <script>
 	
 	
-
 	$(document).ready(function(){
 	    $('input[type="checkbox"]').click(function(){
 	    	$('#e1','#e2','#e3','#e4','#e5','#e6','#e7','#e8','#e9','#e10','#e11','#e12').show();
@@ -101,23 +100,37 @@
 	});
 
 
+
 	$(document).ready(function() {
   		$('#geraPDF11').hide();
   		$('#geraPDF12').hide();
   		
   
-  		$('#uri1').mouseup(function() {
-    		$('#geraPDF11').toggle();
+  		$('#uri11').mouseup(function() {
+    		$('#uri12').mouseup(function() {
+    			$('#geraPDF11').toggle();
+    		});
   		});
+  		$('#uri12').mouseup(function() {
+    		$('#uri15').mouseup(function() {
+    			$('#geraPDF11').toggle();
+    		});
+  		});
+
   		$('#uricodeboard1').mouseup(function() {
     		$('#uri11').mouseup(function() {
-    			$('#geraPDF12').toggle();
+    			$('#uri13').mouseup(function() {
+    				$('#uri14').mouseup(function() {
+    					$('#geraPDF12').toggle();
+    				});
+    			});
     		});
 
   		});
   		
   		
 	});
+	
 
 </script>
 
@@ -134,17 +147,9 @@
 <div class="container">
 <div class="forms">
 <h4 style="text-align:center;">Preencha o formulário de acordo com o Guião de Atividades que desejas obter:</h4>
-<h6 style="text-align:center;">Para habilitar as opções 3 e 4, primeiro selecione a matéria e após isso a(s) plataforma(s).</h6>
-<div>1) Aplicação da atividade:</div><br>
-<form>
-  <select id="dentroFora" class="form-control">
-    <option selected>Escolha...</option>
-    <option>Dentro de sala de aula</option>
-    <option>Fora de sala de aula</option>
-  </select>
- 
-</form><br>
-<div>2) Matéria:</div><br>
+<h6 style="text-align:center;">Para habilitar as opções 3 e 4, primeiro selecione a matéria e, após isso, a plataforma.</h6>
+
+<div>1) Matéria:</div><br>
 <form>
   <input type="radio" name="materia" value="um" > Dados de tipo elementar<br>
   <input type="radio" name="materia" value="dois" > Testes e condições<br>
@@ -155,15 +160,25 @@
  
 </form><br>
 
-<div>3) Plataforma:</div><br>
+<!--<div>2) Aplicação da atividade:</div><br>
+<form>
+  <select id="dentroFora" class="form-control">
+    <option selected>Escolha...</option>
+    <option id="dentro" >Dentro de sala de aula</option>
+    <option id="fora" >Fora de sala de aula</option>
+  </select>
+ 
+</form><br>-->
+
+<div>2) Plataforma:</div><br>
 <form>
   <!--<input type="radio" name="plataforma" value="learnc"> Learn-C<br>-->
   	
 	
 	  <div class="um box" id="c1" style="display: none">	
 	 <!-- 	<input type="checkbox" name="plataforma" value="uri1" id="uripython1" >1 - URI e PythonTutor<br>-->
-	  	<input type="checkbox" class="um" name="plataforma" value="uri1" id="uri1">1.0 - URI Online Judge<br>
-	  	<input type="checkbox" class="um" name="plataforma" value="uri1" id="uricodeboard1" >2.0 - URI Online Judge e Codeboard<br>
+	  	<input type="checkbox" class="um" name="plataforma" value="uri1" id="uri1">1.0 - URI Online Judge (Dentro de sala de aula)<br>
+	  	<input type="checkbox" class="um" name="plataforma" value="uri1" id="uricodeboard1" >2.0 - URI Online Judge e Codeboard (Fora de sala de aula)<br>
 	  </div>
 
 	  <div class="dois box" id="c2" style="display: none">
@@ -211,7 +226,7 @@
  
 </form><br>
 
-<div>4) Número de Exercícios:</div><br>
+<!--<div>4) Número de Exercícios:</div><br>
 <form>
 	<select id="qtdExercicios" class="form-control">
     <option selected>Escolha...</option>
@@ -221,17 +236,17 @@
     <option id="qtd4">4</option>
   </select>
 </form>
-<br>
-<div>5) Exercícios: <font color="red">(funcionalidade ainda não disponível)</font></div><br>
+<br>-->
+<div>4) Exercícios: </div><br>
 <form>
 	<div class="uri1 caixa" id="e1" style="display: none">
-	<select multiple class="form-control" id="e1">
+	<select multiple class="form-control" id="e1" name="uri1">
       <option id="uri11">Área do Círculo - Estimativa: 10 minutos</option>
       <option id="uri12">Produto Simples - Estimativa: 10 minutos</option>
       <option id="uri13">Média 1 - Estimativa: 10 minutos</option>
       <option id="uri14">Média 2 - Estimativa: 10 minutos</option>
       <option id="uri15">Diferença - Estimativa: 10 minutos</option>
-      <option id="uri16">Esfera - Estimativa: 10 minutos</option>
+ <!--     <option id="uri16">Esfera - Estimativa: 10 minutos</option>-->
     </select>
 	</div>
 
@@ -242,7 +257,7 @@
       <option id="uri23">Sort Simples - Estimativa: 10 minutos</option>
       <option id="uri24">Múltiplos - Estimativa: 10 minutos</option>
       <option id="uri25">Tempo de Jogo - Estimativa: 10 minutos</option>
-      <option id="uri26">Aumento de Salário - Estimativa: 10 minutos</option>
+    <!--  <option id="uri26">Aumento de Salário - Estimativa: 10 minutos</option>-->
     </select>
 	</div>
 
