@@ -81,7 +81,7 @@
 	
 	$(document).ready(function(){
 	    $('input[type="checkbox"]').click(function(){
-	    	$('#e1','#e2','#e3','#e4','#e5','#e6','#e7','#e8','#e9','#e10','#e11','#e12').show();
+	    	$('#e1','#e2','#e3','#e4','#e5','#e6','#e7','#e8','#e9','#e10','#e11','#e12','#e13').show();
 	        var inputValue = $(this).attr("value");
 	        var targetBox = $("." + inputValue);
 	        $(".caixa").not(targetBox).hide();
@@ -99,37 +99,52 @@
 	    });
 	});
 
-
-
+	var exists = 0;
 	$(document).ready(function() {
   		$('#geraPDF11').hide();
   		$('#geraPDF12').hide();
+  		$('#escolhe').hide();
   		
-  
   		$('#uri11').mouseup(function() {
     		$('#uri12').mouseup(function() {
-    			$('#geraPDF11').toggle();
+    			$('#escolhe').mouseup(function() {
+    				$('#geraPDF11').toggle();
+    				exists = 1;
+    			});
     		});
   		});
   		$('#uri12').mouseup(function() {
     		$('#uri15').mouseup(function() {
-    			$('#geraPDF11').toggle();
+    			$('#escolhe').mouseup(function() {
+    				$('#geraPDF11').toggle();
+    				exists = 1;
+    			});
     		});
   		});
 
   		$('#uricodeboard1').mouseup(function() {
-    		$('#uri11').mouseup(function() {
-    			$('#uri13').mouseup(function() {
-    				$('#uri14').mouseup(function() {
-    					$('#geraPDF12').toggle();
+    		$('#uricodeboard11').mouseup(function() {
+    			$('#uricodeboard13').mouseup(function() {
+    				$('#uricodeboard14').mouseup(function() {
+    					$('#escolhe').mouseup(function() {
+    						$('#geraPDF12').toggle();
+    						exists = 1;
+    					});
     				});
     			});
     		});
 
   		});
-  		
-  		
+  		$('input[type="checkbox"]').mouseup(function() {
+    		$('#escolhe').toggle();
+		});
+
 	});
+	function escolher(){
+		if(exists == 0){
+  			alert("Este guião ainda não foi desenvolvido!");
+  		}
+	}
 	
 
 </script>
@@ -147,7 +162,7 @@
 <div class="container">
 <div class="forms">
 <h4 style="text-align:center;">Preencha o formulário de acordo com o Guião de Atividades que desejas obter:</h4>
-<h6 style="text-align:center;">Para habilitar as opções 3 e 4, primeiro selecione a matéria e, após isso, a plataforma.</h6>
+<h6 style="text-align:center;">Para habilitar as opções 2 e 3, primeiro selecione a matéria e, após isso, a plataforma.</h6>
 
 <div>1) Matéria:</div><br>
 <form>
@@ -177,51 +192,51 @@
 	
 	  <div class="um box" id="c1" style="display: none">	
 	 <!-- 	<input type="checkbox" name="plataforma" value="uri1" id="uripython1" >1 - URI e PythonTutor<br>-->
-	  	<input type="checkbox" class="um" name="plataforma" value="uri1" id="uri1">1.0 - URI Online Judge (Dentro de sala de aula)<br>
-	  	<input type="checkbox" class="um" name="plataforma" value="uri1" id="uricodeboard1" >2.0 - URI Online Judge e Codeboard (Fora de sala de aula)<br>
+	  	<input type="checkbox" class="um" name="plataforma" value="uri1" id="uri1"> URI Online Judge (Dentro de sala de aula)<br>
+	  	<input type="checkbox" class="um" name="plataforma" value="uricodeboard1" id="uricodeboard1" > URI Online Judge e Codeboard (Fora de sala de aula)<br>
 	  </div>
 
 	  <div class="dois box" id="c2" style="display: none">
 	 <!-- 	<input type="checkbox" name="plataforma" value="uri2" id="uripython2">1.1 - URI e PythonTutor<br>-->
-	  	<input type="checkbox" class="dois" name="plataforma" value="uri2" id="uricodeboard2" >1.1 - URI Online Judge e Codeboard<br>
-	  	<input type="checkbox" class="dois" name="plataforma" value="uri2" id="uri2" >2.1 - URI Online Judge<br>
+	  	<input type="checkbox" class="dois" name="plataforma" value="uri2" id="uricodeboard2" > URI Online Judge e Codeboard<br>
+	  	<input type="checkbox" class="dois" name="plataforma" value="uri2" id="uri2" > URI Online Judge<br>
 	  </div>
 
 	  <div class="tres box" id="c3" style="display: none">
-	  	<input type="checkbox" class="tres" name="plataforma" value="uri3" id="uricodeboard3" >1.2 - URI Online Judge e Codeboard<br>
-	  	<input type="checkbox" class="tres" name="plataforma" value="uri3" id="uri3">2.2 - URI Online Judge<br>
-	  	<input type="checkbox" class="tres" name="plataforma" value="cpuzzles3" id="cpuzzlespython3" >3 - CPuzzles e PythonTutor<br>
-	    <input type="checkbox" class="tres" name="plataforma" value="cpuzzles3" id="cpuzzlescodeboard3" >4 - CPuzzles e Codeboard<br>
+	  	<input type="checkbox" class="tres" name="plataforma" value="uri3" id="uricodeboard3" > URI Online Judge e Codeboard<br>
+	  	<input type="checkbox" class="tres" name="plataforma" value="uri3" id="uri3"> URI Online Judge<br>
+	  	<input type="checkbox" class="tres" name="plataforma" value="cpuzzles3" id="cpuzzlespython3" > CPuzzles e PythonTutor<br>
+	    <input type="checkbox" class="tres" name="plataforma" value="cpuzzles3" id="cpuzzlescodeboard3" > CPuzzles e Codeboard<br>
 	    
-	    <input type="checkbox" class="tres" name="plataforma" value="codingame3" id="codingame3" >5 - CodinGame<br>
+	    <input type="checkbox" class="tres" name="plataforma" value="codingame3" id="codingame3" > CodinGame<br>
 	    <!--<input type="radio" name="plataforma" value="codewars"> Codewars<br>-->
-	    <input type="checkbox" class="tres" name="plataforma" value="coderbyte3" id="coderbyte3" >6 - Coderbyte<br>
+	    <input type="checkbox" class="tres" name="plataforma" value="coderbyte3" id="coderbyte3" > Coderbyte<br>
 	  </div>
 
 	  <div class="quatro box" id="c4" style="display: none">    
-	    <input type="checkbox" class="quatro" name="plataforma" value="codingame4" id="codingame4" >1 - CodinGame<br>
+	    <input type="checkbox" class="quatro" name="plataforma" value="codingame4" id="codingame4" > CodinGame<br>
 	    <!--<input type="radio" name="plataforma" value="codewars"> Codewars<br>-->
-	    <input type="checkbox" class="quatro" name="plataforma" value="coderbyte4" id="coderbyte4" >2 - Coderbyte<br>
+	    <input type="checkbox" class="quatro" name="plataforma" value="coderbyte4" id="coderbyte4" > Coderbyte<br>
 	  </div>
 
 	  <div class="cinco box" id="c5" style="display: none">
-	  <input type="checkbox" class="cinco" name="plataforma" value="uri5" id="uricodeboard3" >1 - URI Online Judge e Codeboard<br>
-	  	<input type="checkbox" class="cinco" name="plataforma" value="uri5" id="uripython3">2 - URI Online Judge e PythonTutor<br>
-	  	<input type="checkbox" class="cinco" name="plataforma" value="uri5" id="uri3">3 - URI Online Judge<br>
-	  	<input type="checkbox" class="cinco" name="plataforma" value="cpuzzlespython5" id="cpuzzlespython5">4 - CPuzzles e PythonTutor<br>
+	  <input type="checkbox" class="cinco" name="plataforma" value="uri5" id="uricodeboard3" > URI Online Judge e Codeboard<br>
+	  	<input type="checkbox" class="cinco" name="plataforma" value="uri5" id="uripython3"> URI Online Judge e PythonTutor<br>
+	  	<input type="checkbox" class="cinco" name="plataforma" value="uri5" id="uri3"> URI Online Judge<br>
+	  	<input type="checkbox" class="cinco" name="plataforma" value="cpuzzlespython5" id="cpuzzlespython5"> CPuzzles e PythonTutor<br>
 	    
-	    <input type="checkbox" class="cinco" name="plataforma" value="codingame5" id="codingame5" >5 - CodinGame<br>
+	    <input type="checkbox" class="cinco" name="plataforma" value="codingame5" id="codingame5" > CodinGame<br>
 	    <!--<input type="radio" name="plataforma" value="codewars"> Codewars<br>-->
 	 <!--   <input type="checkbox" name="plataforma" value="coderbyte5" id="coderbyte5">6 - Coderbyte<br>-->
 	  </div>
 
 	  <div class="seis box" id="c6" style="display: none">
-	  	<input type="checkbox" class="seis" name="plataforma" value="uri6" id="uripython6" >1 - URI Online Judge e PythonTutor<br>
-	  	<input type="checkbox" class="seis" name="plataforma" value="uri6" id="uri6" >2 - URI Online Judge<br>
-	  	<input type="checkbox" class="seis" name="plataforma" value="cpuzzles6" id="cpuzzlespython6" >3 - CPuzzles e PythonTutor<br>
-	    <input type="checkbox" class="seis" name="plataforma" value="cpuzzles6" id="cpuzzlescodeboard6" >4 - CPuzzles e Codeboard<br>
+	  	<input type="checkbox" class="seis" name="plataforma" value="uri6" id="uripython6" > URI Online Judge e PythonTutor<br>
+	  	<input type="checkbox" class="seis" name="plataforma" value="uri6" id="uri6" > URI Online Judge<br>
+	  	<input type="checkbox" class="seis" name="plataforma" value="cpuzzles6" id="cpuzzlespython6" > CPuzzles e PythonTutor<br>
+	    <input type="checkbox" class="seis" name="plataforma" value="cpuzzles6" id="cpuzzlescodeboard6" > CPuzzles e Codeboard<br>
 	    <!--<input type="radio" name="plataforma" value="codewars"> Codewars<br>-->
-	    <input type="checkbox" class="seis" name="plataforma" value="coderbyte6" id="coderbyte6" >5 - Coderbyte<br>
+	    <input type="checkbox" class="seis" name="plataforma" value="coderbyte6" id="coderbyte6" > Coderbyte<br>
 	  </div> 
  
 </form><br>
@@ -237,15 +252,26 @@
   </select>
 </form>
 <br>-->
-<div>4) Exercícios: </div><br>
+<div>3) Exercícios: </div><br>
 <form>
 	<div class="uri1 caixa" id="e1" style="display: none">
 	<select multiple class="form-control" id="e1" name="uri1">
-      <option id="uri11">Área do Círculo - Estimativa: 10 minutos</option>
-      <option id="uri12">Produto Simples - Estimativa: 10 minutos</option>
+      <option id="uri11" style="background-color: #ccffe6">Área do Círculo - Estimativa: 10 minutos</option>
+      <option id="uri12" style="background-color: #ccffe6">Produto Simples - Estimativa: 10 minutos</option>
       <option id="uri13">Média 1 - Estimativa: 10 minutos</option>
       <option id="uri14">Média 2 - Estimativa: 10 minutos</option>
       <option id="uri15">Diferença - Estimativa: 10 minutos</option>
+ <!--     <option id="uri16">Esfera - Estimativa: 10 minutos</option>-->
+    </select>
+	</div>
+
+	<div class="uricodeboard1 caixa" id="e13" style="display: none">
+	<select multiple class="form-control" id="e13" name="uri1">
+      <option id="uricodeboard11" style="background-color: #ccffe6">Área do Círculo - Estimativa: 10 minutos</option>
+      <option id="uricodeboard12">Produto Simples - Estimativa: 10 minutos</option>
+      <option id="uricodeboard13" style="background-color: #ccffe6">Média 1 - Estimativa: 10 minutos</option>
+      <option id="uricodeboard14" style="background-color: #ccffe6">Média 2 - Estimativa: 10 minutos</option>
+      <option id="uricodeboard15">Diferença - Estimativa: 10 minutos</option>
  <!--     <option id="uri16">Esfera - Estimativa: 10 minutos</option>-->
     </select>
 	</div>
@@ -337,6 +363,7 @@
 
 </form>
 <br>
+<input type="button" value="Escolher" id="escolhe" onclick="escolher()" class="btn btn-primary" />
 <div style="text-align:center;">
 	<input type="button" value="Gerar Guião 1" id="geraPDF11" onclick="generatePDF11()" class="btn btn-primary" />
 	<input type="button" value="Gerar Guião 2" id="geraPDF12" onclick="generatePDF12()" class="btn btn-primary" />
