@@ -110,6 +110,7 @@
 	$(document).ready(function() {
   		$('#geraPDF11').hide();
   		$('#geraPDF12').hide();
+  		$('#geraPDF13').hide();
   		$('#geraPDF21').hide();
   		$('#escolhe').hide();
   		
@@ -124,7 +125,7 @@
   		$('#uri12').mouseup(function() {
     		$('#uri15').mouseup(function() {
     			$('#escolhe').mouseup(function() {
-    				$('#geraPDF11').toggle();
+    				$('#geraPDF13').toggle();
     				exists = 1;
     			});
     		});
@@ -419,6 +420,7 @@
 <div style="text-align:center;">
 	<input type="button" value="Gerar Guião 1.1" id="geraPDF11" onclick="build_prof_pdf('1.1')" class="btn btn-primary" />
 	<input type="button" value="Gerar Guião 1.0" id="geraPDF12" onclick="build_prof_pdf('1.0')" class="btn btn-primary" />
+	<input type="button" value="Gerar Guião 1.2" id="geraPDF13" onclick="build_prof_pdf('1.2')" class="btn btn-primary" />
 	<input type="button" value="Gerar Guião 2.0" id="geraPDF21" onclick="generatePDF21()" class="btn btn-primary" />
 
 <!--ADD IMAGEM BASE64 NO HTML-->

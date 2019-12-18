@@ -63,7 +63,7 @@ if(i == 2)
 
     if(numeroGuia == "1.0")
       doc.text(x, y, linhasCodeboard[i]);
-    if(numeroGuia == "1.1")
+    if(numeroGuia == "1.1"|| numeroGuia == "1.2")
       doc.text(x, y, linhasURI[i]);
   }
 
@@ -72,14 +72,14 @@ if(i == 2)
 function build_body(doc,tipoGuia,numeroGuia)
 {
   doc.addPage();
-  var textB;
+  var textB,aux;
   if(tipoGuia == "aluno")
   {
     if(numeroGuia == "1.0"){
       textB = textoBaseAlunoCodeboard;
       imgB = imgBaseAlunoCodeboard;
     }
-    else if(numeroGuia == "1.1"){
+    else if(numeroGuia == "1.1"||numeroGuia == "1.2"){
       textB = textoBaseAlunoURI;
       imgB = imgBaseAlunoURI;
       
@@ -93,7 +93,13 @@ function build_body(doc,tipoGuia,numeroGuia)
     }
     else if(numeroGuia == "1.1"){
       textB = textoBaseProfessorURI;
+      imgB = imgBaseProfessorURI;   
+      aux = 1;
+    }
+    else if(numeroGuia == "1.2"){
+      textB = textoBaseProfessorURI;
       imgB = imgBaseProfessorURI;
+      aux = 2;
       
     }
   }
@@ -103,6 +109,10 @@ function build_body(doc,tipoGuia,numeroGuia)
 //  var textFinal = doc.splitTextToSize(textB, 170);
    for(i = 0; i < textB.length; i++)
     {
+      if(i == 6 && aux == 1)
+        textB[i] = textB[i][0];
+      if(i == 6 && aux == 2)
+        textB[i] = textB[i][1];
       if(i % 3 == 0 && i != 0){
         doc.addPage(); 
         inicioTexto = 30;
