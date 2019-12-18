@@ -78,6 +78,8 @@
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
 <script type="text/javascript" src="script.js">	</script>
 <script type="text/javascript" src="scriptDOCX.js">	</script>
+<script type="text/javascript" src="data.js">	</script>
+<script type="text/javascript" src="build_pdf.js">	</script>
 <script src="https://unpkg.com/docx@4.0.0/build/index.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
 
@@ -415,8 +417,8 @@
 <br>
 <input type="button" value="Escolher" id="escolhe" onclick="escolher()" class="btn btn-primary" />
 <div style="text-align:center;">
-	<input type="button" value="Gerar Guião 1.0" id="geraPDF11" onclick="generatePDF11()" class="btn btn-primary" />
-	<input type="button" value="Gerar Guião 1.1" id="geraPDF12" onclick="generatePDF12()" class="btn btn-primary" />
+	<input type="button" value="Gerar Guião 1.1" id="geraPDF11" onclick="build_prof_pdf('1.1')" class="btn btn-primary" />
+	<input type="button" value="Gerar Guião 1.0" id="geraPDF12" onclick="build_prof_pdf('1.0')" class="btn btn-primary" />
 	<input type="button" value="Gerar Guião 2.0" id="geraPDF21" onclick="generatePDF21()" class="btn btn-primary" />
 
 <!--ADD IMAGEM BASE64 NO HTML-->
