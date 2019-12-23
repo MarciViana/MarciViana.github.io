@@ -111,6 +111,9 @@
   		$('#geraPDF11').hide();
   		$('#geraPDF12').hide();
   		$('#geraPDF13').hide();
+  		$('#geraPDF14').hide();
+  		$('#geraPDF15').hide();
+  		$('#geraPDF16').hide();
   		$('#geraPDF21').hide();
   		$('#escolhe').hide();
   		
@@ -130,7 +133,30 @@
     			});
     		});
   		});
-
+  		$('#uri12').mouseup(function() {
+    		$('#uri13').mouseup(function() {
+    			$('#escolhe').mouseup(function() {
+    				$('#geraPDF14').toggle();
+    				exists = 1;
+    			});
+    		});
+  		});
+  		$('#uri13').mouseup(function() {
+    		$('#uri14').mouseup(function() {
+    			$('#escolhe').mouseup(function() {
+    				$('#geraPDF15').toggle();
+    				exists = 1;
+    			});
+    		});
+  		});
+  		$('#uri14').mouseup(function() {
+    		$('#uri15').mouseup(function() {
+    			$('#escolhe').mouseup(function() {
+    				$('#geraPDF16').toggle();
+    				exists = 1;
+    			});
+    		});
+  		});
   		$('#uricodeboard1').mouseup(function() {
     		$('#uricodeboard11').mouseup(function() {
     			$('#uricodeboard13').mouseup(function() {
@@ -418,9 +444,14 @@
 <br>
 <input type="button" value="Escolher" id="escolhe" onclick="escolher()" class="btn btn-primary" />
 <div style="text-align:center;">
+	<!--codeboard-->
+	<input type="button" value="Gerar Guião 1.0" id="geraPDF12" onclick="build_prof_pdf('1.0')" class="btn btn-primary" />	
+	<!--uri-->
 	<input type="button" value="Gerar Guião 1.1" id="geraPDF11" onclick="build_prof_pdf('1.1')" class="btn btn-primary" />
-	<input type="button" value="Gerar Guião 1.0" id="geraPDF12" onclick="build_prof_pdf('1.0')" class="btn btn-primary" />
 	<input type="button" value="Gerar Guião 1.2" id="geraPDF13" onclick="build_prof_pdf('1.2')" class="btn btn-primary" />
+	<input type="button" value="Gerar Guião 1.3" id="geraPDF14" onclick="build_prof_pdf('1.3')" class="btn btn-primary" />
+	<input type="button" value="Gerar Guião 1.4" id="geraPDF15" onclick="build_prof_pdf('1.4')" class="btn btn-primary" />
+	<input type="button" value="Gerar Guião 1.5" id="geraPDF16" onclick="build_prof_pdf('1.5')" class="btn btn-primary" />
 	<input type="button" value="Gerar Guião 2.0" id="geraPDF21" onclick="generatePDF21()" class="btn btn-primary" />
 
 <!--ADD IMAGEM BASE64 NO HTML-->

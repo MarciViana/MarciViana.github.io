@@ -63,7 +63,7 @@ if(i == 2)
 
     if(numeroGuia == "1.0")
       doc.text(x, y, linhasCodeboard[i]);
-    if(numeroGuia == "1.1"|| numeroGuia == "1.2")
+    if(numeroGuia == "1.1"|| numeroGuia == "1.2"||numeroGuia == "1.3"||numeroGuia == "1.4"||numeroGuia == "1.5")
       doc.text(x, y, linhasURI[i]);
   }
 
@@ -79,7 +79,7 @@ function build_body(doc,tipoGuia,numeroGuia)
       textB = textoBaseAlunoCodeboard;
       imgB = imgBaseAlunoCodeboard;
     }
-    else if(numeroGuia == "1.1"||numeroGuia == "1.2"){
+    else if(numeroGuia == "1.1"||numeroGuia == "1.2"||numeroGuia == "1.3"||numeroGuia == "1.4"||numeroGuia == "1.5"){
       textB = textoBaseAlunoURI;
       imgB = imgBaseAlunoURI;
       
@@ -94,13 +94,27 @@ function build_body(doc,tipoGuia,numeroGuia)
     else if(numeroGuia == "1.1"){
       textB = textoBaseProfessorURI;
       imgB = imgBaseProfessorURI;   
-      aux = 1;
+      auxURI = 1;
     }
     else if(numeroGuia == "1.2"){
       textB = textoBaseProfessorURI;
       imgB = imgBaseProfessorURI;
-      aux = 2;
-      
+      auxURI = 2;  
+    }
+    else if(numeroGuia == "1.3"){
+      textB = textoBaseProfessorURI;
+      imgB = imgBaseProfessorURI;   
+      auxURI = 3;
+    }
+    else if(numeroGuia == "1.4"){
+      textB = textoBaseProfessorURI;
+      imgB = imgBaseProfessorURI;
+      auxURI = 4;  
+    }
+    else if(numeroGuia == "1.5"){
+      textB = textoBaseProfessorURI;
+      imgB = imgBaseProfessorURI;
+      auxURI = 5;  
     }
   }
 
@@ -109,10 +123,16 @@ function build_body(doc,tipoGuia,numeroGuia)
 //  var textFinal = doc.splitTextToSize(textB, 170);
    for(i = 0; i < textB.length; i++)
     {
-      if(i == 6 && aux == 1)
+      if(i == 6 && auxURI == 1)
         textB[i] = textB[i][0];
-      if(i == 6 && aux == 2)
+      if(i == 6 && auxURI == 2)
         textB[i] = textB[i][1];
+      if(i == 6 && auxURI == 3)
+        textB[i] = textB[i][2];
+      if(i == 6 && auxURI == 4)
+        textB[i] = textB[i][3];
+      if(i == 6 && auxURI == 5)
+        textB[i] = textB[i][4];
       if(i % 3 == 0 && i != 0){
         doc.addPage(); 
         inicioTexto = 30;
@@ -163,7 +183,7 @@ function build_body(doc,tipoGuia,numeroGuia)
       }
       if(tipoGuia == "professor" && numeroGuia == "1.0" && i == 1)
         doc.addImage(imgB[i], 'JPEG', 60, high + 100, 100, 60);  
-      else if(tipoGuia == "professor" && numeroGuia == "1.1" && i == 5)
+      else if(tipoGuia == "professor" && (numeroGuia == "1.1"||numeroGuia == "1.2"||numeroGuia == "1.3"||numeroGuia == "1.4"||numeroGuia == "1.5") && i == 5)
         doc.addImage(imgB[i], 'JPEG', 60, high + 95, 100, 60); 
       else
         doc.addImage(imgB[i], 'JPEG', 60, high + 75, 100, 60);
