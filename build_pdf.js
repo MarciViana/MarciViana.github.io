@@ -187,6 +187,7 @@ function build_body(doc,tipoGuia,numeroGuia)
         doc.addImage(imgB[i], 'JPEG', 60, high + 95, 100, 60); 
       else
         doc.addImage(imgB[i], 'JPEG', 60, high + 75, 100, 60);
+      
       inicioImg = inicioImg + espacoLinhasImg;
       high = high + 90;
    }
