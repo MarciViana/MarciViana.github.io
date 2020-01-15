@@ -72,7 +72,7 @@ if(i == 2)
 function build_body(doc,tipoGuia,numeroGuia)
 {
   doc.addPage();
-  var textB,aux;
+  var textB,aux,auxURI;
   if(tipoGuia == "aluno")
   {
     if(numeroGuia == "1.0"){
