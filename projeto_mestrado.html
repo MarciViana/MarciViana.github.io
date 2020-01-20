@@ -108,13 +108,13 @@
 
 	var exists = 0;
 	$(document).ready(function() {
+  		$('#geraPDF10').hide();
   		$('#geraPDF11').hide();
   		$('#geraPDF12').hide();
   		$('#geraPDF13').hide();
   		$('#geraPDF14').hide();
   		$('#geraPDF15').hide();
-  		$('#geraPDF16').hide();
-  		$('#geraPDF21').hide();
+  		$('#geraPDF20').hide();
   		$('#escolhe').hide();
   		
   		$('#uri11').mouseup(function() {
@@ -128,7 +128,7 @@
   		$('#uri12').mouseup(function() {
     		$('#uri15').mouseup(function() {
     			$('#escolhe').mouseup(function() {
-    				$('#geraPDF13').toggle();
+    				$('#geraPDF12').toggle();
     				exists = 1; //guião 1.2
     			});
     		});
@@ -136,7 +136,7 @@
   		$('#uri12').mouseup(function() {
     		$('#uri13').mouseup(function() {
     			$('#escolhe').mouseup(function() {
-    				$('#geraPDF14').toggle();
+    				$('#geraPDF13').toggle();
     				exists = 1; //guião 1.3
     			});
     		});
@@ -144,7 +144,7 @@
   		$('#uri13').mouseup(function() {
     		$('#uri14').mouseup(function() {
     			$('#escolhe').mouseup(function() {
-    				$('#geraPDF15').toggle();
+    				$('#geraPDF14').toggle();
     				exists = 1; //guião 1.4
     			});
     		});
@@ -152,7 +152,7 @@
   		$('#uri14').mouseup(function() {
     		$('#uri15').mouseup(function() {
     			$('#escolhe').mouseup(function() {
-    				$('#geraPDF16').toggle();
+    				$('#geraPDF15').toggle();
     				exists = 1; //guião 1.5
     			});
     		});
@@ -162,7 +162,7 @@
     			$('#uricodeboard13').mouseup(function() {
     				$('#uricodeboard14').mouseup(function() {
     					$('#escolhe').mouseup(function() {
-    						$('#geraPDF12').toggle();
+    						$('#geraPDF10').toggle();
     						exists = 1; //guião 1.0
     					});
     				});
@@ -173,19 +173,12 @@
   		$('#uri22').mouseup(function() {
     		$('#uri23').mouseup(function() {
     			$('#escolhe').mouseup(function() {
-    				$('#geraPDF21').toggle();
-    				exists = 1;
+    				$('#geraPDF20').toggle();
+    				exists = 1;  //guião 2.0
     			});
     		});
   		});
-  		$('#uri24').mouseup(function() {
-    		$('#uri25').mouseup(function() {
-    			$('#escolhe').mouseup(function() {
-    				$('#geraPDF21').toggle();
-    				exists = 1;
-    			});
-    		});
-  		});
+  		
 
   		$('input[type="checkbox"]').mouseup(function() {
     		$('#escolhe').toggle();
@@ -445,19 +438,15 @@
 <input type="button" value="Escolher" id="escolhe" onclick="escolher()" class="btn btn-primary" />
 <div style="text-align:center;">
 	<!--codeboard-->
-	<input type="button" value="Gerar Guião 1.0" id="geraPDF12" onclick="build_prof_pdf('1.0')" class="btn btn-primary" />	
+	<input type="button" value="Gerar Guião 1.0" id="geraPDF10" onclick="build_prof_pdf('1.0')" class="btn btn-primary" />	
 	<!--uri-->
 	<input type="button" value="Gerar Guião 1.1" id="geraPDF11" onclick="build_prof_pdf('1.1')" class="btn btn-primary" />
-	<input type="button" value="Gerar Guião 1.2" id="geraPDF13" onclick="build_prof_pdf('1.2')" class="btn btn-primary" />
-	<input type="button" value="Gerar Guião 1.3" id="geraPDF14" onclick="build_prof_pdf('1.3')" class="btn btn-primary" />
-	<input type="button" value="Gerar Guião 1.4" id="geraPDF15" onclick="build_prof_pdf('1.4')" class="btn btn-primary" />
-	<input type="button" value="Gerar Guião 1.5" id="geraPDF16" onclick="build_prof_pdf('1.5')" class="btn btn-primary" />
-	<input type="button" value="Gerar Guião 2.0" id="geraPDF21" onclick="generatePDF21()" class="btn btn-primary" />
+	<input type="button" value="Gerar Guião 1.2" id="geraPDF12" onclick="build_prof_pdf('1.2')" class="btn btn-primary" />
+	<input type="button" value="Gerar Guião 1.3" id="geraPDF13" onclick="build_prof_pdf('1.3')" class="btn btn-primary" />
+	<input type="button" value="Gerar Guião 1.4" id="geraPDF14" onclick="build_prof_pdf('1.4')" class="btn btn-primary" />
+	<input type="button" value="Gerar Guião 1.5" id="geraPDF15" onclick="build_prof_pdf('1.5')" class="btn btn-primary" />
+	<input type="button" value="Gerar Guião 2.0" id="geraPDF20" onclick="build_prof_pdf('2.0')" class="btn btn-primary" />
 
-<!--ADD IMAGEM BASE64 NO HTML-->
-<!--	 <img src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUA
-    AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO
-        9TXL0Y4OHwAAAABJRU5ErkJggg==" alt="Red dot" />-->
 	
 
 <!--	<input type="button" value="Gerar Guião 1.0 DOCX" id="geraDOCX21" onclick="generate()" class="btn btn-primary" />-->

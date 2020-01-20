@@ -61,10 +61,29 @@ if(i == 2)
     doc.text(x, y, titulos[i]);
     doc.setFontType('italic');
 
-    if(numeroGuia == "1.0")
-      doc.text(x, y, linhasCodeboard[i]);
-    if(numeroGuia == "1.1"|| numeroGuia == "1.2"||numeroGuia == "1.3"||numeroGuia == "1.4"||numeroGuia == "1.5")
-      doc.text(x, y, linhasURI[i]);
+    if(i == 0){ //ver qual é a matéria
+      var res = numeroGuia.substring(0, 1);
+      if(res == "1")
+        doc.text(x, y, linhasCodeboard[i][0]); //dados de tipo elementar (dá na mesma colocar linhasuri ou codeboard nessa parte)
+      else if(res == "2")
+        doc.text(x, y, linhasCodeboard[i][1]); //testes e condições
+      else if(res == "3")
+        doc.text(x, y, linhasCodeboard[i][2]); //instruções de iteração
+      else if(res == "4")
+        doc.text(x, y, linhasCodeboard[i][3]); //funções
+      else if(res == "5")
+        doc.text(x, y, linhasCodeboard[i][4]); //vetores
+      else if(res == "6")
+        doc.text(x, y, linhasCodeboard[i][5]); //strings
+      else if(res == "7")
+        doc.text(x, y, linhasCodeboard[i][6]); //ponteiros
+    }
+    else{
+      if(numeroGuia == "1.0")
+        doc.text(x, y, linhasCodeboard[i]);
+      if(numeroGuia == "1.1"|| numeroGuia == "1.2"||numeroGuia == "1.3"||numeroGuia == "1.4"||numeroGuia == "1.5"||numeroGuia == "2.0"||numeroGuia == "2.1")
+        doc.text(x, y, linhasURI[i]);
+    }
   }
 
 }
@@ -79,7 +98,7 @@ function build_body(doc,tipoGuia,numeroGuia)
       textB = textoBaseAlunoCodeboard;
       imgB = imgBaseAlunoCodeboard;
     }
-    else if(numeroGuia == "1.1"||numeroGuia == "1.2"||numeroGuia == "1.3"||numeroGuia == "1.4"||numeroGuia == "1.5"){
+    else if(numeroGuia == "1.1"||numeroGuia == "1.2"||numeroGuia == "1.3"||numeroGuia == "1.4"||numeroGuia == "1.5"||numeroGuia == "2.0"||numeroGuia == "2.1"){
       textB = textoBaseAlunoURI;
       imgB = imgBaseAlunoURI;
       
@@ -116,6 +135,11 @@ function build_body(doc,tipoGuia,numeroGuia)
       imgB = imgBaseProfessorURI;
       auxURI = 5;  
     }
+    else if(numeroGuia == "2.0"){
+      textB = textoBaseProfessorURI;
+      imgB = imgBaseProfessorURI;
+      auxURI = 6;  
+    }
   }
 
   var inicioTexto = 30;
@@ -133,6 +157,8 @@ function build_body(doc,tipoGuia,numeroGuia)
         textB[i] = textB[i][3];
       if(i == 6 && auxURI == 5)
         textB[i] = textB[i][4];
+       if(i == 6 && auxURI == 6)
+        textB[i] = textB[i][5];
       if(i % 3 == 0 && i != 0){
         doc.addPage(); 
         inicioTexto = 30;
@@ -183,7 +209,7 @@ function build_body(doc,tipoGuia,numeroGuia)
       }
       if(tipoGuia == "professor" && numeroGuia == "1.0" && i == 1)
         doc.addImage(imgB[i], 'JPEG', 60, high + 100, 100, 60);  
-      else if(tipoGuia == "professor" && (numeroGuia == "1.1"||numeroGuia == "1.2"||numeroGuia == "1.3"||numeroGuia == "1.4"||numeroGuia == "1.5") && i == 5)
+      else if(tipoGuia == "professor" && (numeroGuia == "1.1"||numeroGuia == "1.2"||numeroGuia == "1.3"||numeroGuia == "1.4"||numeroGuia == "1.5"||numeroGuia == "2.0"||numeroGuia == "2.1") && i == 5)
         doc.addImage(imgB[i], 'JPEG', 60, high + 95, 100, 60); 
       else
         doc.addImage(imgB[i], 'JPEG', 60, high + 75, 100, 60);
