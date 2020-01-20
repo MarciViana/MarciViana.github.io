@@ -84,8 +84,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
 
 <script>
-	
-	
+
+
 	$(document).ready(function(){
 	    $('input[type="checkbox"]').click(function(){
 	    	$('#e1','#e2','#e3','#e4','#e5','#e6','#e7','#e8','#e9','#e10','#e11','#e12','#e13','#e14').show();
@@ -115,6 +115,7 @@
   		$('#geraPDF14').hide();
   		$('#geraPDF15').hide();
   		$('#geraPDF20').hide();
+  		$('#geraPDF21').hide();
   		$('#escolhe').hide();
   		
   		$('#uri11').mouseup(function() {
@@ -178,6 +179,14 @@
     			});
     		});
   		});
+  		$('#uri24').mouseup(function() {
+    		$('#uri25').mouseup(function() {
+    			$('#escolhe').mouseup(function() {
+    				$('#geraPDF21').toggle();
+    				exists = 1;  //guião 2.1
+    			});
+    		});
+  		});
   		
 
   		$('input[type="checkbox"]').mouseup(function() {
@@ -214,20 +223,9 @@
 <div class="container">
 <div class="forms">
 <h4 style="text-align:center;">Preencha o formulário de acordo com o Guião de Atividades que desejas obter:</h4>
-<h6 style="text-align:center;">Para habilitar as opções 2 e 4, primeiro selecione a matéria e, após isso, a plataforma.</h6>
+<h6 style="text-align:center;">Para habilitar as opções 3 e 4, primeiro selecione a matéria e, após isso, a plataforma.</h6><br>
 
-<div>1) Matéria:</div><br>
-<form>
-  <input type="radio" name="materia" value="um" > Dados de tipo elementar<br>
-  <input type="radio" name="materia" value="dois" > Testes e condições<br>
-  <input type="radio" name="materia" value="tres" > Instruções de iteração<br>
-  <input type="radio" name="materia" value="quatro" > Funções<br>
-  <input type="radio" name="materia" value="cinco" > Vetores<br>
-  <input type="radio" name="materia" value="seis" > String<br>
- 
-</form><br>
-
-<!--<div>2) Aplicação da atividade:</div><br>
+<div>1) Aplicação da atividade:</div><br>
 <form>
   <select id="dentroFora" class="form-control">
     <option selected>Escolha...</option>
@@ -235,9 +233,22 @@
     <option id="fora" >Fora de sala de aula</option>
   </select>
  
-</form><br>-->
+</form><br>
 
-<div>2) Plataforma:</div><br>
+
+<div>2) Matéria:</div><br>
+<form>
+  <input type="radio" name="materia" value="um" > Dados de tipo elementar - Programação I<br>
+  <input type="radio" name="materia" value="dois" > Testes e condições - Programação I<br>
+  <input type="radio" name="materia" value="tres" > Instruções de iteração - Programação I<br>
+  <input type="radio" name="materia" value="quatro" > Funções - Programação I<br>
+  <input type="radio" name="materia" value="cinco" > Vetores - Programação I<br>
+  <input type="radio" name="materia" value="seis" > String - Programação I<br>
+ <!-- <input type="radio" name="materia" value="sete" > Ponteiros - Programação II<br>-->
+ 
+</form><br>
+
+<div>3) Plataforma:</div><br>
 <form>
   <!--<input type="radio" name="plataforma" value="learnc"> Learn-C<br>-->
   	
@@ -313,7 +324,7 @@
   </select>
 </form>
 <br>-->
-<div>3) Exercícios (Para escolher mais de um exercício, pressione "Ctrl" enquanto os seleciona): </div><br>
+<div>4) Exercícios (Para escolher mais de um exercício, pressione "Ctrl" enquanto os seleciona): </div><br>
 <form>
 	<div class="uri1 caixa" id="e1" style="display: none">
 	<select multiple class="form-control" id="e1" name="uri1">
@@ -446,7 +457,7 @@
 	<input type="button" value="Gerar Guião 1.4" id="geraPDF14" onclick="build_prof_pdf('1.4')" class="btn btn-primary" />
 	<input type="button" value="Gerar Guião 1.5" id="geraPDF15" onclick="build_prof_pdf('1.5')" class="btn btn-primary" />
 	<input type="button" value="Gerar Guião 2.0" id="geraPDF20" onclick="build_prof_pdf('2.0')" class="btn btn-primary" />
-
+	<input type="button" value="Gerar Guião 2.1" id="geraPDF21" onclick="build_prof_pdf('2.1')" class="btn btn-primary" />
 	
 
 <!--	<input type="button" value="Gerar Guião 1.0 DOCX" id="geraDOCX21" onclick="generate()" class="btn btn-primary" />-->

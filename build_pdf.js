@@ -61,6 +61,7 @@ if(i == 2)
     doc.text(x, y, titulos[i]);
     doc.setFontType('italic');
 
+
     if(i == 0){ //ver qual é a matéria
       var res = numeroGuia.substring(0, 1);
       if(res == "1")
@@ -78,6 +79,15 @@ if(i == 2)
       else if(res == "7")
         doc.text(x, y, linhasCodeboard[i][6]); //ponteiros
     }
+
+    else if(i == 6){ //verifica se é dentro ou fora de sala de aula    
+      if( $("#dentroFora").val() == "Dentro de sala de aula" )
+        doc.text(x, y, linhasCodeboard[i][0]); //dentro de sala de aula
+      
+      if( $("#dentroFora").val() == "Fora de sala de aula" )
+        doc.text(x, y, linhasCodeboard[i][1]); //fora de sala de aula   
+    }
+    
     else{
       if(numeroGuia == "1.0")
         doc.text(x, y, linhasCodeboard[i]);
@@ -140,6 +150,11 @@ function build_body(doc,tipoGuia,numeroGuia)
       imgB = imgBaseProfessorURI;
       auxURI = 6;  
     }
+    else if(numeroGuia == "2.1"){
+      textB = textoBaseProfessorURI;
+      imgB = imgBaseProfessorURI;
+      auxURI = 7;  
+    }
   }
 
   var inicioTexto = 30;
@@ -157,8 +172,10 @@ function build_body(doc,tipoGuia,numeroGuia)
         textB[i] = textB[i][3];
       if(i == 6 && auxURI == 5)
         textB[i] = textB[i][4];
-       if(i == 6 && auxURI == 6)
+      if(i == 6 && auxURI == 6)
         textB[i] = textB[i][5];
+      if(i == 6 && auxURI == 7)
+        textB[i] = textB[i][6];
       if(i % 3 == 0 && i != 0){
         doc.addPage(); 
         inicioTexto = 30;
