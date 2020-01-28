@@ -40,75 +40,74 @@ function build_head(doc,tipoGuia)
 //constrói a tabela inicial
 function build_table(doc,numeroGuia)
 {
+  // Construção da tabela
+  var pontoInicio = 30;
+  var largura = 150;
+  var linhaA = 82;
 
-// Construção da tabela
-var pontoInicio = 30;
-var largura = 150;
-var linhaA = 82;
+  doc.rect(pontoInicio, linhaA, largura, 76);
 
-doc.rect(pontoInicio, linhaA, largura, 76);
-
-for(i = 0; i < 6; i++) {
-  if(i == 2)
-  {
-     linhaA = linhaA + 16;
-  }
-  else
-  {
-     linhaA = linhaA + 10;
-  }
-  doc.line(pontoInicio, linhaA, largura+30, linhaA);
-}
-//fim construção da tabela
-
-  var x = 32;
-  var y = 76;
-  for(i = 0; i < 7; i++) {
-    if(i == 3)
+  for(i = 0; i < 6; i++) {
+    if(i == 2)
     {
-      y = y+16;
+       linhaA = linhaA + 16;
     }
     else
     {
-      y = y+10;
+       linhaA = linhaA + 10;
     }
-    doc.setFontType('bold');
-    doc.text(x, y, titulos[i]);
-    doc.setFontType('italic');
-
-    //verifica qual é a matéria
-    if(i == 0){
-      if(document.getElementById("materia1").checked )
-        doc.text(x, y, linhasCodeboard[i][0]); //tipos de dados
-      if(document.getElementById("materia2").checked )
-        doc.text(x, y, linhasCodeboard[i][1]); //testes e condições
-      if(document.getElementById("materia3").checked )
-        doc.text(x, y, linhasCodeboard[i][2]); //instruções de iteração
-      if(document.getElementById("materia4").checked )
-        doc.text(x, y, linhasCodeboard[i][3]); //funções
-      if(document.getElementById("materia5").checked )
-        doc.text(x, y, linhasCodeboard[i][4]); //vetores
-      if(document.getElementById("materia6").checked )
-        doc.text(x, y, linhasCodeboard[i][5]); //strings
-      
-    }
-    //verifica se é dentro ou fora de sala de aula
-    else if(i == 6){     
-      if( $("#dentroFora").val() == "Dentro de sala de aula" )
-        doc.text(x, y, linhasCodeboard[i][0]); //dentro de sala de aula
-      
-      if( $("#dentroFora").val() == "Fora de sala de aula" )
-        doc.text(x, y, linhasCodeboard[i][1]); //fora de sala de aula   
-    }
-    
-    else{
-      if(numeroGuia == "codeboard")
-        doc.text(x, y, linhasCodeboard[i]);
-      if(numeroGuia == "uri")
-        doc.text(x, y, linhasURI[i]);
-    }
+    doc.line(pontoInicio, linhaA, largura+30, linhaA);
   }
+  //fim construção da tabela
 
+    var x = 32;
+    var y = 76;
+    for(i = 0; i < 7; i++) {
+      if(i == 3)
+      {
+        y = y+16;
+      }
+      else
+      {
+        y = y+10;
+      }
+      doc.setFontType('bold');
+      doc.text(x, y, titulos[i]);
+      doc.setFontType('italic');
+
+      //verifica qual é a matéria
+      if(i == 0){
+        if(document.getElementById("materia1").checked )
+          doc.text(x, y, linhasCodeboard[i][0]); //tipos de dados
+        if(document.getElementById("materia2").checked )
+          doc.text(x, y, linhasCodeboard[i][1]); //testes e condições
+        if(document.getElementById("materia3").checked )
+          doc.text(x, y, linhasCodeboard[i][2]); //instruções de iteração
+        if(document.getElementById("materia4").checked )
+          doc.text(x, y, linhasCodeboard[i][3]); //funções
+        if(document.getElementById("materia5").checked )
+          doc.text(x, y, linhasCodeboard[i][4]); //vetores
+        if(document.getElementById("materia6").checked )
+          doc.text(x, y, linhasCodeboard[i][5]); //strings
+        
+      }
+
+      //verifica se é dentro ou fora de sala de aula
+      else if(i == 6){     
+        if( $("#dentroFora").val() == "Dentro de sala de aula" )
+          doc.text(x, y, linhasCodeboard[i][0]); //dentro de sala de aula
+        
+        if( $("#dentroFora").val() == "Fora de sala de aula" )
+          doc.text(x, y, linhasCodeboard[i][1]); //fora de sala de aula   
+      }
+      
+      else{
+        if(numeroGuia == "codeboard")
+          doc.text(x, y, linhasCodeboard[i]);
+        if(numeroGuia == "uri")
+          doc.text(x, y, linhasURI[i]);
+      }
+    }
 
   
 }
@@ -147,33 +146,48 @@ function build_body(doc,tipoGuia,numeroGuia)
 
   var inicioTexto = 30;
   var espacoLinhas = 110;
+  var contaExercicios = 0;
    for(i = 0; i < textB.length; i++)
     {
       //exercicios uri
-      if(i ==  6 && tipoGuia == "professor"){
+      if(i ==  6){
         $('#e1 option:selected').each(function(){
-              textB[i] += "\n" + this.value;
+              if(tipoGuia == "professor")
+                textB[i] += "\n" + this.value;
+              contaExercicios++;
         });
         $('#e2 option:selected').each(function(){
-              textB[i] += "\n" + this.value;
+              if(tipoGuia == "professor")
+                textB[i] += "\n" + this.value;
+              contaExercicios++;
         });
         $('#e3 option:selected').each(function(){
-              textB[i] += "\n" + this.value;
+              if(tipoGuia == "professor")
+                textB[i] += "\n" + this.value;
+              contaExercicios++;
         });
         $('#e8 option:selected').each(function(){
-              textB[i] += "\n" + this.value;
+              if(tipoGuia == "professor")
+                textB[i] += "\n" + this.value;
+              contaExercicios++;
         });
         $('#e15 option:selected').each(function(){
-              textB[i] += "\n" + this.value;
+              if(tipoGuia == "professor")
+                textB[i] += "\n" + this.value;
+              contaExercicios++;
         });
       }
       //exercicios codeboard
-      if(i == 0 && tipoGuia == "professor"){
+      if(i == 0){
         $('#e13 option:selected').each(function(){
-              textB[i] += "\n" + this.value;
+              if(tipoGuia == "professor")
+                textB[i] += "\n" + this.value;
+              contaExercicios++;
         });
         $('#e14 option:selected').each(function(){
-              textB[i] += "\n" + this.value;
+              if(tipoGuia == "professor")
+                textB[i] += "\n" + this.value;
+              contaExercicios++;
         });
       }
 
@@ -234,6 +248,15 @@ function build_body(doc,tipoGuia,numeroGuia)
       
       inicioImg = inicioImg + espacoLinhasImg;
       high = high + 90;
+
+      //adiciona quantidade de exercícios
+      var x = 32;
+      var y = 147;  
+      if(contaExercicios != 0){
+        doc.setPage(1);
+        doc.text(x, y, contaExercicios.toString());
+      }
+
    }
 
    
