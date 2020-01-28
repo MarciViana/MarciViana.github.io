@@ -105,101 +105,24 @@
 	        $(targetBox).show();
 	    });
 	});
-
 	var exists = 0;
 	$(document).ready(function() {
-  		$('#geraPDF10').hide();
-  		$('#geraPDF11').hide();
-  		$('#geraPDF12').hide();
-  		$('#geraPDF13').hide();
-  		$('#geraPDF14').hide();
-  		$('#geraPDF15').hide();
-  		$('#geraPDF20').hide();
-  		$('#geraPDF21').hide();
+  		$('#geraURI').hide();
+  		$('#geraCodeboard').hide();
+  		$('#geraPython').hide();
   		$('#escolhe').hide();
-  		
-  		$('#uri11').mouseup(function() {
-    		$('#uri12').mouseup(function() {
-    			$('#escolhe').mouseup(function() {
-    				$('#geraPDF11').toggle();
-    				exists = 1; //guião 1.1
-    			});
-    		});
-  		});
-  		$('#uri12').mouseup(function() {
-    		$('#uri15').mouseup(function() {
-    			$('#escolhe').mouseup(function() {
-    				$('#geraPDF12').toggle();
-    				exists = 1; //guião 1.2
-    			});
-    		});
-  		});
-  		$('#uri12').mouseup(function() {
-    		$('#uri13').mouseup(function() {
-    			$('#escolhe').mouseup(function() {
-    				$('#geraPDF13').toggle();
-    				exists = 1; //guião 1.3
-    			});
-    		});
-  		});
-  		$('#uri13').mouseup(function() {
-    		$('#uri14').mouseup(function() {
-    			$('#escolhe').mouseup(function() {
-    				$('#geraPDF14').toggle();
-    				exists = 1; //guião 1.4
-    			});
-    		});
-  		});
-  		$('#uri14').mouseup(function() {
-    		$('#uri15').mouseup(function() {
-    			$('#escolhe').mouseup(function() {
-    				$('#geraPDF15').toggle();
-    				exists = 1; //guião 1.5
-    			});
-    		});
-  		});
-  		$('#uricodeboard1').mouseup(function() {
-    		$('#uricodeboard11').mouseup(function() {
-    			$('#uricodeboard13').mouseup(function() {
-    				$('#uricodeboard14').mouseup(function() {
-    					$('#escolhe').mouseup(function() {
-    						$('#geraPDF10').toggle();
-    						exists = 1; //guião 1.0
-    					});
-    				});
-    			});
-    		});
 
-  		});
-  		$('#uri22').mouseup(function() {
-    		$('#uri23').mouseup(function() {
-    			$('#escolhe').mouseup(function() {
-    				$('#geraPDF20').toggle();
-    				exists = 1;  //guião 2.0
-    			});
-    		});
-  		});
-  		$('#uri24').mouseup(function() {
-    		$('#uri25').mouseup(function() {
-    			$('#escolhe').mouseup(function() {
-    				$('#geraPDF21').toggle();
-    				exists = 1;  //guião 2.1
-    			});
-    		});
-  		});
-  		
-
-  		$('input[type="checkbox"]').mouseup(function() {
+	  	$('input[type="checkbox"]').mouseup(function() {
     		$('#escolhe').toggle();
 		});
-
+ 
 	});
+	  
 	function escolher(){
 		if(exists == 0){
   			alert("Este guião ainda não foi desenvolvido!");
   		}
 	}
-	
 
 </script>
 
@@ -238,143 +161,97 @@
 
 <div>2) Matéria:</div><br>
 <form>
-  <input type="radio" name="materia" value="um" > Dados de tipo elementar - Programação I<br>
-  <input type="radio" name="materia" value="dois" > Testes e condições - Programação I<br>
-  <input type="radio" name="materia" value="tres" > Instruções de iteração - Programação I<br>
-  <input type="radio" name="materia" value="quatro" > Funções - Programação I<br>
-  <input type="radio" name="materia" value="cinco" > Vetores - Programação I<br>
-  <input type="radio" name="materia" value="seis" > String - Programação I<br>
- <!-- <input type="radio" name="materia" value="sete" > Ponteiros - Programação II<br>-->
+  <input type="radio" name="materia" id="materia1" value="um" >Dados de tipo elementar - Programação I<br>
+  <input type="radio" name="materia" id="materia2" value="dois" >Testes e condições - Programação I<br>
+  <input type="radio" name="materia" id="materia3" value="tres" >Instruções de iteração - Programação I<br>
+  <input type="radio" name="materia" id="materia4" value="quatro" >Funções - Programação I<br>
+  <input type="radio" name="materia" id="materia5" value="cinco" >Vetores - Programação I<br>
+  <input type="radio" name="materia" id="materia6" value="seis" >String - Programação I<br>
+ 
  
 </form><br>
 
 <div>3) Plataforma:</div><br>
-<form>
-  <!--<input type="radio" name="plataforma" value="learnc"> Learn-C<br>-->
-  	
+<form>	
 	
 	  <div class="um box" id="c1" style="display: none">	
-	 <!-- 	<input type="checkbox" name="plataforma" value="uri1" id="uripython1" >1 - URI e PythonTutor<br>-->
-	  	<input type="checkbox" class="um" name="plataforma" value="uri1" id="uri1"> URI Online Judge <br>
-	  	<input type="checkbox" class="um" name="plataforma" value="uricodeboard1" id="uricodeboard1" > URI Online Judge e Codeboard <br>
+	  	<input type="checkbox" class="um" name="plataforma" value="uri1" id="uri1" onclick="selecionaPlataforma()"> URI Online Judge <br>
+	  	<input type="checkbox" class="um" name="plataforma" value="uricodeboard1" id="uricodeboard1" onclick="selecionaPlataforma()" > URI Online Judge e Codeboard <br>
 	  </div>
 
 	  <div class="dois box" id="c2" style="display: none">
-	 <!-- 	<input type="checkbox" name="plataforma" value="uri2" id="uripython2">1.1 - URI e PythonTutor<br>-->
-	  	<input type="checkbox" class="dois" name="plataforma" value="uricodeboard2" id="uricodeboard2" > URI Online Judge e Codeboard <br>
-	  	<input type="checkbox" class="dois" name="plataforma" value="uri2" id="uri2" > URI Online Judge <br>
+	  	<input type="checkbox" class="dois" name="plataforma" value="uricodeboard2" id="uricodeboard2" onclick="selecionaPlataforma()" > URI Online Judge e Codeboard <br>
+	  	<input type="checkbox" class="dois" name="plataforma" value="uri2" id="uri2" onclick="selecionaPlataforma()" > URI Online Judge <br>
 	  </div>
 
 	  <div class="tres box" id="c3" style="display: none">
-	  	<input type="checkbox" class="tres" name="plataforma" value="uri3" id="uricodeboard3" > URI Online Judge e Codeboard <br>
-	  	<input type="checkbox" class="tres" name="plataforma" value="uri3" id="uri3"> URI Online Judge <br>
-	  	<input type="checkbox" class="tres" name="plataforma" value="cpuzzles3" id="cpuzzlespython3" > CPuzzles e PythonTutor <br>
-	    <input type="checkbox" class="tres" name="plataforma" value="cpuzzles3" id="cpuzzlescodeboard3" > CPuzzles e Codeboard <br>
+	  	<input type="checkbox" class="tres" name="plataforma" value="uri3" id="uricodeboard3" onclick="selecionaPlataforma()"> URI Online Judge e Codeboard <br>
+	  	<input type="checkbox" class="tres" name="plataforma" value="uri3" id="uri3" onclick="selecionaPlataforma()"> URI Online Judge <br>
+	  	<input type="checkbox" class="tres" name="plataforma" value="cpuzzles3" id="cpuzzlespython3" onclick="selecionaPlataforma()"> CPuzzles e PythonTutor <br>
 	    
-	    <input type="checkbox" class="tres" name="plataforma" value="codingame3" id="codingame3" > CodinGame <br>
-	    <!--<input type="radio" name="plataforma" value="codewars"> Codewars<br>-->
-	    <input type="checkbox" class="tres" name="plataforma" value="coderbyte3" id="coderbyte3" > Coderbyte <br>
+	    <input type="checkbox" class="tres" name="plataforma" value="codingame3" id="codingame3" onclick="selecionaPlataforma()"> CodinGame <br>
 	  </div>
 
 	  <div class="quatro box" id="c4" style="display: none">    
-	    <input type="checkbox" class="quatro" name="plataforma" value="codingame4" id="codingame4" > CodinGame <br>
-	    <!--<input type="radio" name="plataforma" value="codewars"> Codewars<br>-->
-	    <input type="checkbox" class="quatro" name="plataforma" value="coderbyte4" id="coderbyte4" > Coderbyte <br>
+	    <input type="checkbox" class="quatro" name="plataforma" value="codingame4" id="codingame4" onclick="selecionaPlataforma()"> CodinGame <br>
+	    <input type="checkbox" class="quatro" name="plataforma" value="coderbyte4" id="coderbyte4" onclick="selecionaPlataforma()"> Coderbyte <br>
 	  </div>
 
 	  <div class="cinco box" id="c5" style="display: none">
-	  <input type="checkbox" class="cinco" name="plataforma" value="uri5" id="uricodeboard3" > URI Online Judge e Codeboard <br>
-	  	<input type="checkbox" class="cinco" name="plataforma" value="uri5" id="uripython3"> URI Online Judge e PythonTutor <br>
-	  	<input type="checkbox" class="cinco" name="plataforma" value="uri5" id="uri3"> URI Online Judge <br>
-	  	<input type="checkbox" class="cinco" name="plataforma" value="cpuzzlespython5" id="cpuzzlespython5"> CPuzzles e PythonTutor <br>
-	    
-	    <input type="checkbox" class="cinco" name="plataforma" value="codingame5" id="codingame5" > CodinGame <br>
-	    <!--<input type="radio" name="plataforma" value="codewars"> Codewars<br>-->
-	 <!--   <input type="checkbox" name="plataforma" value="coderbyte5" id="coderbyte5">6 - Coderbyte<br>-->
+	  	<input type="checkbox" class="cinco" name="plataforma" value="uri5" id="uri5" onclick="selecionaPlataforma()"> URI Online Judge <br>
+	  	<input type="checkbox" class="cinco" name="plataforma" value="cpuzzlespython5" id="cpuzzlespython5" onclick="selecionaPlataforma()"> CPuzzles e PythonTutor <br>	    
+	    <input type="checkbox" class="cinco" name="plataforma" value="codingame5" id="codingame5" onclick="selecionaPlataforma()"> CodinGame <br>
 	  </div>
 
 	  <div class="seis box" id="c6" style="display: none">
-	  	<input type="checkbox" class="seis" name="plataforma" value="uri6" id="uripython6" > URI Online Judge e PythonTutor <br>
-	  	<input type="checkbox" class="seis" name="plataforma" value="uri6" id="uri6" > URI Online Judge <br>
-	  	<input type="checkbox" class="seis" name="plataforma" value="cpuzzles6" id="cpuzzlespython6" > CPuzzles e PythonTutor <br>
-	    <input type="checkbox" class="seis" name="plataforma" value="cpuzzles6" id="cpuzzlescodeboard6" > CPuzzles e Codeboard <br>
-	    <!--<input type="radio" name="plataforma" value="codewars"> Codewars<br>-->
-	    <input type="checkbox" class="seis" name="plataforma" value="coderbyte6" id="coderbyte6" > Coderbyte <br>
+	  	<input type="checkbox" class="seis" name="plataforma" value="uri6" id="uri6" onclick="selecionaPlataforma()"> URI Online Judge <br>
+	    <input type="checkbox" class="seis" name="plataforma" value="codeboard6" id="codeboard6" onclick="selecionaPlataforma()"> Codeboard <br>
 	  </div> 
  
 </form><br>
 
-<!--<div>4) Número de Exercícios:</div><br>
-<form>
-	<select id="qtdExercicios" class="form-control">
-    <option selected>Escolha...</option>
-    <option id="qtd1">1</option>
-    <option id="qtd2">2</option>
-    <option id="qtd3">3</option>
-    <option id="qtd4">4</option>
-  </select>
-</form>
-<br>-->
-<!--<div>3) Tipo de documento que deseja gerar: </div><br>
-<form>
-	<select id="tipoDoc" class="form-control">
-    <option selected>Escolha...</option>
-    <option id="docx">Documento .DOCX</option>
-    <option id="pdf">Documento .PDF</option>
-  </select>
-</form>
-<br>-->
+
 <div>4) Exercícios (Para escolher mais de um exercício, pressione "Ctrl" enquanto os seleciona): </div><br>
 <form>
 	<div class="uri1 caixa" id="e1" style="display: none">
 	<select multiple class="form-control" id="e1" name="uri1">
-      <option id="uri11" style="background-color: #ccffe6">Área do Círculo - Estimativa: 10 minutos</option>
-      <option id="uri12" style="background-color: #ccffe6">Produto Simples - Estimativa: 10 minutos</option>
-      <option id="uri13">Média 1 - Estimativa: 10 minutos</option>
-      <option id="uri14">Média 2 - Estimativa: 10 minutos</option>
-      <option id="uri15">Diferença - Estimativa: 10 minutos</option>
- <!--     <option id="uri16">Esfera - Estimativa: 10 minutos</option>-->
+      <option id="uri11">1002 - Área do Círculo - Estimativa: 10 minutos</option>
+      <option id="uri12">1004 - Produto Simples - Estimativa: 10 minutos</option>
+      <option id="uri13">1005 - Média 1 - Estimativa: 10 minutos</option>
+      <option id="uri14">1006 - Média 2 - Estimativa: 10 minutos</option>
+      <option id="uri15">1007 - Diferença - Estimativa: 10 minutos</option>
     </select>
 	</div>
 
 	<div class="uricodeboard1 caixa" id="e13" style="display: none">
 	<select multiple class="form-control" id="e13" name="uri1">
-      <option id="uricodeboard11" style="background-color: #ccffe6">Área do Círculo - Estimativa: 10 minutos</option>
-      <option id="uricodeboard12">Produto Simples - Estimativa: 10 minutos</option>
-      <option id="uricodeboard13" style="background-color: #ccffe6">Média 1 - Estimativa: 10 minutos</option>
-      <option id="uricodeboard14" style="background-color: #ccffe6">Média 2 - Estimativa: 10 minutos</option>
-      <option id="uricodeboard15">Diferença - Estimativa: 10 minutos</option>
- <!--     <option id="uri16">Esfera - Estimativa: 10 minutos</option>-->
+      <option id="uricodeboard11">1002 - Área do Círculo - Estimativa: 10 minutos</option>
+      <option id="uricodeboard13">1005 - Média 1 - Estimativa: 10 minutos</option>
+      <option id="uricodeboard14">1006 - Média 2 - Estimativa: 10 minutos</option>
     </select>
 	</div>
 
 	<div class="uricodeboard2 caixa" id="e14" style="display: none">
 	<select multiple class="form-control" id="e14">
-      <option id="uricodeboard21">Média 3 - Estimativa: 10 minutos</option>
-      <option id="uricodeboard22">Coordenadas de um Ponto - Estimativa: 10 minutos</option>
-      <option id="uricodeboard23">Sort Simples - Estimativa: 10 minutos</option>
-      <option id="uricodeboard24">Múltiplos - Estimativa: 10 minutos</option>
-      <option id="uricodeboard25">Tempo de Jogo - Estimativa: 10 minutos</option>
-    <!--  <option id="uri26">Aumento de Salário - Estimativa: 10 minutos</option>-->
+      <option id="uricodeboard21">1061 - Tempo de um Evento - Estimativa: 10 minutos</option>
     </select>
 	</div>
 
     <div class="uri2 caixa" id="e2" style="display: none">
 	<select multiple class="form-control" id="e2">
-      <option id="uri21">Média 3 - Estimativa: 10 minutos</option>
-      <option id="uri22" style="background-color: #ccffe6">Coordenadas de um Ponto - Estimativa: 10 minutos</option>
-      <option id="uri23" style="background-color: #ccffe6">Sort Simples - Estimativa: 10 minutos</option>
-      <option id="uri24">Múltiplos - Estimativa: 10 minutos</option>
-      <option id="uri25">Tempo de Jogo - Estimativa: 10 minutos</option>
-    <!--  <option id="uri26">Aumento de Salário - Estimativa: 10 minutos</option>-->
+      <option id="uri21">1040 - Média 3 - Estimativa: 10 minutos</option>
+      <option id="uri22">1041 - Coordenadas de um Ponto - Estimativa: 10 minutos</option>
+      <option id="uri23">1042 - Sort Simples - Estimativa: 10 minutos</option>
+      <option id="uri24">1044 - Múltiplos - Estimativa: 10 minutos</option>
+      <option id="uri25">1046 - Tempo de Jogo - Estimativa: 10 minutos</option>
     </select>
 	</div>
 
 	<div class="uri3 caixa" id="e3" style="display: none">
 	<select multiple class="form-control" id="e3">
-      <option id="uri31">Números Positivos - Estimativa: 10 minutos</option>
-      <option id="uri32">Positivos e Média - Estimativa: 10 minutos</option>
-      <option id="uri33">Quadrado de Pares - Estimativa: 10 minutos</option>
+      <option id="uri31">1060 - Números Positivos - Estimativa: 10 minutos</option>
+      <option id="uri32">1064 - Positivos e Média - Estimativa: 10 minutos</option>
+      <option id="uri33">1073 - Quadrado de Pares - Estimativa: 10 minutos</option>
     </select>
 	</div>
 
@@ -409,10 +286,10 @@
 
 	<div class="uri5 caixa" id="e8" style="display: none">
 	<select multiple class="form-control" id="e8">
-      <option id="uri51">Preenchimento de Vetor I - Estimativa: 10 minutos</option>
-      <option id="uri52">Seleção em Vetor I - Estimativa: 10 minutos</option>
-      <option id="uri53">Troca em Vetor - Estimativa: 10 minutos</option>
-      <option id="uri54">Preenchimento de Vetor II - Estimativa: 10 minutos</option>
+      <option id="uri51">1173 - Preenchimento de Vetor I - Estimativa: 10 minutos</option>
+      <option id="uri52">1174 - Seleçao em Vetor I - Estimativa: 10 minutos</option>
+      <option id="uri53">1175 - Troca em Vetor I - Estimativa: 10 minutos</option>
+      <option id="uri54">1177 - Preenchimento de Vetor II - Estimativa: 10 minutos</option>
     </select>
 	</div>
 
@@ -449,18 +326,21 @@
 <input type="button" value="Escolher" id="escolhe" onclick="escolher()" class="btn btn-primary" />
 <div style="text-align:center;">
 	<!--codeboard-->
-	<input type="button" value="Gerar Guião 1.0" id="geraPDF10" onclick="build_prof_pdf('1.0')" class="btn btn-primary" />	
+<!--	<input type="button" value="Gerar Guião 1.0" id="geraPDF10" onclick="build_prof_pdf('1.0')" class="btn btn-primary" />	-->
 	<!--uri-->
-	<input type="button" value="Gerar Guião 1.1" id="geraPDF11" onclick="build_prof_pdf('1.1')" class="btn btn-primary" />
+<!--	<input type="button" value="Gerar Guião 1.1" id="geraPDF11" onclick="build_prof_pdf('1.1')" class="btn btn-primary" />
 	<input type="button" value="Gerar Guião 1.2" id="geraPDF12" onclick="build_prof_pdf('1.2')" class="btn btn-primary" />
 	<input type="button" value="Gerar Guião 1.3" id="geraPDF13" onclick="build_prof_pdf('1.3')" class="btn btn-primary" />
 	<input type="button" value="Gerar Guião 1.4" id="geraPDF14" onclick="build_prof_pdf('1.4')" class="btn btn-primary" />
 	<input type="button" value="Gerar Guião 1.5" id="geraPDF15" onclick="build_prof_pdf('1.5')" class="btn btn-primary" />
 	<input type="button" value="Gerar Guião 2.0" id="geraPDF20" onclick="build_prof_pdf('2.0')" class="btn btn-primary" />
-	<input type="button" value="Gerar Guião 2.1" id="geraPDF21" onclick="build_prof_pdf('2.1')" class="btn btn-primary" />
-	
+	<input type="button" value="Gerar Guião 2.1" id="geraPDF21" onclick="build_prof_pdf('2.1')" class="btn btn-primary" /> --> 
 
-<!--	<input type="button" value="Gerar Guião 1.0 DOCX" id="geraDOCX21" onclick="generate()" class="btn btn-primary" />-->
+	<input type="button" value="Gerar Guião URI" id="geraURI" onclick="build_prof_pdf('uri')" class="btn btn-primary" />
+	<input type="button" value="Gerar Guião Codeboard" id="geraCodeboard" onclick="build_prof_pdf('codeboard')" class="btn btn-primary" />
+	<input type="button" value="Gerar Guião Python" id="geraPython" onclick="build_prof_pdf('python')" class="btn btn-primary" />
+
+
 </div>
 </div>
 

@@ -1,14 +1,29 @@
+function selecionaPlataforma(){
+  //plataforma uri selecionada
+  if (document.getElementById("uri1").checked||document.getElementById("uri2").checked||
+      document.getElementById("uri3").checked||document.getElementById("uri5").checked||
+      document.getElementById("uri6").checked) {
+        
+        $('#escolhe').mouseup(function() {
+          $('#geraURI').toggle();
+          exists = 1;
+        });
+  }
+  //plataforma codeboard selecionada
+  if (document.getElementById("uricodeboard1").checked||document.getElementById("uricodeboard2").checked||
+      document.getElementById("uricodeboard3").checked||document.getElementById("codeboard6").checked) {
+       
+        $('#escolhe').mouseup(function() {
+          $('#geraCodeboard').toggle();
+          exists = 1;
+        });
+  }
+}
 
+//constrói o cabeçalho do guião
 function build_head(doc,tipoGuia)
 {
-
-
   doc.addImage(imgLogo, 'JPEG', 40, 15, 130, 25);
-  //doc.addImage(imgIpb, 'JPEG', 25, 60, 55, 20);
-  //doc.text(28, 35, '\t\t\t\t\t\t\t\t UNIVERSIDADE TECNOLÓGICA FEDERAL DO\n\t\t\t\t\t\t\t\t\tPARANÁ CAMPUS PONTA GROSSA\n\t\t\t\t\t\t\t\t\t\tDepartamento de Computação\n\t\t\t\t\t\t\t\t\tBacharelado em Ciência da Computação');
-  //doc.text(28, 35, '\t\t\t\t\t\t\t\t UNIVERSIDADE TECNOLÓGICA FEDERAL DO\n\t\t\t\t\t\t\t\t\tPARANÁ');
-  //doc.text(28, 65, '\t\t\t\t\t\t\t\t INSTITUTO POLITÉCNICO DE BRAGANÇA\n\t\t\t\t\t\t\t\t\tEscola Superior de Tecnologia e Gestão\n\t\t\t\t\t\t\t\t\t\tLicenciatura em Informática');
-  //doc.text(28, 65, '\t\t\t\t\t\t\t\t INSTITUTO POLITÉCNICO DE BRAGANÇA');
 
   doc.setFontType('bold');
   if(tipoGuia == "aluno")
@@ -22,11 +37,11 @@ function build_head(doc,tipoGuia)
   doc.text(30, 65, '\t\t\t\t\t\t' + tipoGuia);
 }
 
-
+//constrói a tabela inicial
 function build_table(doc,numeroGuia)
 {
 
-  // Construção da tabela
+// Construção da tabela
 var pontoInicio = 30;
 var largura = 150;
 var linhaA = 82;
@@ -34,7 +49,7 @@ var linhaA = 82;
 doc.rect(pontoInicio, linhaA, largura, 76);
 
 for(i = 0; i < 6; i++) {
-if(i == 2)
+  if(i == 2)
   {
      linhaA = linhaA + 16;
   }
@@ -61,26 +76,24 @@ if(i == 2)
     doc.text(x, y, titulos[i]);
     doc.setFontType('italic');
 
-
-    if(i == 0){ //ver qual é a matéria
-      var res = numeroGuia.substring(0, 1);
-      if(res == "1")
-        doc.text(x, y, linhasCodeboard[i][0]); //dados de tipo elementar (dá na mesma colocar linhasuri ou codeboard nessa parte)
-      else if(res == "2")
+    //verifica qual é a matéria
+    if(i == 0){
+      if(document.getElementById("materia1").checked )
+        doc.text(x, y, linhasCodeboard[i][0]); 
+      if(document.getElementById("materia2").checked )
         doc.text(x, y, linhasCodeboard[i][1]); //testes e condições
-      else if(res == "3")
+      if(document.getElementById("materia3").checked )
         doc.text(x, y, linhasCodeboard[i][2]); //instruções de iteração
-      else if(res == "4")
+      if(document.getElementById("materia4").checked )
         doc.text(x, y, linhasCodeboard[i][3]); //funções
-      else if(res == "5")
+      if(document.getElementById("materia5").checked )
         doc.text(x, y, linhasCodeboard[i][4]); //vetores
-      else if(res == "6")
+      if(document.getElementById("materia6").checked )
         doc.text(x, y, linhasCodeboard[i][5]); //strings
-      else if(res == "7")
-        doc.text(x, y, linhasCodeboard[i][6]); //ponteiros
+      
     }
-
-    else if(i == 6){ //verifica se é dentro ou fora de sala de aula    
+    //verifica se é dentro ou fora de sala de aula
+    else if(i == 6){     
       if( $("#dentroFora").val() == "Dentro de sala de aula" )
         doc.text(x, y, linhasCodeboard[i][0]); //dentro de sala de aula
       
@@ -89,26 +102,30 @@ if(i == 2)
     }
     
     else{
-      if(numeroGuia == "1.0")
+      if(numeroGuia == "codeboard")
         doc.text(x, y, linhasCodeboard[i]);
-      if(numeroGuia == "1.1"|| numeroGuia == "1.2"||numeroGuia == "1.3"||numeroGuia == "1.4"||numeroGuia == "1.5"||numeroGuia == "2.0"||numeroGuia == "2.1")
+      if(numeroGuia == "uri")
         doc.text(x, y, linhasURI[i]);
     }
   }
 
+
+  
 }
 
 function build_body(doc,tipoGuia,numeroGuia)
 {
   doc.addPage();
   var textB,aux,auxURI;
+
+
   if(tipoGuia == "aluno")
   {
-    if(numeroGuia == "1.0"){
+    if(numeroGuia == "codeboard"){
       textB = textoBaseAlunoCodeboard;
       imgB = imgBaseAlunoCodeboard;
     }
-    else if(numeroGuia == "1.1"||numeroGuia == "1.2"||numeroGuia == "1.3"||numeroGuia == "1.4"||numeroGuia == "1.5"||numeroGuia == "2.0"||numeroGuia == "2.1"){
+    else if(numeroGuia == "uri"){
       textB = textoBaseAlunoURI;
       imgB = imgBaseAlunoURI;
       
@@ -116,66 +133,53 @@ function build_body(doc,tipoGuia,numeroGuia)
   }
   else
   {
-    if(numeroGuia == "1.0"){
+    if(numeroGuia == "codeboard"){
       textB = textoBaseProfessorCodeboard;
       imgB = imgBaseProfessorCodeboard;
     }
-    else if(numeroGuia == "1.1"){
+    else if(numeroGuia == "uri"){
       textB = textoBaseProfessorURI;
       imgB = imgBaseProfessorURI;   
-      auxURI = 1;
+     
     }
-    else if(numeroGuia == "1.2"){
-      textB = textoBaseProfessorURI;
-      imgB = imgBaseProfessorURI;
-      auxURI = 2;  
-    }
-    else if(numeroGuia == "1.3"){
-      textB = textoBaseProfessorURI;
-      imgB = imgBaseProfessorURI;   
-      auxURI = 3;
-    }
-    else if(numeroGuia == "1.4"){
-      textB = textoBaseProfessorURI;
-      imgB = imgBaseProfessorURI;
-      auxURI = 4;  
-    }
-    else if(numeroGuia == "1.5"){
-      textB = textoBaseProfessorURI;
-      imgB = imgBaseProfessorURI;
-      auxURI = 5;  
-    }
-    else if(numeroGuia == "2.0"){
-      textB = textoBaseProfessorURI;
-      imgB = imgBaseProfessorURI;
-      auxURI = 6;  
-    }
-    else if(numeroGuia == "2.1"){
-      textB = textoBaseProfessorURI;
-      imgB = imgBaseProfessorURI;
-      auxURI = 7;  
-    }
+   
   }
 
   var inicioTexto = 30;
   var espacoLinhas = 110;
-//  var textFinal = doc.splitTextToSize(textB, 170);
    for(i = 0; i < textB.length; i++)
     {
-      if(i == 6 && auxURI == 1)
-        textB[i] = textB[i][0];
-      if(i == 6 && auxURI == 2)
-        textB[i] = textB[i][1];
-      if(i == 6 && auxURI == 3)
-        textB[i] = textB[i][2];
-      if(i == 6 && auxURI == 4)
-        textB[i] = textB[i][3];
-      if(i == 6 && auxURI == 5)
-        textB[i] = textB[i][4];
-      if(i == 6 && auxURI == 6)
-        textB[i] = textB[i][5];
-      if(i == 6 && auxURI == 7)
-        textB[i] = textB[i][6];
+      //exercicios uri
+      if(i ==  6){
+        $('#e1 option:selected').each(function(){
+              textB[i] += "\n" + this.value;
+        });
+        $('#e2 option:selected').each(function(){
+              textB[i] += "\n" + this.value;
+        });
+        $('#e3 option:selected').each(function(){
+              textB[i] += "\n" + this.value;
+        });
+        $('#e8 option:selected').each(function(){
+              textB[i] += "\n" + this.value;
+        });
+      }
+      //exercicios codeboard
+      if(i == 0){
+        $('#e13 option:selected').each(function(){
+              textB[i] += "\n" + this.value;
+        });
+        $('#e14 option:selected').each(function(){
+              textB[i] += "\n" + this.value;
+        });
+        $('#e3 option:selected').each(function(){
+              textB[i] += "\n" + this.value;
+        });
+        $('#e8 option:selected').each(function(){
+              textB[i] += "\n" + this.value;
+        });
+      }
+
       if(i % 3 == 0 && i != 0){
         doc.addPage(); 
         inicioTexto = 30;
@@ -224,9 +228,9 @@ function build_body(doc,tipoGuia,numeroGuia)
         }
         high = -30;
       }
-      if(tipoGuia == "professor" && numeroGuia == "1.0" && i == 1)
+      if(tipoGuia == "professor" && numeroGuia == "codeboard" && i == 1)
         doc.addImage(imgB[i], 'JPEG', 60, high + 100, 100, 60);  
-      else if(tipoGuia == "professor" && (numeroGuia == "1.1"||numeroGuia == "1.2"||numeroGuia == "1.3"||numeroGuia == "1.4"||numeroGuia == "1.5"||numeroGuia == "2.0"||numeroGuia == "2.1") && i == 5)
+      else if(tipoGuia == "professor" && (numeroGuia == "uri") && i == 5)
         doc.addImage(imgB[i], 'JPEG', 60, high + 95, 100, 60); 
       else
         doc.addImage(imgB[i], 'JPEG', 60, high + 75, 100, 60);
@@ -235,12 +239,14 @@ function build_body(doc,tipoGuia,numeroGuia)
       high = high + 90;
    }
 
+   
+
 }
 
 
 function build_prof_pdf(numeroGuia)
 {
-  if(numeroGuia == "1.0"){
+  if(numeroGuia == "codeboard"){
     //new tab com códigos base
     window.open("https://marciviana.github.io/codigo_guia1.0.html", '_blank');
   }
@@ -251,7 +257,7 @@ function build_prof_pdf(numeroGuia)
   build_head(doc,tipoGuia);
   build_table(doc,numeroGuia);
   build_body(doc,tipoGuia,numeroGuia);
-  doc.save('guia'+numeroGuia+'_'+tipoGuia+'.pdf');
+  doc.save('guia_'+numeroGuia+'_'+tipoGuia+'.pdf');
   
   //aluno
   var doc = new jsPDF();
@@ -261,6 +267,6 @@ function build_prof_pdf(numeroGuia)
   build_table(doc,numeroGuia);
   build_body(doc,tipoGuia,numeroGuia);
 
-  doc.save('guia'+numeroGuia+'_'+tipoGuia+'.pdf');
+  doc.save('guia_'+numeroGuia+'_'+tipoGuia+'.pdf');
 
 }
