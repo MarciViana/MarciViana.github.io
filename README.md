@@ -11,11 +11,10 @@ de soluções e análise dos resultados, com o objetivo de auxiliar o planejamen
 Através do preenchimento de um formulário para escolha de características do exercício a ser proposto, o sistema é capaz de gerar 
 um guião de atividades conforme as preferências do professor.
 
-
-
 Tecnologias:
 - Javascript, HTML, CSS
 - JQuery para simplificação dos scripts
 - jsPDF para geração de PDF's
 - Bootstrap para estilização do front-end
 
+Link para utilização do sistema: https://marciviana.github.io/projeto_mestrado.html
