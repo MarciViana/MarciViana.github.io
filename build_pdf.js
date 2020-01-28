@@ -79,7 +79,7 @@ for(i = 0; i < 6; i++) {
     //verifica qual é a matéria
     if(i == 0){
       if(document.getElementById("materia1").checked )
-        doc.text(x, y, linhasCodeboard[i][0]); 
+        doc.text(x, y, linhasCodeboard[i][0]); //tipos de dados
       if(document.getElementById("materia2").checked )
         doc.text(x, y, linhasCodeboard[i][1]); //testes e condições
       if(document.getElementById("materia3").checked )
@@ -161,6 +161,9 @@ function build_body(doc,tipoGuia,numeroGuia)
               textB[i] += "\n" + this.value;
         });
         $('#e8 option:selected').each(function(){
+              textB[i] += "\n" + this.value;
+        });
+        $('#e15 option:selected').each(function(){
               textB[i] += "\n" + this.value;
         });
       }

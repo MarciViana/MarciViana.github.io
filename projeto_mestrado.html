@@ -88,7 +88,7 @@
 
 	$(document).ready(function(){
 	    $('input[type="checkbox"]').click(function(){
-	    	$('#e1','#e2','#e3','#e4','#e5','#e6','#e7','#e8','#e9','#e10','#e11','#e12','#e13','#e14').show();
+	    	$('#e1','#e2','#e3','#e4','#e5','#e6','#e7','#e8','#e9','#e10','#e11','#e12','#e13','#e14','#e15').show();
 	        var inputValue = $(this).attr("value");
 	        var targetBox = $("." + inputValue);
 	        $(".caixa").not(targetBox).hide();
@@ -187,25 +187,25 @@
 	  <div class="tres box" id="c3" style="display: none">
 	  	<input type="checkbox" class="tres" name="plataforma" value="uri3" id="uricodeboard3" onclick="selecionaPlataforma()"> URI Online Judge e Codeboard <br>
 	  	<input type="checkbox" class="tres" name="plataforma" value="uri3" id="uri3" onclick="selecionaPlataforma()"> URI Online Judge <br>
-	  	<input type="checkbox" class="tres" name="plataforma" value="cpuzzles3" id="cpuzzlespython3" onclick="selecionaPlataforma()"> CPuzzles e PythonTutor <br>
+<!--	  	<input type="checkbox" class="tres" name="plataforma" value="cpuzzles3" id="cpuzzlespython3" onclick="selecionaPlataforma()"> CPuzzles e PythonTutor <br>
 	    
-	    <input type="checkbox" class="tres" name="plataforma" value="codingame3" id="codingame3" onclick="selecionaPlataforma()"> CodinGame <br>
+	    <input type="checkbox" class="tres" name="plataforma" value="codingame3" id="codingame3" onclick="selecionaPlataforma()"> CodinGame <br>-->
 	  </div>
 
 	  <div class="quatro box" id="c4" style="display: none">    
-	    <input type="checkbox" class="quatro" name="plataforma" value="codingame4" id="codingame4" onclick="selecionaPlataforma()"> CodinGame <br>
-	    <input type="checkbox" class="quatro" name="plataforma" value="coderbyte4" id="coderbyte4" onclick="selecionaPlataforma()"> Coderbyte <br>
+	<!--    <input type="checkbox" class="quatro" name="plataforma" value="codingame4" id="codingame4" onclick="selecionaPlataforma()"> CodinGame <br>
+	    <input type="checkbox" class="quatro" name="plataforma" value="coderbyte4" id="coderbyte4" onclick="selecionaPlataforma()"> Coderbyte <br>-->
 	  </div>
 
 	  <div class="cinco box" id="c5" style="display: none">
 	  	<input type="checkbox" class="cinco" name="plataforma" value="uri5" id="uri5" onclick="selecionaPlataforma()"> URI Online Judge <br>
-	  	<input type="checkbox" class="cinco" name="plataforma" value="cpuzzlespython5" id="cpuzzlespython5" onclick="selecionaPlataforma()"> CPuzzles e PythonTutor <br>	    
-	    <input type="checkbox" class="cinco" name="plataforma" value="codingame5" id="codingame5" onclick="selecionaPlataforma()"> CodinGame <br>
+	<!--  	<input type="checkbox" class="cinco" name="plataforma" value="cpuzzlespython5" id="cpuzzlespython5" onclick="selecionaPlataforma()"> CPuzzles e PythonTutor <br>	    
+	    <input type="checkbox" class="cinco" name="plataforma" value="codingame5" id="codingame5" onclick="selecionaPlataforma()"> CodinGame <br>-->
 	  </div>
 
 	  <div class="seis box" id="c6" style="display: none">
 	  	<input type="checkbox" class="seis" name="plataforma" value="uri6" id="uri6" onclick="selecionaPlataforma()"> URI Online Judge <br>
-	    <input type="checkbox" class="seis" name="plataforma" value="codeboard6" id="codeboard6" onclick="selecionaPlataforma()"> Codeboard <br>
+<!--	    <input type="checkbox" class="seis" name="plataforma" value="codeboard6" id="codeboard6" onclick="selecionaPlataforma()"> Codeboard <br>-->
 	  </div> 
  
 </form><br>
@@ -320,21 +320,19 @@
     </select>
 	</div>
 
+	<div class="uri6 caixa" id="e15" style="display: none">
+	<select multiple class="form-control" id="e15">
+      <option id="uri61">1238 - Combiner - Estimativa: 10 minutos</option>
+      <option id="uri62">1253 - Caesar Chiper - Estimativa: 10 minutos</option>
+      <option id="uri63">1175 - Array Hash - Estimativa: 10 minutos</option>
+    </select>
+	</div>
+
 
 </form>
 <br>
 <input type="button" value="Escolher" id="escolhe" onclick="escolher()" class="btn btn-primary" />
 <div style="text-align:center;">
-	<!--codeboard-->
-<!--	<input type="button" value="Gerar Guião 1.0" id="geraPDF10" onclick="build_prof_pdf('1.0')" class="btn btn-primary" />	-->
-	<!--uri-->
-<!--	<input type="button" value="Gerar Guião 1.1" id="geraPDF11" onclick="build_prof_pdf('1.1')" class="btn btn-primary" />
-	<input type="button" value="Gerar Guião 1.2" id="geraPDF12" onclick="build_prof_pdf('1.2')" class="btn btn-primary" />
-	<input type="button" value="Gerar Guião 1.3" id="geraPDF13" onclick="build_prof_pdf('1.3')" class="btn btn-primary" />
-	<input type="button" value="Gerar Guião 1.4" id="geraPDF14" onclick="build_prof_pdf('1.4')" class="btn btn-primary" />
-	<input type="button" value="Gerar Guião 1.5" id="geraPDF15" onclick="build_prof_pdf('1.5')" class="btn btn-primary" />
-	<input type="button" value="Gerar Guião 2.0" id="geraPDF20" onclick="build_prof_pdf('2.0')" class="btn btn-primary" />
-	<input type="button" value="Gerar Guião 2.1" id="geraPDF21" onclick="build_prof_pdf('2.1')" class="btn btn-primary" /> --> 
 
 	<input type="button" value="Gerar Guião URI" id="geraURI" onclick="build_prof_pdf('uri')" class="btn btn-primary" />
 	<input type="button" value="Gerar Guião Codeboard" id="geraCodeboard" onclick="build_prof_pdf('codeboard')" class="btn btn-primary" />
