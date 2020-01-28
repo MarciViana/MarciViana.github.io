@@ -150,7 +150,7 @@ function build_body(doc,tipoGuia,numeroGuia)
    for(i = 0; i < textB.length; i++)
     {
       //exercicios uri
-      if(i ==  6){
+      if(i ==  6 && tipoGuia == "professor"){
         $('#e1 option:selected').each(function(){
               textB[i] += "\n" + this.value;
         });
@@ -168,7 +168,7 @@ function build_body(doc,tipoGuia,numeroGuia)
         });
       }
       //exercicios codeboard
-      if(i == 0){
+      if(i == 0 && tipoGuia == "professor"){
         $('#e13 option:selected').each(function(){
               textB[i] += "\n" + this.value;
         });
