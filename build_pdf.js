@@ -245,6 +245,10 @@ function codigosBase(){
         if(this.value == "1006 - Média 2 - Estimativa: 10 minutos")
           window.open("https://marciviana.github.io/codigo_base_1006_media2.html", 'media2');
     });
+   $('#e14 option:selected').each(function(){
+        if(this.value == "1061 - Tempo de um Evento - Estimativa: 10 minutos")
+          window.open("https://marciviana.github.io/codigo_base_1061_tempo_de_um_evento.html", 'tempo_evento');
+    });
 }
 
 function build_prof_pdf(numeroGuia)
