@@ -1,4 +1,4 @@
-# EasyCoding - Metodologia de Suporte ao Aprendizado de Programação
+# EasyCoding - Plataforma de Suporte ao Ensino de Programação
 ### Trabalho realizado sob orientação de:
 #### Professora Doutora Maria João Varanda, Professor Doutor Luís Alves e Professora Glívia Barbosa
 Este trabalho busca propor uma metodologia baseada em guiões de atividades desenvolvidos com a utilização de plataformas web atrativas, 
