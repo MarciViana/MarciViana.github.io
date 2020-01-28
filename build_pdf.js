@@ -172,12 +172,6 @@ function build_body(doc,tipoGuia,numeroGuia)
         $('#e14 option:selected').each(function(){
               textB[i] += "\n" + this.value;
         });
-        $('#e3 option:selected').each(function(){
-              textB[i] += "\n" + this.value;
-        });
-        $('#e8 option:selected').each(function(){
-              textB[i] += "\n" + this.value;
-        });
       }
 
       if(i % 3 == 0 && i != 0){
@@ -242,13 +236,22 @@ function build_body(doc,tipoGuia,numeroGuia)
    
 
 }
-
+function codigosBase(){
+   $('#e13 option:selected').each(function(){
+        if(this.value == "1002 - Área do Círculo - Estimativa: 10 minutos")
+          window.open("https://marciviana.github.io/codigo_base_1002_area_do_circulo.html", '_blank');
+        if(this.value == "1005 - Média 1 - Estimativa: 10 minutos")
+          window.open("https://marciviana.github.io/codigo_base_1005_media1.html", '_blank');
+        if(this.value == "1006 - Média 2 - Estimativa: 10 minutos")
+          window.open("https://marciviana.github.io/codigo_base_1006_media2.html", '_blank');
+    });
+}
 
 function build_prof_pdf(numeroGuia)
 {
   if(numeroGuia == "codeboard"){
-    //new tab com códigos base
-    window.open("https://marciviana.github.io/codigo_guia1.0.html", '_blank');
+    //gera new tabs com códigos base
+    codigosBase();
   }
   //professor
   var doc = new jsPDF();

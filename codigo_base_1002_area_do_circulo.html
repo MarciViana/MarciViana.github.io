@@ -1,0 +1,78 @@
+</!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+	<figure>
+  <figcaption>Códigos Base para a plataforma Codeboard</figcaption>
+  <pre>
+    <code>
+//------------------------------------1002 – Área do Círculo----------------------------------------
+
+	//main.c
+
+		#include <stdio.h>
+		#include <stdlib.h>
+
+
+		int main()
+		{
+		    double raio1 = 2.00;
+		    double raio2 = 20.00;
+		    double raio3 = 150.00;
+		    
+		    //o aluno deve declarar as variáveis area1, area2 e area3 e implementar o resultado     
+		    
+		   
+		     
+		    testUnitario(area1, area2, area3);
+		    
+		    return 0;
+		}
+
+	//test.c
+
+		#include <stdio.h>
+		#include <stdlib.h>
+
+		void testUnitario(double area1, double area2, double area3){
+		  
+		    double grade = 0;
+		    int testsPassed = 0;
+		    int testsFailed = 3;
+		    
+		    if(area1 == 12.56636){
+		        testsPassed++;
+		        testsFailed--;
+		    }
+		    
+		    if(area3 == 70685.775){
+		        testsPassed++;
+		        testsFailed--;
+		    }
+		    
+		    if(area2 == 1256.636){
+		        testsPassed++;
+		        testsFailed--;
+		    }
+		    
+		    if(testsPassed == 3)
+		        grade = 1;
+		    else if(testsPassed == 2)
+		        grade = 0.66;
+		    else if(testsPassed == 1)
+		        grade = 0.33;
+		    
+		    printf("<!--@test=%.2lf;%d;%d;-->",grade,testsPassed,testsFailed);
+
+		      
+		}
+
+
+    </code>
+  </pre>
+</figure>
+</body>
+</html>
+

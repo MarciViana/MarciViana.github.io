@@ -1,0 +1,77 @@
+</!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+	<figure>
+  <figcaption>Códigos Base para a plataforma Codeboard</figcaption>
+  <pre>
+    <code>
+
+//------------------------------------ 1006 – Média 2 ----------------------------------------
+
+
+	//main.c
+
+		#include <stdio.h>
+		#include <stdlib.h>
+
+
+		int main()
+		{
+		    //o aluno deve declarar as variáveis media1, media2 e media3 e implementar o resultado     
+		    //media 1: A = 5.0 e B = 5.0 e C = 5.0
+		    //media 2: A = 5.0 e B = 10.0 e C = 10.0
+		    //media 3: A = 10.0 e B = 10.0 e C = 10.0
+
+		    
+		   
+		    testeUnitario(media1,media2,media3);
+		   
+		    return 0;
+		}
+
+
+	//test.c
+
+		#include <stdio.h>
+		#include <stdlib.h>
+
+
+		void testeUnitario(double media1, double media2, double media3){
+		    
+		    double grade = 0;
+		    int testsPassed = 0;
+		    int testsFailed = 3; 
+
+		    if(media1 == 5){
+		        testsPassed++;
+		        testsFailed--;
+		    }
+		    if(media2 == 9){
+		        testsPassed++;
+		        testsFailed--;
+		    }
+		    if(media3 == 10){
+		        testsPassed++;
+		        testsFailed--;
+		    } 
+		    if(testsPassed == 3)
+		        grade = 1;
+		    else if(testsPassed == 2)
+		        grade = 0.66;
+		    else if(testsPassed == 1)
+		        grade = 0.33;
+
+		    printf("<!--@test=%.2lf;%d;%d;-->",grade,testsPassed,testsFailed);
+		    
+		}
+
+
+    </code>
+  </pre>
+</figure>
+</body>
+</html>
+
