@@ -239,11 +239,11 @@ function build_body(doc,tipoGuia,numeroGuia)
 function codigosBase(){
    $('#e13 option:selected').each(function(){
         if(this.value == "1002 - Área do Círculo - Estimativa: 10 minutos")
-          window.open("https://marciviana.github.io/codigo_base_1002_area_do_circulo.html", '_blank');
+          window.open("https://marciviana.github.io/codigo_base_1002_area_do_circulo.html", 'area_circulo');
         if(this.value == "1005 - Média 1 - Estimativa: 10 minutos")
-          window.open("https://marciviana.github.io/codigo_base_1005_media1.html", '_blank');
+          window.open("https://marciviana.github.io/codigo_base_1005_media1.html", 'media1');
         if(this.value == "1006 - Média 2 - Estimativa: 10 minutos")
-          window.open("https://marciviana.github.io/codigo_base_1006_media2.html", '_blank');
+          window.open("https://marciviana.github.io/codigo_base_1006_media2.html", 'media2');
     });
 }
 
