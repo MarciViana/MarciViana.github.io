@@ -189,6 +189,11 @@ function build_body(doc,tipoGuia,numeroGuia)
                 textB[i] += "\n" + this.value;
               contaExercicios++;
         });
+        $('#e16 option:selected').each(function(){
+              if(tipoGuia == "professor")
+                textB[i] += "\n" + this.value;
+              contaExercicios++;
+        });
       }
 
       if(i % 3 == 0 && i != 0){
@@ -274,6 +279,12 @@ function codigosBase(){
    $('#e14 option:selected').each(function(){
         if(this.value == "1061 - Tempo de um Evento - Estimativa: 10 minutos")
           window.open("https://marciviana.github.io/codigo_base_1061_tempo_de_um_evento.html", 'tempo_evento');
+    });
+   $('#e16 option:selected').each(function(){
+        if(this.value == "1071 - Soma de Ímpares Consecutivos - Estimativa: 10 minutos")
+          window.open("https://marciviana.github.io/codigo_base_1071_soma_impares_consecutivos.html", 'soma_impares');
+        if(this.value == "1132 - Múltiplos de 13 - Estimativa: 10 minutos")
+          window.open("https://marciviana.github.io/codigo_base_1132_multiplos_13.html", 'multiplos_13');
     });
 }
 

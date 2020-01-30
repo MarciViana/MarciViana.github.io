@@ -1,0 +1,63 @@
+</!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+	<figure>
+  <figcaption>Códigos Base para a plataforma Codeboard</figcaption>
+  <xmp>
+    //------------------------------------1132 - Múltiplos de 13----------------------------------------
+
+	//main.c
+	 
+	#include <stdio.h>
+	#include <stdlib.h>
+
+	int main()
+	{
+	    //Escreva um algoritmo que dado 2 valores inteiros X e Y calcule a soma dos números que não são múltiplos de 13 entre X e Y, incluindo ambos.
+	    int n1 = 100, n2 = 200;
+	    int soma = 0;
+	 
+	    //o aluno deve desenvolver a solução aqui e adicioná-la na variavel "soma" 
+	    
+	    testUnitario(soma);
+	    return 0;
+	}
+
+	//test.c
+
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <math.h>
+
+	void testUnitario(int soma){
+	  
+	    double grade = 0;
+	    int testsPassed = 0;
+	    int testsFailed = 1;
+	    printf("%d",soma);
+	    
+	    if(soma == 13954){
+	        testsPassed++;
+	        testsFailed--;
+	    }
+	    
+	    
+	    if(testsPassed == 1)
+	        grade = 1;
+	   
+	   
+	    printf("<!--@test=%.2lf;%d;%d;-->",grade,testsPassed,testsFailed);
+	      
+	  }
+
+
+
+ 
+  </xmp>
+</figure>
+</body>
+</html>
+

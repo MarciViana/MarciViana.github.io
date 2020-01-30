@@ -1,0 +1,66 @@
+</!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+	<figure>
+  <figcaption>Códigos Base para a plataforma Codeboard</figcaption>
+  <xmp>
+    //------------------------------------1071 – Soma de Ímpares Consecutivos----------------------------------------
+
+	//main.c
+
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <math.h>
+
+	int main() {
+
+		//Dois valores inteiros X e Y foram dados. A seguir, calcule e mostre a soma dos números impares entre eles.
+		
+	    int x = 6, y = -5;
+	    int soma = 0;
+	    
+	    //o aluno deve desenvolver a solução aqui e adicioná-la na variavel "soma" 
+	    
+	  
+	    testUnitario(soma);
+	    return 0;
+	}
+
+	//test.c
+
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <math.h>
+
+	void testUnitario(int soma){
+	  
+	    double grade = 0;
+	    int testsPassed = 0;
+	    int testsFailed = 1;
+
+	    
+	    if(soma == 5){
+	        testsPassed++;
+	        testsFailed--;
+	    }
+	    
+	    
+	    if(testsPassed == 1)
+	        grade = 1;
+	   
+	   
+	    printf("<!--@test=%.2lf;%d;%d;-->",grade,testsPassed,testsFailed);
+	      
+	  }
+
+
+
+ 
+  </xmp>
+</figure>
+</body>
+</html>
+

@@ -88,7 +88,7 @@
 
 	$(document).ready(function(){
 	    $('input[type="checkbox"]').click(function(){
-	    	$('#e1','#e2','#e3','#e4','#e5','#e6','#e7','#e8','#e9','#e10','#e11','#e12','#e13','#e14','#e15').show();
+	    	$('#e1','#e2','#e3','#e4','#e5','#e6','#e7','#e8','#e9','#e10','#e11','#e12','#e13','#e14','#e15','#e16').show();
 	        var inputValue = $(this).attr("value");
 	        var targetBox = $("." + inputValue);
 	        $(".caixa").not(targetBox).hide();
@@ -185,7 +185,7 @@
 	  </div>
 
 	  <div class="tres box" id="c3" style="display: none">
-	  	<input type="checkbox" class="tres" name="plataforma" value="uri3" id="uricodeboard3" onclick="selecionaPlataforma()"> URI Online Judge e Codeboard <br>
+	  	<input type="checkbox" class="tres" name="plataforma" value="uricodeboard3" id="uricodeboard3" onclick="selecionaPlataforma()"> URI Online Judge e Codeboard <br>
 	  	<input type="checkbox" class="tres" name="plataforma" value="uri3" id="uri3" onclick="selecionaPlataforma()"> URI Online Judge <br>
 <!--	  	<input type="checkbox" class="tres" name="plataforma" value="cpuzzles3" id="cpuzzlespython3" onclick="selecionaPlataforma()"> CPuzzles e PythonTutor <br>
 	    
@@ -234,6 +234,13 @@
 	<div class="uricodeboard2 caixa" id="e14" style="display: none">
 	<select multiple class="form-control" id="e14">
       <option id="uricodeboard21">1061 - Tempo de um Evento - Estimativa: 10 minutos</option>
+    </select>
+	</div>
+
+	<div class="uricodeboard3 caixa" id="e16" style="display: none">
+	<select multiple class="form-control" id="e16">
+      <option id="uricodeboard31">1071 - Soma de Ímpares Consecutivos - Estimativa: 10 minutos</option>
+      <option id="uricodeboard32">1132 - Múltiplos de 13 - Estimativa: 10 minutos</option>
     </select>
 	</div>
 
