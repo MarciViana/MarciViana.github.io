@@ -76,8 +76,6 @@
 
 <script type="text/javascript" src="jspdf.min.js"></script>
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
-<script type="text/javascript" src="script.js">	</script>
-<script type="text/javascript" src="scriptDOCX.js">	</script>
 <script type="text/javascript" src="data.js">	</script>
 <script type="text/javascript" src="build_pdf.js">	</script>
 <script src="https://unpkg.com/docx@4.0.0/build/index.js"></script>
@@ -88,7 +86,7 @@
 
 	$(document).ready(function(){
 	    $('input[type="checkbox"]').click(function(){
-	    	$('#e1','#e2','#e3','#e4','#e5','#e6','#e7','#e8','#e9','#e10','#e11','#e12','#e13','#e14','#e15','#e16').show();
+	    	$('#e1','#e2','#e3','#e4','#e5','#e6','#e7','#e8','#e9','#e10','#e11','#e12','#e13','#e14','#e15','#e16','#e17').show();
 	        var inputValue = $(this).attr("value");
 	        var targetBox = $("." + inputValue);
 	        $(".caixa").not(targetBox).hide();
@@ -193,6 +191,7 @@
 	  </div>
 
 	  <div class="quatro box" id="c4" style="display: none">    
+	  	<input type="checkbox" class="quatro" name="plataforma" value="codeboard4" id="codeboard4" onclick="selecionaPlataforma()"> Codeboard <br>
 	<!--    <input type="checkbox" class="quatro" name="plataforma" value="codingame4" id="codingame4" onclick="selecionaPlataforma()"> CodinGame <br>
 	    <input type="checkbox" class="quatro" name="plataforma" value="coderbyte4" id="coderbyte4" onclick="selecionaPlataforma()"> Coderbyte <br>-->
 	  </div>
@@ -237,12 +236,6 @@
     </select>
 	</div>
 
-	<div class="uricodeboard3 caixa" id="e16" style="display: none">
-	<select multiple class="form-control" id="e16">
-      <option id="uricodeboard31">1071 - Soma de Ímpares Consecutivos - Estimativa: 10 minutos</option>
-      <option id="uricodeboard32">1132 - Múltiplos de 13 - Estimativa: 10 minutos</option>
-    </select>
-	</div>
 
     <div class="uri2 caixa" id="e2" style="display: none">
 	<select multiple class="form-control" id="e2">
@@ -251,6 +244,13 @@
       <option id="uri23">1042 - Sort Simples - Estimativa: 10 minutos</option>
       <option id="uri24">1044 - Múltiplos - Estimativa: 10 minutos</option>
       <option id="uri25">1046 - Tempo de Jogo - Estimativa: 10 minutos</option>
+    </select>
+	</div>
+
+	<div class="uricodeboard3 caixa" id="e16" style="display: none">
+	<select multiple class="form-control" id="e16">
+      <option id="uricodeboard31">1071 - Soma de Ímpares Consecutivos - Estimativa: 10 minutos</option>
+      <option id="uricodeboard32">1132 - Múltiplos de 13 - Estimativa: 10 minutos</option>
     </select>
 	</div>
 
@@ -273,6 +273,12 @@
 	<div class="codingame3 caixa" id="e5" style="display: none">
 	<select multiple class="form-control" id="e5">
       <option id="codingame31">Temperatures - Estimativa: 15 minutos</option>
+    </select>
+	</div>
+
+	<div class="codeboard4 caixa" id="e17" style="display: none">
+	<select multiple class="form-control" id="e17">
+      <option id="codeboard41">Devolver valor absoluto de X - Estimativa: 10 minutos</option>
     </select>
 	</div>
 

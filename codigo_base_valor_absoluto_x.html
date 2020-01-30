@@ -1,0 +1,67 @@
+</!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+	<figure>
+  <figcaption>Códigos Base para a plataforma Codeboard</figcaption>
+  <xmp>
+    //-------------Exercício 4 - Livro Linguagem C. Luis Damas-----------------
+
+
+	//main.c
+
+	#include <stdio.h>
+	#include <stdlib.h>
+
+	int main()
+	{
+	    /* Implemente a seguinte função: 
+	    int Abs(int x), que devolve o valor absoluto de x.
+	    Casos de testes já disponíveis:
+	    */
+	    
+	    int x = 5, y = -5;
+	    
+	    x = Abs(x);
+	    y = Abs(y);
+	    
+	    testUnitario(x,y);
+	    return 0;
+		
+	}
+
+	//test.c
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <math.h>
+
+	void testUnitario(int x, int y){
+	  
+	    double grade = 0;
+	    int testsPassed = 0;
+	    int testsFailed = 1;
+	    
+	    
+	    if(x == 5 && y == 5){
+	        testsPassed++;
+	        testsFailed--;
+	    }
+	    
+	    if(testsPassed == 1)
+	        grade = 1;
+	   
+	   
+	    printf("<!--@test=%.2lf;%d;%d;-->",grade,testsPassed,testsFailed);
+	      
+	  }
+
+
+
+ 
+  </xmp>
+</figure>
+</body>
+</html>
+
