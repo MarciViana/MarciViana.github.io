@@ -349,7 +349,7 @@ function codigosBase(){
           window.open("https://marciviana.github.io/codigo_base_1132_multiplos_13.html", 'multiplos_13');
     });
    $('#e17 option:selected').each(function(){
-        if(this.value == "Devolver valor absoluto de X - Estimativa: 10 minutos")
+        if(this.value == "Cap. 5. Pág. 127 - 4. Devolver valor absoluto de X - Estimativa: 10 minutos")
           window.open("https://marciviana.github.io/codigo_base_valor_absoluto_x.html", 'valor_absoluto');
         
     });
