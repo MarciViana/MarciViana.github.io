@@ -143,7 +143,7 @@ function build_body(doc,tipoGuia,numeroGuia)
     }
    
   }
-
+  var cont = 0;
   var inicioTexto = 30;
   var espacoLinhas = 110;
   var contaExercicios = 0;
@@ -180,23 +180,47 @@ function build_body(doc,tipoGuia,numeroGuia)
       //exercicios codeboard
       if(i == 0){
         $('#e13 option:selected').each(function(){
-              if(tipoGuia == "professor")
-                textB[i] += "\n" + this.value;
+              if(tipoGuia == "professor"){
+                if(cont>0)
+                  textB[i] = textB[i] + "\n" + this.value;  
+                else{
+                  textB[i] = textB[i][0] + "\n" + this.value;
+                  cont++;
+                }              
+              }
               contaExercicios++;
         });
         $('#e14 option:selected').each(function(){
-              if(tipoGuia == "professor")
-                textB[i] += "\n" + this.value;
+              if(tipoGuia == "professor"){
+                if(cont>0)
+                  textB[i] = textB[i] + "\n" + this.value;  
+                else{
+                  textB[i] = textB[i][0] + "\n" + this.value;
+                  cont++;
+                }              
+              }
               contaExercicios++;
         });
         $('#e16 option:selected').each(function(){
-              if(tipoGuia == "professor")
-                textB[i] += "\n" + this.value;
+              if(tipoGuia == "professor"){
+                if(cont>0)
+                  textB[i] = textB[i] + "\n" + this.value;  
+                else{
+                  textB[i] = textB[i][0] + "\n" + this.value;
+                  cont++;
+                }              
+              }
               contaExercicios++;
         });
         $('#e17 option:selected').each(function(){
-              if(tipoGuia == "professor")
-                textB[i] += "\n" + this.value;
+              if(tipoGuia == "professor"){
+                if(cont>0)
+                  textB[i] = textB[i] + "\n" + this.value;  
+                else{
+                  textB[i] = textB[i][1] + "\n" + this.value;
+                  cont++;
+                }              
+              }
               contaExercicios++;
         });
       }
@@ -205,6 +229,7 @@ function build_body(doc,tipoGuia,numeroGuia)
         doc.addPage(); 
         inicioTexto = 30;
       }
+      //adiciona textos
 
       doc.text(25, inicioTexto, textB[i]);
 
@@ -249,12 +274,44 @@ function build_body(doc,tipoGuia,numeroGuia)
         }
         high = -30;
       }
+      var conta = 0;
+
       if(tipoGuia == "professor" && numeroGuia == "codeboard" && i == 1)
         doc.addImage(imgB[i], 'JPEG', 60, high + 100, 100, 60);  
       else if(tipoGuia == "professor" && (numeroGuia == "uri") && i == 5)
         doc.addImage(imgB[i], 'JPEG', 60, high + 95, 100, 60); 
+
+      //primeira imagem uri_codeboard/codeboard
+      else if(tipoGuia == "professor" && i == 0){
+          $('#e13 option:selected').each(function(){             
+            if(conta == 0){
+              doc.addImage(imgB[i][0], 'JPEG', 60, high + 75, 100, 60);  
+              conta++;
+            }                     
+          });
+          $('#e14 option:selected').each(function(){             
+            if(conta == 0){
+              doc.addImage(imgB[i][0], 'JPEG', 60, high + 75, 100, 60);  
+              conta++;
+            }                     
+          });
+          $('#e16 option:selected').each(function(){             
+            if(conta == 0){
+              doc.addImage(imgB[i][0], 'JPEG', 60, high + 75, 100, 60);  
+              conta++;
+            }                     
+          });
+          $('#e17 option:selected').each(function(){         
+            if(conta == 0){
+              doc.addImage(imgB[i][1], 'JPEG', 60, high + 75, 100, 60);  
+              conta++;
+            }                     
+          });
+      }
+      
       else
         doc.addImage(imgB[i], 'JPEG', 60, high + 75, 100, 60);
+      
       
       inicioImg = inicioImg + espacoLinhasImg;
       high = high + 90;
