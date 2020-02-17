@@ -282,7 +282,7 @@ function build_body(doc,tipoGuia,numeroGuia)
         doc.addImage(imgB[i], 'JPEG', 60, high + 95, 100, 60); 
 
       //primeira imagem uri_codeboard/codeboard
-      else if(tipoGuia == "professor" && i == 0){
+      else if(tipoGuia == "professor" && i == 0 && numeroGuia == "codeboard"){
           $('#e13 option:selected').each(function(){             
             if(conta == 0){
               doc.addImage(imgB[i][0], 'JPEG', 60, high + 75, 100, 60);  
