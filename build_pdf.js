@@ -150,7 +150,7 @@ function build_body(doc,tipoGuia,numeroGuia)
    for(i = 0; i < textB.length; i++)
     {
       //exercicios uri
-      if(i ==  6){
+      if(i ==  5){
         $('#e1 option:selected').each(function(){
               if(tipoGuia == "professor")
                 textB[i] += "\n" + this.value;
