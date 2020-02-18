@@ -11,7 +11,8 @@ function selecionaPlataforma(){
   }
   //plataforma codeboard selecionada
   if (document.getElementById("uricodeboard1").checked||document.getElementById("uricodeboard2").checked||
-      document.getElementById("uricodeboard3").checked||document.getElementById("codeboard4").checked) {
+      document.getElementById("uricodeboard3").checked||document.getElementById("codeboard4").checked||
+      document.getElementById("codeboard7").checked) {
         
         $('#escolhe').mouseup(function() {
           $('#geraCodeboard').toggle();
@@ -89,6 +90,8 @@ function build_table(doc,numeroGuia)
           doc.text(x, y, linhasCodeboard[i][4]); //vetores
         if(document.getElementById("materia6").checked )
           doc.text(x, y, linhasCodeboard[i][5]); //strings
+        if(document.getElementById("materia7").checked )
+          doc.text(x, y, linhasCodeboard[i][6]); //strings
         
       }
 
@@ -223,6 +226,17 @@ function build_body(doc,tipoGuia,numeroGuia)
               }
               contaExercicios++;
         });
+        $('#e18 option:selected').each(function(){
+              if(tipoGuia == "professor"){
+                if(cont>0)
+                  textB[i] = textB[i] + "\n" + this.value;  
+                else{
+                  textB[i] = textB[i][1] + "\n" + this.value;
+                  cont++;
+                }              
+              }
+              contaExercicios++;
+        });
       }
 
       if(i % 3 == 0 && i != 0){
@@ -307,6 +321,12 @@ function build_body(doc,tipoGuia,numeroGuia)
               conta++;
             }                     
           });
+          $('#e18 option:selected').each(function(){         
+            if(conta == 0){
+              doc.addImage(imgB[i][1], 'JPEG', 60, high + 75, 100, 60);  
+              conta++;
+            }                     
+          });
       }
       
       else
@@ -353,6 +373,11 @@ function codigosBase(){
           window.open("https://marciviana.github.io/codigo_base_valor_absoluto_x.html", 'valor_absoluto');
         if(this.value == "Cap. 5. Pág. 128 - 16. Verifica se ch é uma das vogais do alfabeto - Estimativa: 10 minutos")
           window.open("https://marciviana.github.io/codigo_base_verifica_vogais.html", 'verifica_vogais');
+        
+    });
+   $('#e18 option:selected').each(function(){
+        if(this.value == "Cap. 8. Pág. 201 - 8. Apaga todos os caracteres maiúsculos em s - Estimativa: 10 minutos")
+          window.open("https://marciviana.github.io/codigo_base_apaga_maiusculos.html", 'valor_absoluto');
         
     });
 }

@@ -1,0 +1,67 @@
+</!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+	<figure>
+  <figcaption>Códigos Base para a plataforma Codeboard</figcaption>
+  <xmp>
+    //-------------Exercício 8 - Cap. 8. Pág. 201 - Livro Linguagem C. Luis Damas-----------------
+
+
+	//main.c
+
+	#include <stdio.h>
+	#include <stdlib.h>
+
+
+	int main()
+	{
+	    /* Implemente a seguinte função: 
+	       void strDelUpper(char *s), que apaga todos os caracteres maiúsculos em s.
+	       Caso de teste já disponível:
+	    */
+	    
+	    char s[7] = "AlegriA";
+	    
+	    strDelUpper(s);
+	    
+	    testUnitario(s);
+	    return 0;
+	}
+
+
+	//test.c
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <math.h>
+
+	void testUnitario(char *s){
+	  
+	    double grade = 0;
+	    int testsPassed = 0;
+	    int testsFailed = 1;
+	    
+	    
+	    if(strcmp(s, "legri") == 0){
+	        testsPassed++;
+	        testsFailed--;
+	    }
+	    
+	    if(testsPassed == 1)
+	        grade = 1;
+	   
+	   
+	    printf("<!--@test=%.2lf;%d;%d;-->",grade,testsPassed,testsFailed);
+	      
+	  }
+
+
+
+ 
+  </xmp>
+</figure>
+</body>
+</html>
+
