@@ -1,0 +1,67 @@
+</!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+	<figure>
+  <figcaption>Códigos Base para a plataforma Codeboard</figcaption>
+  <xmp>
+    //-------------Exercício 9 - Cap. 8. Pág. 201 - Livro Linguagem C. Luis Damas-----------------
+
+
+	//main.c
+
+	#include <stdio.h>
+	#include <stdlib.h>
+
+
+	int main()
+	{
+	    /* Implemente a seguinte função: 
+	       void strDelStr(char *s1, char *s2), que apaga em s1 a primeira ocorrência de s2
+	       Caso de teste já disponível:
+	    */
+	    
+	    char s1[7] = "alegria";
+	    
+	    strDelStr(s1,"a");
+
+	    testUnitario(s1);
+	    return 0;
+	}
+
+
+	//test.c
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <math.h>
+
+	void testUnitario(char *s){
+  
+	    double grade = 0;
+	    int testsPassed = 0;
+	    int testsFailed = 1;
+	    
+	    
+	    if(strcmp(s, "legria") == 0){
+	        testsPassed++;
+	        testsFailed--;
+	    }
+	    
+	    if(testsPassed == 1)
+	        grade = 1;
+	   
+	   
+	    printf("<!--@test=%.2lf;%d;%d;-->",grade,testsPassed,testsFailed);
+	      
+	 }
+
+
+
+ 
+  </xmp>
+</figure>
+</body>
+</html>
+
