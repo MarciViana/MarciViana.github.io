@@ -378,8 +378,8 @@ function codigosBase(){
    $('#e18 option:selected').each(function(){
         if(this.value == "Cap. 8. Pág. 201 - 8. Apaga todos os caracteres maiúsculos em s - Estimativa: 10 minutos")
           window.open("https://marciviana.github.io/codigo_base_apaga_maiusculos.html", 'apaga_maiusculos');
-        if(this.value == "Cap. 8. Pág. 201 - 9. Apaga em s1 a primeira ocorrência de s2 - Estimativa: 10 minutos")
-          window.open("https://marciviana.github.io/codigo_base_apaga_prim_ocorrencia.html", 'apaga_prim_ocor'); 
+      if(this.value == "Cap. 8. Pág. 201 - 9. Apaga em s1 a primeira ocorrência de s2 - Estimativa: 10 minutos")
+        window.open("https://marciviana.github.io/codigo_base_apaga_prim_ocorrencia.html", 'apaga_prim_ocor'); 
     });
 }
 
