@@ -19,6 +19,14 @@ function selecionaPlataforma(){
           exists = 1;
         });
   }
+  //plataforma pythontutor selecionada
+  if (document.getElementById("python3").checked) {
+        
+        $('#escolhe').mouseup(function() {
+          $('#geraPython').toggle();
+          exists = 1;
+        });
+  }
 }
 
 //constrói o cabeçalho do guião
@@ -109,6 +117,8 @@ function build_table(doc,numeroGuia)
           doc.text(x, y, linhasCodeboard[i]);
         if(numeroGuia == "uri")
           doc.text(x, y, linhasURI[i]);
+        if(numeroGuia == "python")
+          doc.text(x, y, linhasPython[i]);
       }
     }
 
@@ -132,6 +142,11 @@ function build_body(doc,tipoGuia,numeroGuia)
       imgB = imgBaseAlunoURI;
       
     }
+    else if(numeroGuia == "python"){
+      textB = textoBaseAlunoPython;
+      imgB = imgBaseAlunoPython;
+      
+    }
   }
   else
   {
@@ -142,6 +157,11 @@ function build_body(doc,tipoGuia,numeroGuia)
     else if(numeroGuia == "uri"){
       textB = textoBaseProfessorURI;
       imgB = imgBaseProfessorURI;   
+     
+    }
+    else if(numeroGuia == "python"){
+      textB = textoBaseProfessorPython;
+      imgB = imgBaseProfessorPython;   
      
     }
    
@@ -239,6 +259,16 @@ function build_body(doc,tipoGuia,numeroGuia)
         });
       }
 
+      //exercicios python
+      if(i ==  1){
+        $('#e4 option:selected').each(function(){
+              if(tipoGuia == "professor")
+                textB[i] += "\n" + this.value;
+              contaExercicios++;
+        });
+        
+      }
+
       if(i % 3 == 0 && i != 0){
         doc.addPage(); 
         inicioTexto = 30;
@@ -290,10 +320,14 @@ function build_body(doc,tipoGuia,numeroGuia)
       }
       var conta = 0;
 
+      //imagens após os exercícios
       if(tipoGuia == "professor" && numeroGuia == "codeboard" && i == 1)
         doc.addImage(imgB[i], 'JPEG', 60, high + 100, 100, 60);  
       else if(tipoGuia == "professor" && (numeroGuia == "uri") && i == 5)
         doc.addImage(imgB[i], 'JPEG', 60, high + 95, 100, 60); 
+      else if(tipoGuia == "professor" && (numeroGuia == "python") && i == 1)
+        doc.addImage(imgB[i], 'JPEG', 60, high + 95, 100, 60); 
+
 
       //primeira imagem uri_codeboard/codeboard
       else if(tipoGuia == "professor" && i == 0 && numeroGuia == "codeboard"){
