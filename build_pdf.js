@@ -20,7 +20,7 @@ function selecionaPlataforma(){
         });
   }
   //plataforma pythontutor selecionada
-  if (document.getElementById("python3").checked) {
+  if (document.getElementById("python3").checked||document.getElementById("python5").checked) {
         
         $('#escolhe').mouseup(function() {
           $('#geraPython').toggle();
@@ -262,6 +262,11 @@ function build_body(doc,tipoGuia,numeroGuia)
       //exercicios python
       if(i ==  1){
         $('#e4 option:selected').each(function(){
+              if(tipoGuia == "professor")
+                textB[i] += "\n" + this.value;
+              contaExercicios++;
+        });
+        $('#e9 option:selected').each(function(){
               if(tipoGuia == "professor")
                 textB[i] += "\n" + this.value;
               contaExercicios++;
