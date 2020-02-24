@@ -20,7 +20,8 @@ function selecionaPlataforma(){
         });
   }
   //plataforma pythontutor selecionada
-  if (document.getElementById("python3").checked||document.getElementById("python5").checked) {
+  if (document.getElementById("python3").checked||document.getElementById("python5").checked||
+    document.getElementById("python6").checked) {
         
         $('#escolhe').mouseup(function() {
           $('#geraPython').toggle();
@@ -259,20 +260,64 @@ function build_body(doc,tipoGuia,numeroGuia)
         });
       }
 
-      //exercicios python
+      //exercicios python 
       if(i ==  1){
         $('#e4 option:selected').each(function(){
-              if(tipoGuia == "professor")
-                textB[i] += "\n" + this.value;
+               if(tipoGuia == "professor"){
+                if(cont>0)
+                  textB[i] = textB[i] + "\n" + this.value;  
+                else{
+                  textB[i] = textB[i][0] + "\n" + this.value;
+                  cont++;
+                }              
+              }
               contaExercicios++;
         });
         $('#e9 option:selected').each(function(){
-              if(tipoGuia == "professor")
-                textB[i] += "\n" + this.value;
+               if(tipoGuia == "professor"){
+                if(cont>0)
+                  textB[i] = textB[i] + "\n" + this.value;  
+                else{
+                  textB[i] = textB[i][0] + "\n" + this.value;
+                  cont++;
+                }              
+              }
               contaExercicios++;
         });
-        
+        $('#e19 option:selected').each(function(){
+               if(tipoGuia == "professor"){
+                if(cont>0)
+                  textB[i] = textB[i] + "\n" + this.value;  
+                else{
+                  textB[i] = textB[i][1] + "\n" + this.value;
+                  cont++;
+                }              
+              }
+              contaExercicios++;
+        });
       }
+      var conta = 0;
+      //alterações python
+      if(tipoGuia == "professor" && (i == 0|| i == 2)){
+      $('#e4 option:selected').each(function(){             
+            if(conta == 0){
+              textB[i] = textB[i][0]; 
+              conta++;
+            }                     
+      });
+      $('#e9 option:selected').each(function(){             
+            if(conta == 0){
+              textB[i] = textB[i][0]; 
+              conta++;
+            }                     
+      });
+      $('#e19 option:selected').each(function(){             
+            if(conta == 0){
+              textB[i] = textB[i][1]; 
+              conta++;
+            }                     
+      });
+    }
 
       if(i % 3 == 0 && i != 0){
         doc.addPage(); 
@@ -330,8 +375,8 @@ function build_body(doc,tipoGuia,numeroGuia)
         doc.addImage(imgB[i], 'JPEG', 60, high + 100, 100, 60);  
       else if(tipoGuia == "professor" && (numeroGuia == "uri") && i == 5)
         doc.addImage(imgB[i], 'JPEG', 60, high + 95, 100, 60); 
-      else if(tipoGuia == "professor" && (numeroGuia == "python") && i == 1)
-        doc.addImage(imgB[i], 'JPEG', 60, high + 95, 100, 60); 
+     // else if(tipoGuia == "professor" && (numeroGuia == "python") && i == 1)
+      //  doc.addImage(imgB[i], 'JPEG', 60, high + 95, 100, 60); 
 
 
       //primeira imagem uri_codeboard/codeboard
@@ -366,6 +411,37 @@ function build_body(doc,tipoGuia,numeroGuia)
               conta++;
             }                     
           });
+      }
+      //primeira e segunda imagem cpuzzles_pythontutor/livro_pythontutor
+      else if(tipoGuia == "professor" && (i == 0 || i == 1) && numeroGuia == "python"){
+          $('#e4 option:selected').each(function(){             
+            if(conta == 0){
+              if(i == 0)
+                doc.addImage(imgB[i][0], 'JPEG', 60, high + 75, 100, 60);  
+              else
+                doc.addImage(imgB[i][0], 'JPEG', 60, high + 95, 100, 60);  
+              conta++;
+            }                     
+          });
+          $('#e9 option:selected').each(function(){             
+            if(conta == 0){
+              if(i == 0)
+                doc.addImage(imgB[i][0], 'JPEG', 60, high + 75, 100, 60);  
+              else
+                doc.addImage(imgB[i][0], 'JPEG', 60, high + 95, 100, 60);  
+              conta++;
+            }                     
+          });
+          $('#e19 option:selected').each(function(){             
+            if(conta == 0){
+              if(i == 0)
+                doc.addImage(imgB[i][1], 'JPEG', 60, high + 75, 100, 60);  
+              else
+                doc.addImage(imgB[i][1], 'JPEG', 60, high + 75, 100, 60);  
+              conta++;
+            }                     
+          });
+          
       }
       
       else

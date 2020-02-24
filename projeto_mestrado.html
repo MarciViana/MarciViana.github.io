@@ -86,7 +86,7 @@
 
 	$(document).ready(function(){
 	    $('input[type="checkbox"]').click(function(){
-	    	$('#e1','#e2','#e3','#e4','#e5','#e6','#e7','#e8','#e9','#e10','#e11','#e12','#e13','#e14','#e15','#e16','#e17','#e18').show();
+	    	$('#e1','#e2','#e3','#e4','#e5','#e6','#e7','#e8','#e9','#e10','#e11','#e12','#e13','#e14','#e15','#e16','#e17','#e18','#e19').show();
 	        var inputValue = $(this).attr("value");
 	        var targetBox = $("." + inputValue);
 	        $(".caixa").not(targetBox).hide();
@@ -205,7 +205,7 @@
 
 	  <div class="seis box" id="c6" style="display: none">
 	  	<input type="checkbox" class="seis" name="plataforma" value="uri6" id="uri6" onclick="selecionaPlataforma()"> URI Online Judge <br>
-<!--	    <input type="checkbox" class="seis" name="plataforma" value="codeboard6" id="codeboard6" onclick="selecionaPlataforma()"> Codeboard <br>-->
+		<input type="checkbox" class="seis" name="plataforma" value="python6" id="python6" onclick="selecionaPlataforma()"> PythonTutor <br>
 	  </div> 
 
 	  <div class="sete box" id="c7" style="display: none">
@@ -351,6 +351,13 @@
       <option id="uri61">1238 - Combiner - Estimativa: 10 minutos</option>
       <option id="uri62">1253 - Caesar Chiper - Estimativa: 10 minutos</option>
       <option id="uri63">1175 - Array Hash - Estimativa: 10 minutos</option>
+    </select>
+	</div>
+
+	<div class="python6 caixa" id="e19" style="display: none">
+	<select multiple class="form-control" id="e19">
+      <option id="python61">Cap. 7. Pág. 171 - 2.1. Devolver o número de caracteres alfabéticos de uma string - Estimativa: 10 minutos</option>
+      <option id="python62">Cap. 7. Pág. 171 - 3.1. Retirar os caracteres que não se encontram repetidos em uma string - Estimativa: 10 minutos</option>
     </select>
 	</div>
 
