@@ -21,7 +21,7 @@ function selecionaPlataforma(){
   }
   //plataforma pythontutor selecionada
   if (document.getElementById("python3").checked||document.getElementById("python5").checked||
-    document.getElementById("python6").checked) {
+    document.getElementById("python6").checked || document.getElementById("python7").checked) {
         
         $('#escolhe').mouseup(function() {
           $('#geraPython').toggle();
@@ -295,6 +295,17 @@ function build_body(doc,tipoGuia,numeroGuia)
               }
               contaExercicios++;
         });
+        $('#e20 option:selected').each(function(){
+               if(tipoGuia == "professor"){
+                if(cont>0)
+                  textB[i] = textB[i] + "\n" + this.value;  
+                else{
+                  textB[i] = textB[i][1] + "\n" + this.value;
+                  cont++;
+                }              
+              }
+              contaExercicios++;
+        });
       }
       var conta = 0;
       //alterações python
@@ -312,6 +323,12 @@ function build_body(doc,tipoGuia,numeroGuia)
             }                     
       });
       $('#e19 option:selected').each(function(){             
+            if(conta == 0){
+              textB[i] = textB[i][1]; 
+              conta++;
+            }                     
+      });
+      $('#e20 option:selected').each(function(){             
             if(conta == 0){
               textB[i] = textB[i][1]; 
               conta++;
@@ -433,6 +450,15 @@ function build_body(doc,tipoGuia,numeroGuia)
             }                     
           });
           $('#e19 option:selected').each(function(){             
+            if(conta == 0){
+              if(i == 0)
+                doc.addImage(imgB[i][1], 'JPEG', 60, high + 75, 100, 60);  
+              else
+                doc.addImage(imgB[i][1], 'JPEG', 60, high + 75, 100, 60);  
+              conta++;
+            }                     
+          });
+          $('#e20 option:selected').each(function(){             
             if(conta == 0){
               if(i == 0)
                 doc.addImage(imgB[i][1], 'JPEG', 60, high + 75, 100, 60);  

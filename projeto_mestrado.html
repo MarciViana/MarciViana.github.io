@@ -86,7 +86,7 @@
 
 	$(document).ready(function(){
 	    $('input[type="checkbox"]').click(function(){
-	    	$('#e1','#e2','#e3','#e4','#e5','#e6','#e7','#e8','#e9','#e10','#e11','#e12','#e13','#e14','#e15','#e16','#e17','#e18','#e19').show();
+	    	$('#e1','#e2','#e3','#e4','#e5','#e6','#e7','#e8','#e9','#e10','#e11','#e12','#e13','#e14','#e15','#e16','#e17','#e18','#e19','#e20').show();
 	        var inputValue = $(this).attr("value");
 	        var targetBox = $("." + inputValue);
 	        $(".caixa").not(targetBox).hide();
@@ -210,6 +210,7 @@
 
 	  <div class="sete box" id="c7" style="display: none">
 	  	<input type="checkbox" class="sete" name="plataforma" value="codeboard7" id="codeboard7" onclick="selecionaPlataforma()"> Codeboard <br>
+	  	<input type="checkbox" class="sete" name="plataforma" value="python7" id="python7" onclick="selecionaPlataforma()"> PythonTutor <br>
 
 	  </div>
  
@@ -364,7 +365,15 @@
 	<div class="codeboard7 caixa" id="e18" style="display: none">
 	<select multiple class="form-control" id="e18">
       <option id="codeboard71">Cap. 8. Pág. 201 - 8. Apaga todos os caracteres maiúsculos em s - Estimativa: 10 minutos</option>
-     <option id="codeboard72">Cap. 8. Pág. 201 - 9. Apaga em s1 a primeira ocorrência de s2 - Estimativa: 10 minutos</option>
+      <option id="codeboard72">Cap. 8. Pág. 201 - 9. Apaga em s1 a primeira ocorrência de s2 - Estimativa: 10 minutos</option>
+    </select>
+	</div>
+
+	<div class="python7 caixa" id="e20" style="display: none">
+	<select multiple class="form-control" id="e20">
+	  <option id="python72">Cap. 8. Pág. 200 - 3. Retornar o endereço da última ocorrência de "ch" em s  - Estimativa: 10 minutos</option>
+      <option id="python73">Cap. 8. Pág. 201 - 8. Apagar todos os caracteres maiúsculos em s - Estimativa: 10 minutos</option>
+      <option id="python74">Cap. 8. Pág. 201 - 9. Apagar em s1 a primeira ocorrência de s2 - Estimativa: 10 minutos</option>
     </select>
 	</div>
 
