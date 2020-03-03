@@ -16,6 +16,7 @@ function selecionaPlataforma(){
         
         $('#escolhe').mouseup(function() {
           $('#geraCodeboard').toggle();
+          $('#geraBasCodeboard').toggle();
           exists = 1;
         });
   }

@@ -107,6 +107,7 @@
 	$(document).ready(function() {
   		$('#geraURI').hide();
   		$('#geraCodeboard').hide();
+  		$('#geraBasCodeboard').hide();
   		$('#geraPython').hide();
   		$('#escolhe').hide();
 
@@ -396,6 +397,7 @@
 
 	<input type="button" value="Gerar Guião URI" id="geraURI" onclick="build_prof_pdf('uri')" class="btn btn-primary" />
 	<input type="button" value="Gerar Guião Codeboard" id="geraCodeboard" onclick="build_prof_pdf('codeboard')" class="btn btn-primary" />
+	<a id="geraBasCodeboard" href="script_csv.bas" download>Download Codeboard .bas File</a>
 	<input type="button" value="Gerar Guião Python" id="geraPython" onclick="build_prof_pdf('python')" class="btn btn-primary" />
 
 
@@ -403,7 +405,6 @@
 </div>
 
 </div><br>
-
 
 
 <div style="background-color:#87CEFA;text-align:center;padding:10px;margin-top:7px;font-size:12px; "> Proposta de Trabalho referente ao Mestrado em Sistemas de Informação pelo Instituto Politécnico de Bragança - IPB.<br>Autora: Marcela Viana Pereira de Almeida<br>Contato: marcelavpa@gmail.com</div>
