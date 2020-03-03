@@ -46,6 +46,9 @@ Sheets.Add(After:=Sheets("Plan1")).Name = "Plan2"
     Else
         Cells(cont_student + 4, 2).Value = 0
     End If
+    Cells(cont_student + 5, 1).Value = "Total Alunos"
+    Cells(cont_student + 5, 1).Interior.ColorIndex = 34
+    Cells(cont_student + 5, 2).Value = cont_student - 1
     Worksheets("Plan2").Columns("A:E").AutoFit
     Worksheets("Plan2").Range("A1:D1").BorderAround _
     ColorIndex:=1
