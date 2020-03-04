@@ -17,11 +17,11 @@ Sheets.Add(After:=Sheets("Plan1")).Name = "Plan2"
             Worksheets("Plan2").Activate
             Cells(1, 1).Value = "Username Aluno"
             Cells(1, 1).Interior.ColorIndex = 34
-            Cells(1, 2).Value = "Num Tests Passed"
+            Cells(1, 2).Value = "Número Testes Aprovados"
             Cells(1, 2).Interior.ColorIndex = 34
-            Cells(1, 3).Value = "Num Tests Failed"
+            Cells(1, 3).Value = "Número Testes que Falharam"
             Cells(1, 3).Interior.ColorIndex = 34
-            Cells(1, 4).Value = "Submission Date"
+            Cells(1, 4).Value = "Data de Submissão"
             Cells(1, 4).Interior.ColorIndex = 34
             Cells(cont_student + 2, 1).Value = user_student
             Cells(cont_student + 2, 2).Value = num_testsPassed
@@ -32,6 +32,12 @@ Sheets.Add(After:=Sheets("Plan1")).Name = "Plan2"
         End If
     Next students
     Worksheets("Plan2").Activate
+    Dim chrt As ChartObject
+ 
+    Set chrt = Sheets("Plan2").ChartObjects.Add(Left:=280, Width:=270, Top:=7, Height:=210)
+    chrt.Chart.SetSourceData Source:=Sheets("Plan2").Range(Cells(1, 1), Cells(cont_student, 2))
+    chrt.Chart.ChartType = xlPie
+    
     Cells(cont_student + 3, 1).Value = "Media Tests Passed"
     Cells(cont_student + 3, 1).Interior.ColorIndex = 34
     If ((mediaPassed <> 0) And cont_student <> 0) Then
@@ -52,5 +58,8 @@ Sheets.Add(After:=Sheets("Plan1")).Name = "Plan2"
     Worksheets("Plan2").Columns("A:E").AutoFit
     Worksheets("Plan2").Range("A1:D1").BorderAround _
     ColorIndex:=1
+    
 End Sub
+
+
 
