@@ -108,6 +108,7 @@
   		$('#geraURI').hide();
   		$('#geraCodeboard').hide();
   		$('#geraBasCodeboard').hide();
+  		$('#geraInfoEstatistica').hide();
   		$('#geraPython').hide();
   		$('#escolhe').hide();
 
@@ -405,6 +406,12 @@
 </form>
 <br>
 <input type="button" value="Escolher" id="escolhe" onclick="escolher()" class="btn btn-primary" />
+<br><br>
+<div id="geraInfoEstatistica" class="alert alert-info alert-dismissible">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Análise Estatística!</strong> <br>A plataforma escolhida pode gerar resultados dos alunos em um arquivo .csv! Portanto disponibilizamos um algoritmo que pode ser utilizado no Excel para gerar análises estatísticas. <br>Basta fazer o download do arquivo .bas, abrir o arquivo .csv (gerado pela plataforma) no Excel e importar o algoritmo dentro da área "DESENVOLVEDOR -> Visual Basic" do Excel. Por fim, executar o código e visualizar os resultados na nova Folha criada.
+  </div>
+
 <div style="text-align:center;">
 
 	<input type="button" value="Gerar Guião URI" id="geraURI" onclick="build_prof_pdf('uri')" class="btn btn-primary" />

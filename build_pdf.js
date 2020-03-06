@@ -17,6 +17,7 @@ function selecionaPlataforma(){
         $('#escolhe').mouseup(function() {
           $('#geraCodeboard').toggle();
           $('#geraBasCodeboard').toggle();
+          $('#geraInfoEstatistica').toggle();
           exists = 1;
         });
   }
