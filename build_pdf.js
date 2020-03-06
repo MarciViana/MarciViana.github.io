@@ -23,7 +23,7 @@ function selecionaPlataforma(){
   //plataforma pythontutor selecionada
   if (document.getElementById("python3").checked||document.getElementById("python5").checked||
     document.getElementById("python6").checked || document.getElementById("python7").checked||
-    document.getElementById("python72").checked) {
+    document.getElementById("python72").checked||document.getElementById("python8").checked) {
         
         $('#escolhe').mouseup(function() {
           $('#geraPython').toggle();
@@ -102,8 +102,9 @@ function build_table(doc,numeroGuia)
         if(document.getElementById("materia6").checked )
           doc.text(x, y, linhasCodeboard[i][5]); //strings
         if(document.getElementById("materia7").checked )
-          doc.text(x, y, linhasCodeboard[i][6]); //strings
-        
+          doc.text(x, y, linhasCodeboard[i][6]); //apontadores
+        if(document.getElementById("materia8").checked )
+          doc.text(x, y, linhasCodeboard[i][7]); //recursividade
       }
 
       //verifica se é dentro ou fora de sala de aula
@@ -319,6 +320,17 @@ function build_body(doc,tipoGuia,numeroGuia)
               }
               contaExercicios++;
         });
+        $('#e22 option:selected').each(function(){
+               if(tipoGuia == "professor"){
+                if(cont>0)
+                  textB[i] = textB[i] + "\n" + this.value;  
+                else{
+                  textB[i] = textB[i][1] + "\n" + this.value;
+                  cont++;
+                }              
+              }
+              contaExercicios++;
+        });
       }
       var conta = 0;
       //alterações python
@@ -348,6 +360,12 @@ function build_body(doc,tipoGuia,numeroGuia)
             }                     
       });
       $('#e20 option:selected').each(function(){             
+            if(conta == 0){
+              textB[i] = textB[i][1]; 
+              conta++;
+            }                     
+      });
+      $('#e22 option:selected').each(function(){             
             if(conta == 0){
               textB[i] = textB[i][1]; 
               conta++;
@@ -495,6 +513,15 @@ function build_body(doc,tipoGuia,numeroGuia)
               conta++;
             }                     
           });
+          $('#e22 option:selected').each(function(){             
+            if(conta == 0){
+              if(i == 0)
+                doc.addImage(imgB[i][1], 'JPEG', 60, high + 75, 100, 60);  
+              else
+                doc.addImage(imgB[i][1], 'JPEG', 60, high + 75, 100, 60);  
+              conta++;
+            }                     
+          });
           
       }
       
@@ -505,12 +532,15 @@ function build_body(doc,tipoGuia,numeroGuia)
       inicioImg = inicioImg + espacoLinhasImg;
       high = high + 90;
 
-      //adiciona quantidade de exercícios
+      //adiciona quantidade de exercícios e duração
       var x = 32;
       var y = 147;  
       if(contaExercicios != 0){
         doc.setPage(1);
         doc.text(x, y, contaExercicios.toString());
+        y = 136;
+        var duracao = contaExercicios * 10;
+        doc.text(x, y, duracao.toString());
       }
 
    }

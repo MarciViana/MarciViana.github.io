@@ -86,7 +86,7 @@
 
 	$(document).ready(function(){
 	    $('input[type="checkbox"]').click(function(){
-	    	$('#e1','#e2','#e3','#e4','#e5','#e6','#e7','#e8','#e9','#e10','#e11','#e12','#e13','#e14','#e15','#e16','#e17','#e18','#e19','#e20','#e21').show();
+	    	$('#e1','#e2','#e3','#e4','#e5','#e6','#e7','#e8','#e9','#e10','#e11','#e12','#e13','#e14','#e15','#e16','#e17','#e18','#e19','#e20','#e21','#e22').show();
 	        var inputValue = $(this).attr("value");
 	        var targetBox = $("." + inputValue);
 	        $(".caixa").not(targetBox).hide();
@@ -96,7 +96,7 @@
 
 	$(document).ready(function(){
 	    $('input[type="radio"]').click(function(){
-	    	$('#c1','#c2','#c3','#c4','#c5','#c6','#c7').show();
+	    	$('#c1','#c2','#c3','#c4','#c5','#c6','#c7','#c8').show();
 	        var inputValue = $(this).attr("value");
 	        var targetBox = $("." + inputValue);
 	        $(".box").not(targetBox).hide();
@@ -170,6 +170,7 @@
   <input type="radio" name="materia" id="materia5" value="cinco" >Vetores - Programação I<br>
   <input type="radio" name="materia" id="materia6" value="seis" >String - Programação II<br>
   <input type="radio" name="materia" id="materia7" value="sete" >Apontadores - Programação II<br>
+  <input type="radio" name="materia" id="materia8" value="oito" >Recursividade - Programação II<br>
  
  
 </form><br>
@@ -215,6 +216,10 @@
 	  	<input type="checkbox" class="sete" name="plataforma" value="codeboard7" id="codeboard7" onclick="selecionaPlataforma()"> Codeboard <br>
 	  	<input type="checkbox" class="sete" name="plataforma" value="python7" id="python7" onclick="selecionaPlataforma()"> PythonTutor (Exercícios do Livro Linguagem C) <br>
 	  	<input type="checkbox" class="sete" name="plataforma" value="python72" id="python72" onclick="selecionaPlataforma()"> CPuzzles e PythonTutor <br>
+	  </div>
+
+	  <div class="oito box" id="c8" style="display: none">
+	  	<input type="checkbox" class="oito" name="plataforma" value="python8" id="python8" onclick="selecionaPlataforma()"> PythonTutor (Exercícios do Livro Linguagem C) <br>
 	  </div>
  
 </form><br>
@@ -389,6 +394,13 @@
     </select>
 	</div>
 
+	<div class="python8 caixa" id="e22" style="display: none">
+	<select multiple class="form-control" id="e22">
+      <option id="python81">Cap. 9. Pág. 226. 4. Escreva, de forma iterativa e recursiva, a função de Fibonacci. Estimativa: 10 min.</option>
+      <option id="python82">Cap. 9. Pág. 226. 5. Escreva, de forma recursiva, uma função que concatena duas strings. Estimativa: 10 min.</option>
+      <option id="python83">Cap. 9. Pág. 227. 6. Faça recursivamente uma função que mostra o endereço de "ch" em uma str. Estimativa: 10 min.</option>
+    </select>
+	</div>
 
 </form>
 <br>
