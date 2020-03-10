@@ -6,6 +6,8 @@ function selecionaPlataforma(){
         
         $('#escolhe').mouseup(function() {
           $('#geraURI').toggle();
+          $('#geraBasUri').toggle();
+          $('#geraInfoEstatistica').toggle();
           exists = 1;
         });
   }
