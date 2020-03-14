@@ -7,7 +7,7 @@ Sheets.Add(After:=Sheets("Plan1")).Name = "Plan2"
     For students = 2 To 100
         Worksheets("Plan1").Activate
         user_student = Cells(students, 3).Value
-        If (user_student <> Cells(students - 1, 1).Value) Then
+        If (user_student <> Cells(students - 1, 3).Value) Then
             num_testsPassed = Cells(students, 5).Value
             mediaPassed = mediaPassed + num_testsPassed
             num_testsFailed = Cells(students, 6).Value
@@ -34,9 +34,10 @@ Sheets.Add(After:=Sheets("Plan1")).Name = "Plan2"
     Worksheets("Plan2").Activate
     Dim chrt As ChartObject
  
-    Set chrt = Sheets("Plan2").ChartObjects.Add(Left:=280, Width:=270, Top:=7, Height:=210)
-    chrt.Chart.SetSourceData Source:=Sheets("Plan2").Range(Cells(1, 1), Cells(cont_student, 2))
-    chrt.Chart.ChartType = xlPie
+    Set chrt = Sheets("Plan2").ChartObjects.Add(Left:=280, Width:=500, Top:=7, Height:=700)
+    chrt.Chart.SetSourceData Source:=Sheets("Plan2").Range(Cells(1, 1), Cells(cont_student, 3))
+    chrt.Chart.ChartType = xlBarClustered
+    
     
     Cells(cont_student + 3, 1).Value = "Media Tests Passed"
     Cells(cont_student + 3, 1).Interior.ColorIndex = 34
