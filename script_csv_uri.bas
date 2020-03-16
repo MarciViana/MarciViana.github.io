@@ -38,6 +38,14 @@ Sheets.Add(After:=Sheets("Plan1")).Name = "Plan2"
     chrt.Chart.SetSourceData Source:=Sheets("Plan2").Range(Cells(1, 1), Cells(cont_student, 3))
     chrt.Chart.ChartType = xlBarClustered
     
+    Dim chrt2 As ChartObject
+ 
+    Set chrt2 = Sheets("Plan2").ChartObjects.Add(Left:=280, Width:=500, Top:=750, Height:=700)
+    Set MyDataSource1 = Sheets("Plan2").Range(Cells(1, 1), Cells(cont_student, 1))
+    Set MyDataSource2 = Sheets("Plan2").Range(Cells(1, 4), Cells(cont_student, 4))
+    chrt2.Chart.SetSourceData Source:=Union(MyDataSource1, MyDataSource2)
+    chrt2.Chart.ChartType = xlBarClustered
+    
     
     Cells(cont_student + 3, 1).Value = "Media Tests Passed"
     Cells(cont_student + 3, 1).Interior.ColorIndex = 34
