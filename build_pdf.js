@@ -585,6 +585,12 @@ function codigosBase(){
     });
 }
 
+function atualizaPag()
+{
+  location.reload();
+  $('html,body').scrollTop(0);
+}
+
 function build_prof_pdf(numeroGuia)
 {
   if(numeroGuia == "codeboard"){
