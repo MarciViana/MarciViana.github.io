@@ -110,6 +110,7 @@
   		$('#geraBasCodeboard').hide();
   		$('#geraBasUri').hide();
   		$('#geraInfoEstatistica').hide();
+  		$('#geraInfoURI').hide();
   		$('#geraPython').hide();
   		$('#escolhe').hide();
 
@@ -418,10 +419,14 @@
 <br>
 <input type="button" value="Escolher" id="escolhe" onclick="escolher()" class="btn btn-primary" />
 <br><br>
+<div id="geraInfoURI" class="alert alert-warning alert-dismissible">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>URI Online Judge:</strong> Podes encontrar o enunciado de cada exercício selecionado acima no próprio site do <i>URI Online Judge</i> (https://www.urionlinejudge.com.br/judge/pt), pesquisando pelo número ou nome do exercício, caso queira saber melhor sobre o que se trata cada um antes de gerar o guião de atividade.
+ </div>
 <div id="geraInfoEstatistica" class="alert alert-info alert-dismissible">
     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
     <strong>Análise Estatística!</strong> <br>A plataforma escolhida pode gerar resultados dos alunos em um arquivo .csv! Portanto disponibilizamos um algoritmo que pode ser utilizado no Excel para gerar análises estatísticas. <br>Basta fazer o download do arquivo .bas, abrir o arquivo .csv (gerado pela plataforma) no Excel e importar o algoritmo dentro da área "DESENVOLVEDOR -> Visual Basic" do Excel. Por fim, executar o código e visualizar os resultados na nova Folha criada.
-  </div>
+ </div>
 
 <div style="text-align:center;">
 
