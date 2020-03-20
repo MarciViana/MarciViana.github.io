@@ -14,7 +14,7 @@ function selecionaPlataforma(){
   //plataforma codeboard selecionada
   if (document.getElementById("uricodeboard1").checked||document.getElementById("uricodeboard2").checked||
       document.getElementById("uricodeboard3").checked||document.getElementById("codeboard4").checked||
-      document.getElementById("codeboard7").checked) {
+      document.getElementById("codeboard6").checked||document.getElementById("codeboard7").checked) {
         
         $('#escolhe').mouseup(function() {
           $('#geraCodeboard').toggle();
@@ -264,6 +264,17 @@ function build_body(doc,tipoGuia,numeroGuia)
               }
               contaExercicios++;
         });
+        $('#e23 option:selected').each(function(){
+              if(tipoGuia == "professor"){
+                if(cont>0)
+                  textB[i] = textB[i] + "\n" + this.value;  
+                else{
+                  textB[i] = textB[i][1] + "\n" + this.value;
+                  cont++;
+                }              
+              }
+              contaExercicios++;
+        });
       }
 
       //exercicios python 
@@ -468,6 +479,12 @@ function build_body(doc,tipoGuia,numeroGuia)
               conta++;
             }                     
           });
+          $('#e23 option:selected').each(function(){         
+            if(conta == 0){
+              doc.addImage(imgB[i][1], 'JPEG', 60, high + 75, 100, 60);  
+              conta++;
+            }                     
+          });
       }
       //primeira e segunda imagem cpuzzles_pythontutor/livro_pythontutor
       else if(tipoGuia == "professor" && (i == 0 || i == 1) && numeroGuia == "python"){
@@ -582,6 +599,10 @@ function codigosBase(){
           window.open("https://marciviana.github.io/codigo_base_apaga_maiusculos.html", 'apaga_maiusculos');
       if(this.value == "Cap. 8. Pág. 201 - 9. Apaga em s1 a primeira ocorrência de s2 - Estimativa: 10 minutos")
         window.open("https://marciviana.github.io/codigo_base_apaga_prim_ocorrencia.html", 'apaga_prim_ocor'); 
+    });
+   $('#e23 option:selected').each(function(){
+        if(this.value == "Cap. 7. Pág. 182 - 3.1. Receba uma string e retire os caracteres que não se encontram repetidos - Estimativa: 10 min")
+          window.open("https://marciviana.github.io/codigo_base_retira_caracteres.html", 'retira_caracteres');
     });
 }
 

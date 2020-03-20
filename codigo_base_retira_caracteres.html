@@ -1,0 +1,73 @@
+</!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+	<figure>
+  <figcaption>Códigos Base para a plataforma Codeboard</figcaption>
+  <xmp>
+    //----------Exercício 3.1 - Capítulo 7. Página 182 - Livro Linguagem C. Luis Damas. 10 Edição------------
+
+
+	//main.c
+
+	#include <stdio.h>
+	#include <stdlib.h>
+
+	int main (){
+    	/*Receba uma string, retirando-lhe todos os caracteres que não se encontram repetidos.
+          Caso de teste:        "ALFACE"         ->     "AA"   */
+        
+   
+    	char y[6] = "ALFACE";
+    
+    	//desenvolva a resposta aqui
+    
+    
+    	testUnitario(y);
+    	return 0;
+	}
+
+
+	//test.c
+
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <math.h>
+
+	void testUnitario(char * y){
+	  
+	    int i,cont=0,ok=0;
+	    double grade = 0;
+	    int testsPassed = 0;
+	    int testsFailed = 1;
+	    
+	    for(i=0;y[i]!='\0';i++){
+	        if(y[i] == 'A')
+	            ok = 1;
+	        else
+	            ok = 0;
+	        cont++;
+	    }
+	    if(ok == 1 && cont == 2){
+	        testsPassed++;
+	        testsFailed--;
+	    }
+	    
+	    if(testsPassed == 1)
+	        grade = 1;
+	   
+	   
+	    printf("<!--@test=%.2lf;%d;%d;-->",grade,testsPassed,testsFailed);
+	      
+	  }
+
+
+
+ 
+  </xmp>
+</figure>
+</body>
+</html>
+
