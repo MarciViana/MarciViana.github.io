@@ -85,17 +85,20 @@
 
 
 	$(document).ready(function(){
-	    $('input[type="checkbox"]').click(function(){
+	    $("input[type='radio'][name='plataforma']").click(function(){
 	    	$('#e1','#e2','#e3','#e4','#e5','#e6','#e7','#e8','#e9','#e10','#e11','#e12','#e13','#e14','#e15','#e16','#e17','#e18','#e19','#e20','#e21','#e22','#e23').show();
 	        var inputValue = $(this).attr("value");
 	        var targetBox = $("." + inputValue);
 	        $(".caixa").not(targetBox).hide();
 	        $(targetBox).show();
+
+	        $('#escolhe').toggle();
 	    });
 	});	
 
+
 	$(document).ready(function(){
-	    $('input[type="radio"]').click(function(){
+	    $("input[type='radio'][name='materia']").click(function(){
 	    	$('#c1','#c2','#c3','#c4','#c5','#c6','#c7','#c8').show();
 	        var inputValue = $(this).attr("value");
 	        var targetBox = $("." + inputValue);
@@ -114,9 +117,6 @@
   		$('#geraPython').hide();
   		$('#escolhe').hide();
 
-	  	$('input[type="checkbox"]').mouseup(function() {
-    		$('#escolhe').toggle();
-		});
  
 	});
 	  
@@ -165,7 +165,7 @@
 </form><br>
 
 
-<div>2) Matéria:</div><br>
+<div>2) Matéria (Selecionar apenas uma opção):</div><br>
 <form>
   <input type="radio" name="materia" id="materia1" value="um" >Dados de tipo elementar - Programação I<br>
   <input type="radio" name="materia" id="materia2" value="dois" >Testes e condições - Programação I<br>
@@ -183,48 +183,48 @@
 <form>	
 	
 	  <div class="um box" id="c1" style="display: none">	
-	  	<input type="checkbox" class="um" name="plataforma" value="uri1" id="uri1" onclick="selecionaPlataforma()"> URI Online Judge <br>
-	  	<input type="checkbox" class="um" name="plataforma" value="uricodeboard1" id="uricodeboard1" onclick="selecionaPlataforma()" > URI Online Judge e Codeboard <br>
+	  	<input type="radio" class="um" name="plataforma" value="uri1" id="uri1" onclick="selecionaPlataforma()"> URI Online Judge <br>
+	  	<input type="radio" class="um" name="plataforma" value="uricodeboard1" id="uricodeboard1" onclick="selecionaPlataforma()" > URI Online Judge e Codeboard <br>
 	  </div>
 
 	  <div class="dois box" id="c2" style="display: none">
-	  	<input type="checkbox" class="dois" name="plataforma" value="uricodeboard2" id="uricodeboard2" onclick="selecionaPlataforma()" > URI Online Judge e Codeboard <br>
-	  	<input type="checkbox" class="dois" name="plataforma" value="uri2" id="uri2" onclick="selecionaPlataforma()" > URI Online Judge <br>
+	  	<input type="radio" class="dois" name="plataforma" value="uricodeboard2" id="uricodeboard2" onclick="selecionaPlataforma()" > URI Online Judge e Codeboard <br>
+	  	<input type="radio" class="dois" name="plataforma" value="uri2" id="uri2" onclick="selecionaPlataforma()" > URI Online Judge <br>
 	  </div>
 
 	  <div class="tres box" id="c3" style="display: none">
-	  	<input type="checkbox" class="tres" name="plataforma" value="uricodeboard3" id="uricodeboard3" onclick="selecionaPlataforma()"> URI Online Judge e Codeboard <br>
-	  	<input type="checkbox" class="tres" name="plataforma" value="uri3" id="uri3" onclick="selecionaPlataforma()"> URI Online Judge <br>
-	  	<input type="checkbox" class="tres" name="plataforma" value="python3" id="python3" onclick="selecionaPlataforma()"> CPuzzles e PythonTutor <br>
+	  	<input type="radio" class="tres" name="plataforma" value="uricodeboard3" id="uricodeboard3" onclick="selecionaPlataforma()"> URI Online Judge e Codeboard <br>
+	  	<input type="radio" class="tres" name="plataforma" value="uri3" id="uri3" onclick="selecionaPlataforma()"> URI Online Judge <br>
+	  	<input type="radio" class="tres" name="plataforma" value="python3" id="python3" onclick="selecionaPlataforma()"> CPuzzles e PythonTutor <br>
 	    
 	   
 	  </div>
 
 	  <div class="quatro box" id="c4" style="display: none">    
-	  	<input type="checkbox" class="quatro" name="plataforma" value="codeboard4" id="codeboard4" onclick="selecionaPlataforma()"> Codeboard <br>
+	  	<input type="radio" class="quatro" name="plataforma" value="codeboard4" id="codeboard4" onclick="selecionaPlataforma()"> Codeboard <br>
 	<!--    <input type="checkbox" class="quatro" name="plataforma" value="codingame4" id="codingame4" onclick="selecionaPlataforma()"> CodinGame <br>
 	    <input type="checkbox" class="quatro" name="plataforma" value="coderbyte4" id="coderbyte4" onclick="selecionaPlataforma()"> Coderbyte <br>-->
 	  </div>
 
 	  <div class="cinco box" id="c5" style="display: none">
-	  	<input type="checkbox" class="cinco" name="plataforma" value="uri5" id="uri5" onclick="selecionaPlataforma()"> URI Online Judge <br>
-	  	<input type="checkbox" class="cinco" name="plataforma" value="python5" id="python5" onclick="selecionaPlataforma()"> CPuzzles e PythonTutor <br>
+	  	<input type="radio" class="cinco" name="plataforma" value="uri5" id="uri5" onclick="selecionaPlataforma()"> URI Online Judge <br>
+	  	<input type="radio" class="cinco" name="plataforma" value="python5" id="python5" onclick="selecionaPlataforma()"> CPuzzles e PythonTutor <br>
 	  </div>
 
 	  <div class="seis box" id="c6" style="display: none">
-	  	<input type="checkbox" class="seis" name="plataforma" value="uri6" id="uri6" onclick="selecionaPlataforma()"> URI Online Judge <br>
-	  	<input type="checkbox" class="seis" name="plataforma" value="codeboard6" id="codeboard6" onclick="selecionaPlataforma()"> Codeboard <br>
-		<input type="checkbox" class="seis" name="plataforma" value="python6" id="python6" onclick="selecionaPlataforma()"> PythonTutor (Exercícios do Livro Linguagem C) <br>
+	  	<input type="radio" class="seis" name="plataforma" value="uri6" id="uri6" onclick="selecionaPlataforma()"> URI Online Judge <br>
+	  	<input type="radio" class="seis" name="plataforma" value="codeboard6" id="codeboard6" onclick="selecionaPlataforma()"> Codeboard <br>
+		<input type="radio" class="seis" name="plataforma" value="python6" id="python6" onclick="selecionaPlataforma()"> PythonTutor (Exercícios do Livro Linguagem C) <br>
 	  </div> 
 
 	  <div class="sete box" id="c7" style="display: none">
-	  	<input type="checkbox" class="sete" name="plataforma" value="codeboard7" id="codeboard7" onclick="selecionaPlataforma()"> Codeboard <br>
-	  	<input type="checkbox" class="sete" name="plataforma" value="python7" id="python7" onclick="selecionaPlataforma()"> PythonTutor (Exercícios do Livro Linguagem C) <br>
-	  	<input type="checkbox" class="sete" name="plataforma" value="python72" id="python72" onclick="selecionaPlataforma()"> CPuzzles e PythonTutor <br>
+	  	<input type="radio" class="sete" name="plataforma" value="codeboard7" id="codeboard7" onclick="selecionaPlataforma()"> Codeboard <br>
+	  	<input type="radio" class="sete" name="plataforma" value="python7" id="python7" onclick="selecionaPlataforma()"> PythonTutor (Exercícios do Livro Linguagem C) <br>
+	  	<input type="radio" class="sete" name="plataforma" value="python72" id="python72" onclick="selecionaPlataforma()"> CPuzzles e PythonTutor <br>
 	  </div>
 
 	  <div class="oito box" id="c8" style="display: none">
-	  	<input type="checkbox" class="oito" name="plataforma" value="python8" id="python8" onclick="selecionaPlataforma()"> PythonTutor (Exercícios do Livro Linguagem C) <br>
+	  	<input type="radio" class="oito" name="plataforma" value="python8" id="python8" onclick="selecionaPlataforma()"> PythonTutor (Exercícios do Livro Linguagem C) <br>
 	  </div>
  
 </form><br>
