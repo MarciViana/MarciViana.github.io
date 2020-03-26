@@ -1,0 +1,75 @@
+</!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script type="text/javascript" src="build_pdf.js">	</script>
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script>
+		function geraSolucoes(){
+
+			$('#exercicios option:selected').each(function(){
+	      		if(this.value == "URI Online Judge - 1005 - Média 1")
+	          		$('#media1sol').show();
+	             	      		   
+	  		}); 
+		}
+
+	</script>
+</head>
+<body>
+	<div style="text-align:center;">
+		<br><br>
+	<div>(Ainda em Desenvolvimento)</div><br>
+	<div>Escolha os Exercícios que deseja visualizar um Exemplo de Solução</div><br>
+	<form>
+	  <select multiple class="form-control" id="exercicios">
+	    <option id="media1" >URI Online Judge - 1005 - Média 1</option>
+	    
+	  </select>
+	 
+	</form><br>
+	
+		<input type="button" value="Gerar Soluções" id="geraSolucao" onclick="geraSolucoes()" class="btn btn-primary" />
+	</div>
+  <div id="media1sol" style="display: none">	
+  <figure>
+  <figcaption>Exemplos de Solução aos Exercícios Escolhidos</figcaption>
+  
+  <xmp>
+
+//-----------------------------Exercício do URI Online Judge - 1005 – Média 1 -------------------------------
+
+
+	//main.c
+
+		#include <stdio.h>
+		#include <stdlib.h>
+		#include <math.h>
+
+		int main()
+		{
+			//o aluno deve declarar as variáveis media1, media2 e media3 e implementar o resultado das médias    
+			//media 1: A = 5.0 e B = 7.1
+			//media 2: A = 0.0 e B = 7.1
+			//media 3: A = 10.0 e B = 10.0
+			//A tem peso 3.5 e B tem peso 7.5
+			
+			double media1 = (3.5 * 5 + 7.5 * 7.1)/(3.5 + 7.5);
+			double media2 = (3.5 * 0 + 7.5 * 7.1)/(3.5 + 7.5);
+			double media3 = (3.5 * 10 + 7.5 * 10)/(3.5 + 7.5);
+		   
+		  
+			testeUnitario(media1,media2,media3);
+		   
+			return 0;
+		}
+
+
+  </xmp>
+  </div>
+  </figure>
+</body>
+</html>
+

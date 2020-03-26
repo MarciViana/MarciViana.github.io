@@ -116,6 +116,7 @@
   		$('#geraInfoURI').hide();
   		$('#geraPython').hide();
   		$('#escolhe').hide();
+  		$('#geraSolucao').hide();
 
  
 	});
@@ -391,10 +392,14 @@
 <div style="text-align:center;">
 
 	<input type="button" value="Gerar Guião URI" id="geraURI" onclick="build_prof_pdf('uri')" class="btn btn-primary" />
-	<a id="geraBasUri" href="script_csv_uri.bas" download>Download URI .bas File</a>
 	<input type="button" value="Gerar Guião Codeboard" id="geraCodeboard" onclick="build_prof_pdf('codeboard')" class="btn btn-primary" />
-	<a id="geraBasCodeboard" href="script_csv.bas" download>Download Codeboard .bas File</a>
 	<input type="button" value="Gerar Guião Python" id="geraPython" onclick="build_prof_pdf('python')" class="btn btn-primary" />
+	<input type="button" value="Gerar Soluções" id="geraSolucao" onclick="geraSolucoes()" class="btn btn-primary" />
+	<a id="geraBasUri" href="script_csv_uri.bas" download>Download URI .bas File</a>
+	<a id="geraBasCodeboard" href="script_csv.bas" download>Download Codeboard .bas File</a>
+	
+
+	
 
 </div>
 <br><br>

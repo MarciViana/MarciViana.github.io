@@ -10,6 +10,7 @@ function selecionaPlataforma(){
           $('#geraBasUri').toggle();
           $('#geraInfoURI').toggle();
           $('#geraInfoEstatistica').toggle();
+          $('#geraSolucao').toggle();
           exists = 1;
         });
   }
@@ -22,6 +23,7 @@ function selecionaPlataforma(){
           $('#geraCodeboard').toggle();
           $('#geraBasCodeboard').toggle();
           $('#geraInfoEstatistica').toggle();
+          $('#geraSolucao').toggle();
           exists = 1;
         });
   }
@@ -32,6 +34,7 @@ function selecionaPlataforma(){
         
         $('#escolhe').mouseup(function() {
           $('#geraPython').toggle();
+          $('#geraSolucao').toggle();
           exists = 1;
         });
   }
@@ -607,6 +610,13 @@ function codigosBase(){
         if(this.value == "Cap. 7. Pág. 182 - 3.1. Receba uma string e retire os caracteres que não se encontram repetidos - Estimativa: 10 min")
           window.open("https://marciviana.github.io/codigo_base_retira_caracteres.html", 'retira_caracteres');
     });
+}
+
+function geraSolucoes()
+{
+
+  window.open("https://marciviana.github.io/solucoes.html", 'solucoes');    
+    
 }
 
 function atualizaPag()
