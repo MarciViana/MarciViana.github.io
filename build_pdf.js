@@ -4,6 +4,7 @@ function selecionaPlataforma(){
       document.getElementById("uri3").checked||document.getElementById("uri5").checked||
       document.getElementById("uri6").checked) {
         
+
         $('#escolhe').mouseup(function() {
           $('#geraURI').toggle();
           $('#geraBasUri').toggle();
@@ -180,7 +181,7 @@ function build_body(doc,tipoGuia,numeroGuia)
   var contaExercicios = 0;
    for(i = 0; i < textB.length; i++)
     {
-      //exercicios uri
+      //adiciona exercicios uri
       if(i ==  5){
         $('#e1 option:selected').each(function(){
               if(tipoGuia == "professor")
@@ -208,7 +209,7 @@ function build_body(doc,tipoGuia,numeroGuia)
               contaExercicios++;
         });
       }
-      //exercicios codeboard
+      //adiciona exercicios codeboard
       if(i == 0){
         $('#e13 option:selected').each(function(){
               if(tipoGuia == "professor"){
@@ -278,7 +279,7 @@ function build_body(doc,tipoGuia,numeroGuia)
         });
       }
 
-      //exercicios python 
+      //adiciona exercicios python 
       if(i ==  1){
         $('#e4 option:selected').each(function(){
                if(tipoGuia == "professor"){
@@ -348,7 +349,7 @@ function build_body(doc,tipoGuia,numeroGuia)
         });
       }
       var conta = 0;
-      //alterações python
+      //alterações guião python
       if(tipoGuia == "professor" && (i == 0|| i == 2)){
       $('#e4 option:selected').each(function(){             
             if(conta == 0){
@@ -439,7 +440,8 @@ function build_body(doc,tipoGuia,numeroGuia)
       }
       var conta = 0;
 
-      //imagens após os exercícios
+      //imagens após os exercícios dos guiões codeboard e uri
+      //alteração devido ao tratamento de espaço necessário
       if(tipoGuia == "professor" && numeroGuia == "codeboard" && i == 1)
         doc.addImage(imgB[i], 'JPEG', 60, high + 100, 100, 60);  
       else if(tipoGuia == "professor" && (numeroGuia == "uri") && i == 5)
@@ -448,7 +450,7 @@ function build_body(doc,tipoGuia,numeroGuia)
       //  doc.addImage(imgB[i], 'JPEG', 60, high + 95, 100, 60); 
 
 
-      //primeira imagem uri_codeboard/codeboard
+      //primeira imagem guiões uri_codeboard/codeboard
       else if(tipoGuia == "professor" && i == 0 && numeroGuia == "codeboard"){
           $('#e13 option:selected').each(function(){             
             if(conta == 0){
@@ -598,7 +600,7 @@ function codigosBase(){
    $('#e18 option:selected').each(function(){
         if(this.value == "Cap. 8. Pág. 201 - 8. Apaga todos os caracteres maiúsculos em s - Estimativa: 10 minutos")
           window.open("https://marciviana.github.io/codigo_base_apaga_maiusculos.html", 'apaga_maiusculos');
-      if(this.value == "Cap. 8. Pág. 201 - 9. Apaga em s1 a primeira ocorrência de s2 - Estimativa: 10 minutos")
+        if(this.value == "Cap. 8. Pág. 201 - 9. Apaga em s1 a primeira ocorrência de s2 - Estimativa: 10 minutos")
         window.open("https://marciviana.github.io/codigo_base_apaga_prim_ocorrencia.html", 'apaga_prim_ocor'); 
     });
    $('#e23 option:selected').each(function(){

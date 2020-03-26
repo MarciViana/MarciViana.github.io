@@ -86,7 +86,7 @@
 
 	$(document).ready(function(){
 	    $("input[type='radio'][name='plataforma']").click(function(){
-	    	$('#e1','#e2','#e3','#e4','#e5','#e6','#e7','#e8','#e9','#e10','#e11','#e12','#e13','#e14','#e15','#e16','#e17','#e18','#e19','#e20','#e21','#e22','#e23').show();
+	    	$('#e1','#e2','#e3','#e4','#e8','#e9','#e13','#e14','#e15','#e16','#e17','#e18','#e19','#e20','#e21','#e22','#e23').show();
 	        var inputValue = $(this).attr("value");
 	        var targetBox = $("." + inputValue);
 	        $(".caixa").not(targetBox).hide();
@@ -202,8 +202,6 @@
 
 	  <div class="quatro box" id="c4" style="display: none">    
 	  	<input type="radio" class="quatro" name="plataforma" value="codeboard4" id="codeboard4" onclick="selecionaPlataforma()"> Codeboard <br>
-	<!--    <input type="checkbox" class="quatro" name="plataforma" value="codingame4" id="codingame4" onclick="selecionaPlataforma()"> CodinGame <br>
-	    <input type="checkbox" class="quatro" name="plataforma" value="coderbyte4" id="coderbyte4" onclick="selecionaPlataforma()"> Coderbyte <br>-->
 	  </div>
 
 	  <div class="cinco box" id="c5" style="display: none">
@@ -294,11 +292,6 @@
     </select>
 	</div>
 
-	<div class="codingame3 caixa" id="e5" style="display: none">
-	<select multiple class="form-control" id="e5">
-      <option id="codingame31">Temperatures - Estimativa: 15 minutos</option>
-    </select>
-	</div>
 
 	<div class="codeboard4 caixa" id="e17" style="display: none">
 	<select multiple class="form-control" id="e17">
@@ -307,20 +300,6 @@
     </select>
 	</div>
 
-	<div class="codingame4 caixa" id="e6" style="display: none">
-	<select multiple class="form-control" id="e6">
-      <option id="codingame41">The River i. - Estimativa: 15 minutos</option>
-    </select>
-	</div>
-
-	<div class="coderbyte4 caixa" id="e7" style="display: none">
-	<select multiple class="form-control" id="e7">
-      <option id="coderbyte41">Check Nums - Estimativa: 10 minutos</option>
-      <option id="coderbyte42">Time Convert - Estimativa: 10 minutos</option>
-      <option id="coderbyte43">Alphabet Soup Problem - Estimativa: 10 minutos</option>
-      <option id="coderbyte44">First Factorial - Estimativa: 10 minutos</option>
-    </select>
-	</div>
 
 	<div class="uri5 caixa" id="e8" style="display: none">
 	<select multiple class="form-control" id="e8">
@@ -340,25 +319,6 @@
     </select>
 	</div>
 
-	<div class="codingame5 caixa" id="e10" style="display: none">
-	<select multiple class="form-control" id="e10">
-      <option id="codingame51">The Descent - Estimativa: 10 minutos</option>
-    </select>
-	</div>
-
-	<div class="cpuzzles6 caixa" id="e11" style="display: none">
-	<select multiple class="form-control" id="e11">
-      <option id="cpuzzles61">Puzzle S01 – Is a character upper case? - Estimativa: 10 minutos</option>
-      <option id="cpuzzles62">Puzzle S03 – Convert to lower case - Estimativa: 10 minutos</option>
-    </select>
-	</div>
-
-	<div class="coderbyte6 caixa" id="e12" style="display: none">
-	<select multiple class="form-control" id="e12">
-      <option id="coderbyte61">First Reverse - Estimativa: 15 minutos</option>
-      <option id="coderbyte62">Letter Changes - Estimativa: 15 minutos</option>
-    </select>
-	</div>
 
 	<div class="uri6 caixa" id="e15" style="display: none">
 	<select multiple class="form-control" id="e15">
