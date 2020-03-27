@@ -615,7 +615,7 @@ function codigosBase(){
 function geraSolucoes()
 {
 
-  window.open("solucoes.html", 'solucoes');    
+  window.open("https://marciviana.github.io/solucoes.html", 'solucoes');    
     
 }
 
