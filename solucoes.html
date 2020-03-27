@@ -12,6 +12,8 @@
 			$('#exercicios option:selected').each(function(){
 	      		if(this.value == "URI Online Judge - 1005 - Média 1")
 	          		$('#media1sol').show();
+	          	if(this.value == "URI Online Judge - 1002 – Área do Círculo")
+	          		$('#areasol').show();
 	             	      		   
 	  		}); 
 		}
@@ -26,7 +28,7 @@
 	<form>
 	  <select multiple class="form-control" id="exercicios">
 	    <option id="media1" >URI Online Judge - 1005 - Média 1</option>
-	    
+	    <option id="area" >URI Online Judge - 1002 – Área do Círculo</option>
 	  </select>
 	 
 	</form><br>
@@ -35,7 +37,7 @@
 	</div>
   <div id="media1sol" style="display: none">	
   <figure>
-  <figcaption>Exemplos de Solução aos Exercícios Escolhidos</figcaption>
+<!--  <figcaption>Exemplos de Solução aos Exercícios Escolhidos</figcaption>-->
   
   <xmp>
 
@@ -68,8 +70,45 @@
 
 
   </xmp>
-  </div>
   </figure>
-</body>
+  </div>
+  <div id="areasol" style="display: none">	
+  <figure>
+<!--  <figcaption>Exemplos de Solução aos Exercícios Escolhidos</figcaption>-->
+  
+  <xmp>
+
+ //-------------------------Exercício do URI Online Judge - 1002 – Área do Círculo-----------------------------
+
+  #include <stdio.h>
+  #include <stdlib.h>
+
+
+	int main()
+	{
+		double raio1 = 2.00;
+		double raio2 = 20.00;
+		double raio3 = 150.00;
+		double pi = 3.14159;
+		double area1, area2, area3;
+		
+		//o aluno deve declarar as variáveis area1, area2 e area3 e implementar a área do círculo de cada raio  
+		//considere Pi = 3.14159
+		
+		area1 = pi * raio1 * raio1;
+		area2 = pi * raio2 * raio2;
+		area3 = pi * raio3 * raio3;
+		
+		 
+		testUnitario(area1, area2, area3);
+		
+		return 0;
+	}
+
+
+  </xmp>
+  </figure>
+  </div>
+  </body>
 </html>
 
