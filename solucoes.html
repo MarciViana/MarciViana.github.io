@@ -1,5 +1,22 @@
 </!DOCTYPE html>
 <html>
+<style type="text/css">
+	.forms{
+	padding: 20px;
+	border-radius: 10px;
+	text-align: center;
+	background-color: white;
+	}
+
+	.container{
+	padding-top: 10px;
+	padding-left: 70px;
+	padding-right: 70px;
+
+	background-color: #B0E0E6 !important;
+
+	}
+</style>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -20,7 +37,10 @@
 	          		$('#media2sol').show();
 	          	if(this.value == "URI Online Judge - 1007 - Diferença")
 	          		$('#difsol').show();
-
+	          	if(this.value == "CPuzzles - A03 – Print the integers 0, 2, 4 ... 20 one per line")
+	          		$('#a03sol').show();
+	          	if(this.value == "CPuzzles - A04 – Print the integers from -7 to +7, one per line")
+	          		$('#a04sol').show();
 	          
 	             	      		   
 	  		}); 
@@ -29,10 +49,14 @@
 	</script>
 </head>
 <body>
-	<div style="text-align:center;">
-		<br><br>
+	<div style="background-color:#B0E0E6;padding:30px;text-align:center;">
+		
+		<h2><strong>EasyCoding</strong></h2>
+		<h4>Exemplos de Soluções dos Exercícios</h4>
+	<div class="container">
+	<div class="forms">	
 	<div>(Ainda em Desenvolvimento)</div><br>
-	<div>Escolha os Exercícios que deseja visualizar um Exemplo de Solução</div><br>
+	<div>Escolha os Exercícios que deseja visualizar um Exemplo de Solução:</div><br>
 	<form>
 	  <select multiple class="form-control" id="exercicios">
 	  	<option id="area" >URI Online Judge - 1002 – Área do Círculo</option>
@@ -40,13 +64,20 @@
 	    <option id="media1" >URI Online Judge - 1005 - Média 1</option>
 	    <option id="media2" >URI Online Judge - 1006 - Média 2</option>
 	    <option id="dif" >URI Online Judge - 1007 - Diferença</option>
+	    <option id="a03" >CPuzzles - A03 – Print the integers 0, 2, 4 ... 20 one per line</option>
+	    <option id="a04" >CPuzzles - A04 – Print the integers from -7 to +7, one per line</option>
 	  </select>
 	 
 	</form><br>
 	
 		<input type="button" value="Gerar Soluções" id="geraSolucao" onclick="geraSolucoes()" class="btn btn-primary" />
+		<br><br>
+		<h6 style="text-align: center;">Os seguintes exemplos de solução foram desenvolvidos e testados pela autora. No caso dos exercícios da plataforma <i>CPuzzles</i>, as soluções foram retiradas da própria plataforma.</h6>
 	</div>
-
+	</div>
+	</div>
+	<br>
+	<div style="text-align: center;">As soluções aparecerão aqui.</div>	
   <div id="areasol" style="display: none">	
   <figure>
   
@@ -190,7 +221,7 @@
 
 
 		#include <stdio.h>
-		
+
 		int main()
 		{
 		    int a,b,c,d,DIFERENCA;
@@ -206,6 +237,64 @@
   </figure>
   </div>
   
+  <div id="a03sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+
+//---------------Exercício do CPuzzles - A03 – Print the integers 0, 2, 4 ... 20 one per line------------------
+
+
+
+		#include <stdio.h>
+		#include <stdlib.h>
+
+		/* Puzzle A03 -- print the  even integers 0, 2, 4, 6, ... , 20, one per line */
+		int main(int argc, char *argv[])
+		{
+		  int j;
+		  for (j=0; j<=20; j+=2 )
+		  {
+		    printf("%3d\n", j);
+		  }
+		  system("PAUSE");	
+		  return 0;
+		}
+
+
+  </xmp>
+  </figure>
+  </div>
+
+  <div id="a04sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+
+//---------------Exercício do CPuzzles - A04 – Print the integers from -7 to +7, one per line------------------
+
+
+
+		#include <stdio.h>
+		#include <stdlib.h>
+
+		/* Puzzle A04 -- print the integers from -7 to +7, one per line */
+		int main(int argc, char *argv[])
+		{
+		  int j;
+		  for (j= -7; j<= 7; j++ )
+		  {
+		    printf("%3d\n", j);
+		  }
+		  system("PAUSE");	
+		  return 0;
+		}
+
+
+  </xmp>
+  </figure>
+  </div>
+
   </body>
 </html>
 
