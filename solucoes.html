@@ -10,10 +10,18 @@
 		function geraSolucoes(){
 
 			$('#exercicios option:selected').each(function(){
+				if(this.value == "URI Online Judge - 1002 – Área do Círculo")
+	          		$('#areasol').show();
+	          	if(this.value == "URI Online Judge - 1004 – Produto Simples")
+	          		$('#prodsol').show();
 	      		if(this.value == "URI Online Judge - 1005 - Média 1")
 	          		$('#media1sol').show();
-	          	if(this.value == "URI Online Judge - 1002 – Área do Círculo")
-	          		$('#areasol').show();
+	          	if(this.value == "URI Online Judge - 1006 - Média 2")
+	          		$('#media2sol').show();
+	          	if(this.value == "URI Online Judge - 1007 - Diferença")
+	          		$('#difsol').show();
+
+	          
 	             	      		   
 	  		}); 
 		}
@@ -27,54 +35,20 @@
 	<div>Escolha os Exercícios que deseja visualizar um Exemplo de Solução</div><br>
 	<form>
 	  <select multiple class="form-control" id="exercicios">
+	  	<option id="area" >URI Online Judge - 1002 – Área do Círculo</option>
+	  	<option id="prod" >URI Online Judge - 1004 – Produto Simples</option>
 	    <option id="media1" >URI Online Judge - 1005 - Média 1</option>
-	    <option id="area" >URI Online Judge - 1002 – Área do Círculo</option>
+	    <option id="media2" >URI Online Judge - 1006 - Média 2</option>
+	    <option id="dif" >URI Online Judge - 1007 - Diferença</option>
 	  </select>
 	 
 	</form><br>
 	
 		<input type="button" value="Gerar Soluções" id="geraSolucao" onclick="geraSolucoes()" class="btn btn-primary" />
 	</div>
-  <div id="media1sol" style="display: none">	
-  <figure>
-<!--  <figcaption>Exemplos de Solução aos Exercícios Escolhidos</figcaption>-->
-  
-  <xmp>
 
-//-----------------------------Exercício do URI Online Judge - 1005 – Média 1 -------------------------------
-
-
-	//main.c
-
-		#include <stdio.h>
-		#include <stdlib.h>
-		#include <math.h>
-
-		int main()
-		{
-			//o aluno deve declarar as variáveis media1, media2 e media3 e implementar o resultado das médias    
-			//media 1: A = 5.0 e B = 7.1
-			//media 2: A = 0.0 e B = 7.1
-			//media 3: A = 10.0 e B = 10.0
-			//A tem peso 3.5 e B tem peso 7.5
-			
-			double media1 = (3.5 * 5 + 7.5 * 7.1)/(3.5 + 7.5);
-			double media2 = (3.5 * 0 + 7.5 * 7.1)/(3.5 + 7.5);
-			double media3 = (3.5 * 10 + 7.5 * 10)/(3.5 + 7.5);
-		   
-		  
-			testeUnitario(media1,media2,media3);
-		   
-			return 0;
-		}
-
-
-  </xmp>
-  </figure>
-  </div>
   <div id="areasol" style="display: none">	
   <figure>
-<!--  <figcaption>Exemplos de Solução aos Exercícios Escolhidos</figcaption>-->
   
   <xmp>
 
@@ -109,6 +83,129 @@
   </xmp>
   </figure>
   </div>
+
+  <div id="prodsol" style="display: none">	
+  <figure>
+  
+  <xmp>
+
+ //-------------------------Exercício do URI Online Judge - 1004 – Produto Simples-----------------------------
+
+  #include <stdio.h>
+
+	int main()
+	{
+	    int a,b,PROD;
+	    scanf("%d%d",&a,&b);
+	    PROD=a*b;
+	    printf("PROD = %d\n",PROD);
+	    return 0;
+	}
+
+
+  </xmp>
+  </figure>
+  </div>
+
+  <div id="media1sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+
+//-----------------------------Exercício do URI Online Judge - 1005 – Média 1 -------------------------------
+
+
+
+		#include <stdio.h>
+		#include <stdlib.h>
+		#include <math.h>
+
+		int main()
+		{
+			//o aluno deve declarar as variáveis media1, media2 e media3 e implementar o resultado das médias    
+			//media 1: A = 5.0 e B = 7.1
+			//media 2: A = 0.0 e B = 7.1
+			//media 3: A = 10.0 e B = 10.0
+			//A tem peso 3.5 e B tem peso 7.5
+			
+			double media1 = (3.5 * 5 + 7.5 * 7.1)/(3.5 + 7.5);
+			double media2 = (3.5 * 0 + 7.5 * 7.1)/(3.5 + 7.5);
+			double media3 = (3.5 * 10 + 7.5 * 10)/(3.5 + 7.5);
+		   
+		  
+			testeUnitario(media1,media2,media3);
+		   
+			return 0;
+		}
+
+
+  </xmp>
+  </figure>
+  </div>
+
+  <div id="media2sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+
+//-----------------------------Exercício do URI Online Judge - 1006 – Média 2 -------------------------------
+
+
+
+		#include <stdio.h>
+		#include <stdlib.h>
+		#include <math.h>
+
+		int main()
+		{
+			//o aluno deve declarar as variáveis media1, media2 e media3 e implementar o resultado     
+			//media 1: A = 5.0 e B = 6.0 e C = 7.0
+			//media 2: A = 5.0 e B = 10.0 e C = 10.0
+			//media 3: A = 10.0 e B = 10.0 e C = 5.0
+			//A tem peso 2, B tem peso 3 e C tem peso 5
+			
+			double media1 = (2*5.0 + 3*6.0 + 5*7.0)/(2+3+5);
+			double media2 = (2*5.0 + 3*10.0 + 5*10.0)/(2+3+5);
+			double media3 = (2*10.0 + 3*10.0 + 5*5.0)/(2+3+5);
+			
+		  
+			testeUnitario(media1,media2,media3);
+		   
+			return 0;
+		}
+
+
+  </xmp>
+  </figure>
+  </div>
+
+
+  <div id="difsol" style="display: none">	
+  <figure>
+  
+  <xmp>
+
+//-----------------------------Exercício do URI Online Judge - 1007 – Diferença-------------------------------
+
+
+
+		#include <stdio.h>
+		
+		int main()
+		{
+		    int a,b,c,d,DIFERENCA;
+		    scanf("%d%d%d%d",&a,&b,&c,&d);
+		    DIFERENCA=(a*b-c*d);
+		    printf("DIFERENCA = %d\n",DIFERENCA);
+
+		    return 0;
+		}
+
+
+  </xmp>
+  </figure>
+  </div>
+  
   </body>
 </html>
 
