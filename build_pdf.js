@@ -607,7 +607,7 @@ function codigosBase(){
         window.open("https://marciviana.github.io/codigo_base_apaga_prim_ocorrencia.html", 'apaga_prim_ocor'); 
     });
    $('#e23 option:selected').each(function(){
-        if(this.value == "Cap. 7. Pág. 182 - 3.1. Receba uma string e retire os caracteres que não se encontram repetidos - Estimativa: 10 min")
+        if(this.value == "Cap. 7. Pág. 171 - 3.1. Receba uma string e retire os caracteres que não se encontram repetidos - Estimativa: 10 min")
           window.open("https://marciviana.github.io/codigo_base_retira_caracteres.html", 'retira_caracteres');
     });
 }

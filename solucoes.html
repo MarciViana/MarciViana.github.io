@@ -41,6 +41,14 @@
 	          		$('#a03sol').show();
 	          	if(this.value == "CPuzzles - A04 – Print the integers from -7 to +7, one per line")
 	          		$('#a04sol').show();
+	          	if(this.value == "Livro Linguagem C. Luis Damas - Cap. 7. Pág. 171 - 2.1. Devolver o número de caracteres alfabéticos de uma string")
+	          		$('#string21Sol').show();
+	          	if(this.value == "Livro Linguagem C. Luis Damas - Cap. 7. Pág. 171 - 3.1. Receba uma string e retire os caracteres que não se encontram repetidos")
+	          		$('#string31Sol').show();
+	          	if(this.value == "Livro Linguagem C. Luis Damas - Cap. 8. Pág. 200 - 3. Retornar o endereço da última ocorrência de 'ch' em s")
+	          		$('#ponteiros3Sol').show();
+	          	if(this.value == "Livro Linguagem C. Luis Damas - Cap. 8. Pág. 200 - 4. Retornar o endereço de s em que ocorre pela 1ª vez 'substr'. Caso não exista, retornar NULL")
+	          		$('#ponteiros4Sol').show();
 	          
 	             	      		   
 	  		}); 
@@ -56,7 +64,7 @@
 	<div class="container">
 	<div class="forms">	
 	<div>(Ainda em Desenvolvimento)</div><br>
-	<div>Escolha os Exercícios que deseja visualizar um Exemplo de Solução:</div><br>
+	<div>Escolha o(s) exercício(s) que deseja visualizar um Exemplo de Solução:</div><br>
 	<form>
 	  <select multiple class="form-control" id="exercicios">
 	  	<option id="area" >URI Online Judge - 1002 – Área do Círculo</option>
@@ -66,6 +74,10 @@
 	    <option id="dif" >URI Online Judge - 1007 - Diferença</option>
 	    <option id="a03" >CPuzzles - A03 – Print the integers 0, 2, 4 ... 20 one per line</option>
 	    <option id="a04" >CPuzzles - A04 – Print the integers from -7 to +7, one per line</option>
+	    <option id="string21" >Livro Linguagem C. Luis Damas - Cap. 7. Pág. 171 - 2.1. Devolver o número de caracteres alfabéticos de uma string</option>
+	    <option id="string31" >Livro Linguagem C. Luis Damas - Cap. 7. Pág. 171 - 3.1. Receba uma string e retire os caracteres que não se encontram repetidos</option>
+	    <option id="ponteiros3" >Livro Linguagem C. Luis Damas - Cap. 8. Pág. 200 - 3. Retornar o endereço da última ocorrência de 'ch' em s</option>
+	    <option id="ponteiros4" >Livro Linguagem C. Luis Damas - Cap. 8. Pág. 200 - 4. Retornar o endereço de s em que ocorre pela 1ª vez 'substr'. Caso não exista, retornar NULL</option>
 	  </select>
 	 
 	</form><br>
@@ -295,6 +307,186 @@
   </figure>
   </div>
 
+
+ <div id="string21Sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+
+//---------------Exercício do Livro Linguagem C. Luis Damas - Cap. 7. Pág. 171 - 2.1. Devolver o número de caracteres alfabéticos de uma string-------------
+
+
+
+	int strcounta(char *s){
+	  int count = 0;
+	  int i;
+	  for(i=0;s[i]!='\0';i++){
+	    if ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z')){
+	      count++;  
+	    }  
+	  }
+	  return count;
+	}
+
+
+	int main() {
+	  int count;
+	  count = strcounta("15 abacates");
+	  printf("%d\n",count);
+	  count = strcounta("quinze (15) abacates");
+	  printf("%d\n",count);
+	  return 0;
+	}
+
+
+  </xmp>
+  </figure>
+  </div>
+
+   <div id="string31Sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+
+//---------------Exercício do Livro Linguagem C. Luis Damas - Cap. 7. Pág. 171 - 3.1. Receba uma string e retire os caracteres que não se encontram repetidos-------------
+
+
+
+	#include <stdio.h>
+	#include <stdlib.h>
+
+	int main (){
+	    /*Receba uma string, retirando-lhe todos os caracteres que não se encontram repetidos.
+	        Caso de teste:        "ALFACE"         ->     "AA"   */
+	       
+	    int i,j,k,l;
+	    int repete = 0;
+
+	    char x[6] = "ALFACE";
+	    char y[6] = "ALFACE";
+	    
+	    for(i=0; x[i]!='\0';i++){
+	        for(j=0; x[j]!='\0';j++){
+	            if(x[j] == x[i] && j!=i)
+	                repete = 1;
+	        }
+	        if(repete == 0){
+	            for(k=0;y[k]!='\0';k++){
+	                if(y[k] == x[i]){
+	                    for(l=k;y[l]!='\0';l++){
+	                        y[l] = y[l+1];
+	                    }
+	                }
+	                
+	            }
+	        }
+	        repete = 0;
+	    }
+	    printf("%s",y);
+		
+	    //Mantenha essa função apenas no caso de estar utilizando a plataforma Codeboard
+	    testUnitario(y);
+	    return 0;
+	}
+
+
+  </xmp>
+  </figure>
+  </div>
+
+
+   <div id="ponteiros3Sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+
+//---------------Exercício do Livro Linguagem C. Luis Damas - Cap. 8. Pág. 200 - 3. Retornar o endereço da última ocorrência de "ch" em s --------------
+
+
+
+	char *strrch(char *s,char ch){
+	  char *save; 
+	  save = 0;
+
+	  for (; *s != '\0'; s++)
+	  {
+	  	if (*s == ch)
+	    {
+	    	save = s; // Guarda o endereço de s em save
+	    }
+	  }
+
+	  // Se save continua a apontar para NULL então retorna 0 caso contrário retorna save
+	  if (*save == 0)
+	  {
+	  	return 0;
+	  }
+	  else
+	  {
+	    return save;
+	  }
+	}
+
+
+	int main() {
+	  char *save;
+	  save = strrch("15 abacates",'a');
+	  printf("%p\n",&save);
+	  return 0;
+	}
+
+
+  </xmp>
+  </figure>
+  </div>
+
+
+  <div id="ponteiros4Sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+
+//---------------Exercício do Livro Linguagem C. Luis Damas - Cap. 8. Pág. 200 - 4. Retornar o endereço de s em que ocorre pela 1ª vez "substr". --------
+//               Caso não exista, retornar NULL
+
+
+
+	char *strstr(char *s,char ch){
+	  char *save; 
+	  save = 0;
+
+	  for (; *s != '\0'; s++)
+	  {
+	    if (*s == ch)
+	    {
+	      save = s; // Guarda o endereço de s em save
+		  break;
+	    }
+	  }
+
+	  // Se save continua a apontar para NULL então retorna 0 caso contrário retorna save
+	  if (*save == 0)
+	  {
+	    return 0;
+	  }
+	  else
+	  {
+	    return save;
+	  }
+	}
+
+
+	int main() {
+	  char *save;
+	  save = strstr("15 abacates",'a');
+	  printf("%p\n",&save);
+	  return 0;
+	}
+
+
+  </xmp>
+  </figure>
+  </div>
   </body>
 </html>
 
