@@ -86,7 +86,7 @@
 
 	$(document).ready(function(){
 	    $("input[type='radio'][name='plataforma']").click(function(){
-	    	$('#e1','#e2','#e3','#e4','#e8','#e9','#e13','#e14','#e15','#e16','#e17','#e18','#e19','#e20','#e21','#e22','#e23').show();
+	    	$('#e1','#e2','#e3','#e4','#e5','#e8','#e9','#e13','#e14','#e15','#e16','#e17','#e18','#e19','#e20','#e21','#e22','#e23').show();
 	        var inputValue = $(this).attr("value");
 	        var targetBox = $("." + inputValue);
 	        $(".caixa").not(targetBox).hide();
@@ -99,7 +99,7 @@
 
 	$(document).ready(function(){
 	    $("input[type='radio'][name='materia']").click(function(){
-	    	$('#c1','#c2','#c3','#c4','#c5','#c6','#c7','#c8').show();
+	    	$('#c1','#c2','#c3','#c4','#c5','#c6','#c7','#c8','#c9').show();
 	        var inputValue = $(this).attr("value");
 	        var targetBox = $("." + inputValue);
 	        $(".box").not(targetBox).hide();
@@ -176,6 +176,7 @@
   <input type="radio" name="materia" id="materia6" value="seis" >String - Programação II<br>
   <input type="radio" name="materia" id="materia7" value="sete" >Apontadores - Programação II<br>
   <input type="radio" name="materia" id="materia8" value="oito" >Recursividade - Programação II<br>
+  <input type="radio" name="materia" id="materia9" value="nove" >Estruturas - Programação II<br>
  
  
 </form><br>
@@ -224,6 +225,10 @@
 
 	  <div class="oito box" id="c8" style="display: none">
 	  	<input type="radio" class="oito" name="plataforma" value="python8" id="python8" onclick="selecionaPlataforma()"> PythonTutor (Exercícios do Livro Linguagem C) <br>
+	  </div>
+
+	  <div class="nove box" id="c9" style="display: none">
+	  	<input type="radio" class="nove" name="plataforma" value="python9" id="python9" onclick="selecionaPlataforma()"> CPuzzles e PythonTutor <br>
 	  </div>
  
 </form><br>
@@ -375,6 +380,17 @@
       <option id="python81">Cap. 9. Pág. 226. 4. Escreva, de forma iterativa e recursiva, a função de Fibonacci. Estimativa: 10 min.</option>
       <option id="python82">Cap. 9. Pág. 226. 5. Escreva, de forma recursiva, uma função que concatena duas strings. Estimativa: 10 min.</option>
       <option id="python83">Cap. 9. Pág. 227. 6. Faça recursivamente uma função que mostra o endereço de "ch" em uma str. Estimativa: 10 min.</option>
+    </select>
+	</div>
+
+	<div class="python9 caixa" id="e5" style="display: none">
+	<select multiple class="form-control" id="e5">
+      <option id="python91">Puzzle G01 - Dot Notation. Estimativa: 10 minutos.</option>
+      <option id="python92">Puzzle G03 - Call by Value. Estimativa: 10 minutos.</option>
+      <option id="python93">Puzzle G05 - Array Declaration. Estimativa: 10 minutos.</option>
+      <option id="python93">Puzzle G06 - Function to print an array. Estimativa: 10 minutos.</option>
+      <option id="python93">Puzzle G07 - Function to change a struct. Estimativa: 10 minutos.</option>
+      <option id="python93">Puzzle G08 - Apply a function to each element of an array. Estimativa: 10 minutos.</option>
     </select>
 	</div>
 

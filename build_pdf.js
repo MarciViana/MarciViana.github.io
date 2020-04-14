@@ -30,7 +30,8 @@ function selecionaPlataforma(){
   //plataforma pythontutor selecionada
   if (document.getElementById("python3").checked||document.getElementById("python5").checked||
     document.getElementById("python6").checked || document.getElementById("python7").checked||
-    document.getElementById("python72").checked||document.getElementById("python8").checked) {
+    document.getElementById("python72").checked||document.getElementById("python8").checked ||
+    document.getElementById("python9").checked) {
         
         $('#escolhe').mouseup(function() {
           $('#geraPython').toggle();
@@ -113,6 +114,8 @@ function build_table(doc,numeroGuia)
           doc.text(x, y, linhasCodeboard[i][6]); //apontadores
         if(document.getElementById("materia8").checked )
           doc.text(x, y, linhasCodeboard[i][7]); //recursividade
+        if(document.getElementById("materia9").checked )
+          doc.text(x, y, linhasCodeboard[i][8]); //estruturas
       }
 
       //verifica se é dentro ou fora de sala de aula
@@ -295,6 +298,17 @@ function build_body(doc,tipoGuia,numeroGuia)
               }
               contaExercicios++;
         });
+        $('#e5 option:selected').each(function(){
+               if(tipoGuia == "professor"){
+                if(cont>0)
+                  textB[i] = textB[i] + "\n" + this.value;  
+                else{
+                  textB[i] = textB[i][0] + "\n" + this.value;
+                  cont++;
+                }              
+              }
+              contaExercicios++;
+        });
         $('#e9 option:selected').each(function(){
                if(tipoGuia == "professor"){
                 if(cont>0)
@@ -360,6 +374,12 @@ function build_body(doc,tipoGuia,numeroGuia)
               conta++;
             }                     
       });
+      $('#e5 option:selected').each(function(){             
+            if(conta == 0){
+              textB[i] = textB[i][0]; 
+              conta++;
+            }                     
+      });
       $('#e9 option:selected').each(function(){             
             if(conta == 0){
               textB[i] = textB[i][0]; 
@@ -408,6 +428,7 @@ function build_body(doc,tipoGuia,numeroGuia)
   var espacoLinhasImg = 30;
   var high = -10;
   var page = 2;
+  //muda de página caso a página tenha acabado
    for(i = 0; i < imgB.length; i++){
       doc.setPage(page);
       if(high >= 150){
@@ -495,6 +516,15 @@ function build_body(doc,tipoGuia,numeroGuia)
       //primeira e segunda imagem cpuzzles_pythontutor/livro_pythontutor
       else if(tipoGuia == "professor" && (i == 0 || i == 1) && numeroGuia == "python"){
           $('#e4 option:selected').each(function(){             
+            if(conta == 0){
+              if(i == 0)
+                doc.addImage(imgB[i][0], 'JPEG', 60, high + 75, 100, 60);  
+              else
+                doc.addImage(imgB[i][0], 'JPEG', 60, high + 95, 100, 60);  
+              conta++;
+            }                     
+          });
+          $('#e5 option:selected').each(function(){             
             if(conta == 0){
               if(i == 0)
                 doc.addImage(imgB[i][0], 'JPEG', 60, high + 75, 100, 60);  
