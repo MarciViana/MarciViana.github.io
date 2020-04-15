@@ -10,7 +10,7 @@ function selecionaPlataforma(){
           $('#geraBasUri').toggle();
           $('#geraInfoURI').toggle();
           $('#geraInfoEstatistica').toggle();
-          $('#geraSolucao').toggle();
+          
           exists = 1;
         });
   }
@@ -23,7 +23,7 @@ function selecionaPlataforma(){
           $('#geraCodeboard').toggle();
           $('#geraBasCodeboard').toggle();
           $('#geraInfoEstatistica').toggle();
-          $('#geraSolucao').toggle();
+          
           exists = 1;
         });
   }
@@ -35,7 +35,7 @@ function selecionaPlataforma(){
         
         $('#escolhe').mouseup(function() {
           $('#geraPython').toggle();
-          $('#geraSolucao').toggle();
+          
           exists = 1;
         });
   }

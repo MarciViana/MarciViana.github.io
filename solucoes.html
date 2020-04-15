@@ -24,9 +24,21 @@
 	<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	<script>
+		$(document).ready(function(){
+	    $("input[type='radio'][name='sistema']").click(function(){
+	    	$('#exercicios1','#exercicios2','#exercicios3').show();
+	        var inputValue = $(this).attr("value");
+	        var targetBox = $("." + inputValue);
+	        $(".caixa").not(targetBox).hide();
+	        $(targetBox).show();
+
+	    });
+		});	
+
+
 		function geraSolucoes(){
 
-			$('#exercicios option:selected').each(function(){
+			$('#exercicios1 option:selected').each(function(){
 				if(this.value == "URI Online Judge - 1002 – Área do Círculo")
 	          		$('#areasol').show();
 	          	if(this.value == "URI Online Judge - 1004 – Produto Simples")
@@ -36,7 +48,10 @@
 	          	if(this.value == "URI Online Judge - 1006 - Média 2")
 	          		$('#media2sol').show();
 	          	if(this.value == "URI Online Judge - 1007 - Diferença")
-	          		$('#difsol').show();
+	          		$('#difsol').show();          	             	      		   
+	  		}); 
+
+	  		$('#exercicios2 option:selected').each(function(){
 	          	if(this.value == "CPuzzles - A03 – Print the integers 0, 2, 4 ... 20 one per line")
 	          		$('#a03sol').show();
 	          	if(this.value == "CPuzzles - A04 – Print the integers from -7 to +7, one per line")
@@ -50,7 +65,10 @@
 	          	if(this.value == "CPuzzles - C02 – Print each element in an array of ints, 10 elements per line")
 	          		$('#c02sol').show();
 	          	if(this.value == "CPuzzles - C03 – Fill an array by making each element the same integer x")
-	          		$('#c03sol').show();
+	          		$('#c03sol').show();         	             	      		   
+	  		});
+
+	  		$('#exercicios3 option:selected').each(function(){
 	          	if(this.value == "Livro Linguagem C. Luis Damas - Cap. 7. Pág. 171 - 2.1. Devolver o número de caracteres alfabéticos de uma string")
 	          		$('#string21Sol').show();
 	          	if(this.value == "Livro Linguagem C. Luis Damas - Cap. 7. Pág. 171 - 3.1. Receba uma string e retire os caracteres que não se encontram repetidos")
@@ -58,30 +76,45 @@
 	          	if(this.value == "Livro Linguagem C. Luis Damas - Cap. 8. Pág. 200 - 3. Retornar o endereço da última ocorrência de 'ch' em s")
 	          		$('#ponteiros3Sol').show();
 	          	if(this.value == "Livro Linguagem C. Luis Damas - Cap. 8. Pág. 200 - 4. Retornar o endereço de s em que ocorre pela 1ª vez 'substr'. Caso não exista, retornar NULL")
-	          		$('#ponteiros4Sol').show();
-	          
-	             	      		   
-	  		}); 
+	          		$('#ponteiros4Sol').show();	          	             	      		   
+	  		});  
 		}
 
 	</script>
 </head>
 <body>
-	<div style="background-color:#B0E0E6;padding:30px;text-align:center;">
+	<div style="background-color:#B0E0E6;padding:10px;text-align:center;">
 		
 		<h2><strong>EasyCoding</strong></h2>
 		<h4>Exemplos de Soluções dos Exercícios</h4>
 	<div class="container">
 	<div class="forms">	
-	<div>(Ainda em Desenvolvimento)</div><br>
-	<div>Escolha o(s) exercício(s) que deseja visualizar um Exemplo de Solução:</div><br>
+
+	<div style="text-align: justify;">1) Escolha o sistema em que o exercício se encontra:</div><br>
+	<div style="text-align: justify;">	
 	<form>
-	  <select multiple class="form-control" id="exercicios">
+		<input type="radio" name="sistema" value="uriSystem" id="uriSystem" > URI Online Judge <br>
+		<input type="radio" name="sistema" value="cpuzzlesSystem" id="cpuzzlesSystem" > CPuzzles <br>
+		<input type="radio" name="sistema" value="livroSystem" id="livroSystem" > Livro Linguagem C. Luís Damas <br>
+	</form>
+	</div>
+	<div style="text-align: justify;">2) Escolha o(s) exercício(s) que deseja visualizar um Exemplo de Solução:</div><br>
+
+	<div class="uriSystem caixa" id="exercicios1" style="display: none">
+	<form>
+	  <select multiple class="form-control" id="exercicios1">
 	  	<option id="area" >URI Online Judge - 1002 – Área do Círculo</option>
 	  	<option id="prod" >URI Online Judge - 1004 – Produto Simples</option>
 	    <option id="media1" >URI Online Judge - 1005 - Média 1</option>
 	    <option id="media2" >URI Online Judge - 1006 - Média 2</option>
-	    <option id="dif" >URI Online Judge - 1007 - Diferença</option>
+	  </select>
+	 
+	</form>
+	</div>
+
+	<div class="cpuzzlesSystem caixa" id="exercicios2" style="display: none">
+	<form>
+	  <select multiple class="form-control" id="exercicios2">
 	    <option id="a03" >CPuzzles - A03 – Print the integers 0, 2, 4 ... 20 one per line</option>
 	    <option id="a04" >CPuzzles - A04 – Print the integers from -7 to +7, one per line</option>
 	    <option id="a06" >CPuzzles - A06 – Print the ODD integers from 1 to 99, one per line</option>
@@ -89,6 +122,14 @@
 	    <option id="c01" >CPuzzles - C01 – Print each element in an array of ints, one per line</option>
 	    <option id="c02" >CPuzzles - C02 – Print each element in an array of ints, 10 elements per line</option>
 	    <option id="c03" >CPuzzles - C03 – Fill an array by making each element the same integer x</option>
+	  </select>
+	 
+	</form>
+	</div>
+
+	<div class="livroSystem caixa" id="exercicios3" style="display: none">
+	<form>
+	  <select multiple class="form-control" id="exercicios3">
 	    <option id="string21" >Livro Linguagem C. Luis Damas - Cap. 7. Pág. 171 - 2.1. Devolver o número de caracteres alfabéticos de uma string</option>
 	    <option id="string31" >Livro Linguagem C. Luis Damas - Cap. 7. Pág. 171 - 3.1. Receba uma string e retire os caracteres que não se encontram repetidos</option>
 	    <option id="ponteiros3" >Livro Linguagem C. Luis Damas - Cap. 8. Pág. 200 - 3. Retornar o endereço da última ocorrência de 'ch' em s</option>
@@ -96,18 +137,19 @@
 	  </select>
 	 
 	</form>
+	</div>
 	
 		<input type="button" value="Gerar Soluções" id="geraSolucao" onclick="geraSolucoes()" class="btn btn-primary" />
 		<br><br>
-		<h6 style="text-align: justify;"><br><b>Observação:</b> As soluções exemplo do sistema <i>CPuzzles</i> foram retiradas da própria plataforma. As soluções exemplo do <i>Livro Linguagem C, por Luís Damas</i> foram retiradas do próprio livro.<br></h6>
+		<h6 style="text-align: justify;"><b>Observação:</b> As soluções exemplo do sistema <i>CPuzzles</i> foram retiradas da própria plataforma. As soluções exemplo do <i>Livro Linguagem C, por Luís Damas</i> foram retiradas do próprio livro.<br></h6>
 		<h6 style="text-align: center;"><br>Os seguintes exemplos de solução foram todos testados pela autora.</h6>
 
 		
 	</div>
 	</div>
 	</div>
-	<br>
-	<div style="text-align: center;">As soluções aparecerão aqui.</div>	
+	
+	<div style="text-align: center;">As soluções aparecerão abaixo.</div>	
   <div id="areasol" style="display: none">	
   <figure>
   
