@@ -41,6 +41,16 @@
 	          		$('#a03sol').show();
 	          	if(this.value == "CPuzzles - A04 – Print the integers from -7 to +7, one per line")
 	          		$('#a04sol').show();
+	          	if(this.value == "CPuzzles - A06 – Print the ODD integers from 1 to 99, one per line")
+	          		$('#a06sol').show();
+	          	if(this.value == "CPuzzles - A10 – Print the integers from 0 to 24, five per line")
+	          		$('#a10sol').show();
+	          	if(this.value == "CPuzzles - C01 – Print each element in an array of ints, one per line")
+	          		$('#c01sol').show();
+	          	if(this.value == "CPuzzles - C02 – Print each element in an array of ints, 10 elements per line")
+	          		$('#c02sol').show();
+	          	if(this.value == "CPuzzles - C03 – Fill an array by making each element the same integer x")
+	          		$('#c03sol').show();
 	          	if(this.value == "Livro Linguagem C. Luis Damas - Cap. 7. Pág. 171 - 2.1. Devolver o número de caracteres alfabéticos de uma string")
 	          		$('#string21Sol').show();
 	          	if(this.value == "Livro Linguagem C. Luis Damas - Cap. 7. Pág. 171 - 3.1. Receba uma string e retire os caracteres que não se encontram repetidos")
@@ -74,17 +84,25 @@
 	    <option id="dif" >URI Online Judge - 1007 - Diferença</option>
 	    <option id="a03" >CPuzzles - A03 – Print the integers 0, 2, 4 ... 20 one per line</option>
 	    <option id="a04" >CPuzzles - A04 – Print the integers from -7 to +7, one per line</option>
+	    <option id="a06" >CPuzzles - A06 – Print the ODD integers from 1 to 99, one per line</option>
+	    <option id="a10" >CPuzzles - A10 – Print the integers from 0 to 24, five per line</option>
+	    <option id="c01" >CPuzzles - C01 – Print each element in an array of ints, one per line</option>
+	    <option id="c02" >CPuzzles - C02 – Print each element in an array of ints, 10 elements per line</option>
+	    <option id="c03" >CPuzzles - C03 – Fill an array by making each element the same integer x</option>
 	    <option id="string21" >Livro Linguagem C. Luis Damas - Cap. 7. Pág. 171 - 2.1. Devolver o número de caracteres alfabéticos de uma string</option>
 	    <option id="string31" >Livro Linguagem C. Luis Damas - Cap. 7. Pág. 171 - 3.1. Receba uma string e retire os caracteres que não se encontram repetidos</option>
 	    <option id="ponteiros3" >Livro Linguagem C. Luis Damas - Cap. 8. Pág. 200 - 3. Retornar o endereço da última ocorrência de 'ch' em s</option>
 	    <option id="ponteiros4" >Livro Linguagem C. Luis Damas - Cap. 8. Pág. 200 - 4. Retornar o endereço de s em que ocorre pela 1ª vez 'substr'. Caso não exista, retornar NULL</option>
 	  </select>
 	 
-	</form><br>
+	</form>
 	
 		<input type="button" value="Gerar Soluções" id="geraSolucao" onclick="geraSolucoes()" class="btn btn-primary" />
 		<br><br>
-		<h6 style="text-align: center;">Os seguintes exemplos de solução foram desenvolvidos e testados pela autora. No caso dos exercícios da plataforma <i>CPuzzles</i>, as soluções foram retiradas da própria plataforma.</h6>
+		<h6 style="text-align: justify;"><br><b>Observação:</b> As soluções exemplo do sistema <i>CPuzzles</i> foram retiradas da própria plataforma. As soluções exemplo do <i>Livro Linguagem C, por Luís Damas</i> foram retiradas do próprio livro.<br></h6>
+		<h6 style="text-align: center;"><br>Os seguintes exemplos de solução foram todos testados pela autora.</h6>
+
+		
 	</div>
 	</div>
 	</div>
@@ -298,6 +316,206 @@
 		  {
 		    printf("%3d\n", j);
 		  }
+		  system("PAUSE");	
+		  return 0;
+		}
+
+
+  </xmp>
+  </figure>
+  </div>
+
+
+  <div id="a06sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+
+//---------------Exercício do CPuzzles - A06 – Print the ODD integers from 1 to 99, one per line------------------
+
+
+
+		#include <stdio.h>
+		#include <stdlib.h>
+
+		/* Puzzle A06 -- print the odd integers from 1 to 99, one per line */
+		int main(int argc, char *argv[])
+		{
+		  int j;
+		  for (j=1; j<=99; j+=2 )
+		  {
+		    printf("%3d\n", j);
+		  }
+		  system("PAUSE");	
+		  return 0;
+		}
+
+
+  </xmp>
+  </figure>
+  </div>
+
+
+  <div id="a10sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+
+//---------------Exercício do CPuzzles - A10 – Print the integers from 0 to 24, five per line------------------
+
+
+		#include <stdio.h>
+		#include <stdlib.h>
+
+		/* Puzzle A10 -- print the integers from 0 to 24, five per line */
+		int main(int argc, char *argv[])
+		{
+		  int j;
+		  for (j = 0; j < 25; j++ )
+		  {
+		    printf("%3d", j);
+		    if ( j%5 == 4 ) printf("\n");
+		  }
+		  system("PAUSE");	
+		  return 0;
+		}
+
+  </xmp>
+  </figure>
+  </div>
+
+
+  <div id="c01sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+
+//---------------Exercício do CPuzzles - C01 – Print each element in an array of ints, one per line------------------
+
+
+		#include <stdio.h>
+		#include <stdlib.h>
+
+		/* Puzzle C01 -- print each element in an array of ints, one per line */
+
+		void printArray( int arr[], int size )
+		{
+		  int j;
+		  printf("index\tvalue\n");
+		  printf("-----\t-----\n");
+		  for ( j=0; j < size; j++ )
+		    printf(" %3d: \t%5d\n", j, arr[j] );
+		}
+
+
+		int main(int argc, char *argv[])
+		{
+		  int x[] = {0, 9, 23, -6, 5, 2, 71, 45, -9, 3 };
+		  
+		  printArray( x, 10 );
+		    
+		  printf("\n");
+		  system("pause");	
+		  return 0;
+		}
+
+  </xmp>
+  </figure>
+  </div>
+
+
+  <div id="c02sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+
+//---------------Exercício do CPuzzles - C02 – Print each element in an array of ints, 10 elements per line------------------
+
+
+		#include <stdio.h>
+		#include <stdlib.h>
+
+		/* Puzzle C02 -- print each element in an array of ints, 10 elements per line */
+
+		void printArray( int arr[], int size )
+		{
+		  const int N = 10;
+		  int j;
+		  
+		  for ( j = 0; j < size; j++ )
+		  {
+		    if ( j%N == N-1 )
+		      printf("%4d\n", arr[j] );
+		    else
+		      printf("%4d ", arr[j] );    
+		  }
+		}
+
+		int main(int argc, char *argv[])
+		{
+		  int x[] = { 1,  2,  3,  4,  5,  6,  7,  8,  9, 10,
+		             11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+		             21, 22, 23, 24, 25, 26, 27, 28, 29, 30,             
+		             31, 32, 33, 34, 35, 36, 37, 38, 39, 40 };
+		  
+		  printArray( x, 40 );
+		    
+		  printf("\n");
+		  system("pause");	
+		  return 0;
+		}
+
+
+  </xmp>
+  </figure>
+  </div>
+
+
+   <div id="c03sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+
+//---------------Exercício do CPuzzles - C03 – Fill an array by making each element the same integer x------------------
+
+
+		#include <stdio.h>
+		#include <stdlib.h>
+
+		/* Puzzle C03 - fill an array by making each element the same integer x */
+		void fillArrayConst( int arr[], int size, int x )
+		{
+		  int j;
+		  
+		  for ( j = 0; j < size; j++ )
+		  {
+		    arr[j] = x;
+		  }
+		}
+
+		void printArray( int arr[], int size )
+		{
+		  const int N = 10;
+		  int j;
+		  
+		  for ( j = 0; j < size; j++ )
+		  {
+		    if ( j%N == N-1 )
+		      printf("%4d\n", arr[j] );
+		    else
+		      printf("%4d ", arr[j] );    
+		  }
+		}
+
+		const int SIZE = 100;
+		int main(int argc, char *argv[])
+		{
+		  int x[ SIZE ];
+		  
+		  fillArrayConst( x, SIZE, 7 );
+		  printArray( x, SIZE );
+		    
+		  printf("\n");
 		  system("PAUSE");	
 		  return 0;
 		}
