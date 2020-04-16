@@ -235,7 +235,11 @@
 </form><br>
 
 
-<div>4) Exercícios (Para escolher mais de um exercício, pressione "Ctrl" enquanto os seleciona): </div><br>
+<div>4) Exercícios (Para escolher mais de um exercício, pressione "Ctrl" enquanto os seleciona e depois clique em "Escolher"): </div><br>
+<div style="text-align:center;">
+<input type="button" value="Visualizar Soluções" id="geraSolucao" onclick="geraSolucoes()" class="btn btn-primary" />
+</div>
+<br>
 <form>
 	<div class="uri1 caixa" id="e1" style="display: none">
 	<select multiple class="form-control" id="e1" name="uri1">
@@ -397,7 +401,7 @@
 
 </form>
 <br>
-<input type="button" value="Visualizar Soluções" id="geraSolucao" onclick="geraSolucoes()" class="btn btn-primary" />
+
 <input type="button" value="Escolher" id="escolhe" onclick="escolher()" class="btn btn-primary" />
 <br><br>
 <div id="geraInfoURI" class="alert alert-warning alert-dismissible">
