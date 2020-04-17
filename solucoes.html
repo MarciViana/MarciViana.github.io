@@ -38,6 +38,7 @@
 
 		function geraSolucoes(){
 
+			//Soluções de Exercícios URI Online Judge
 			$('#exercicios1 option:selected').each(function(){
 				if(this.value == "URI Online Judge - 1002 – Área do Círculo")
 	          		$('#areasol').show();
@@ -48,9 +49,10 @@
 	          	if(this.value == "URI Online Judge - 1006 - Média 2")
 	          		$('#media2sol').show();
 	          	if(this.value == "URI Online Judge - 1007 - Diferença")
-	          		$('#difsol').show();          	             	      		   
-	  		}); 
+	          		$('#difsol').show();         	             	      		   
 
+	  		}); 
+			//Soluções de Exercícios CPuzzles
 	  		$('#exercicios2 option:selected').each(function(){
 	          	if(this.value == "CPuzzles - A03 – Print the integers 0, 2, 4 ... 20 one per line")
 	          		$('#a03sol').show();
@@ -65,10 +67,38 @@
 	          	if(this.value == "CPuzzles - C02 – Print each element in an array of ints, 10 elements per line")
 	          		$('#c02sol').show();
 	          	if(this.value == "CPuzzles - C03 – Fill an array by making each element the same integer x")
-	          		$('#c03sol').show();         	             	      		   
+	          		$('#c03sol').show(); 
+	          	if(this.value == "CPuzzles - C06 – Fill an array with random integers in the range Low to High")
+	          		$('#c06sol').show(); 
+	          	if(this.value == "CPuzzles - F08 – What does the following code write to the monitor?")
+	          		$('#f08sol').show(); 
+	          	if(this.value == "CPuzzles - F12 – Review of Call by Value 1 - What does the following code write to the monitor?")
+	          		$('#f12sol').show(); 	
+	          	if(this.value == "CPuzzles - F13 – Review of Call by Value 2 - What does the following code write to the monitor?")
+	          		$('#f13sol').show(); 
+	          	if(this.value == "CPuzzles - F19 – The classic swap mistake 1")
+	          		$('#f19sol').show(); 
+	          	if(this.value == "CPuzzles - F20 – The classic swap mistake 2")
+	          		$('#f20sol').show(); 	
+	          	if(this.value == "CPuzzles - G01 – Dot Notation")
+	          		$('#g01sol').show(); 
+	          	if(this.value == "CPuzzles - G03 – Call by Value")
+	          		$('#g03sol').show(); 
+	          	if(this.value == "CPuzzles - G05 – Array Declaration")
+	          		$('#g05sol').show(); 
+	          	if(this.value == "CPuzzles - G06 – Function to print an array")
+	          		$('#g06sol').show(); 
+	          	if(this.value == "CPuzzles - G07 – Function to change a struct")
+	          		$('#g07sol').show(); 
+	          	if(this.value == "CPuzzles - G08 – Apply a function to each element of an array")
+	          		$('#g08sol').show(); 				        	             	      		   
 	  		});
-
+	  		//Soluções de Exercícios Livro Linguagem C
 	  		$('#exercicios3 option:selected').each(function(){
+	          	if(this.value == "Livro Linguagem C. Luis Damas - Cap. 5. Pág. 127 - 4. Devolver valor absoluto de X")
+	          		$('#function4Sol').show();
+	          	if(this.value == "Livro Linguagem C. Luis Damas - Cap. 5. Pág. 128 - 16. Verifica se ch é uma das vogais do alfabeto")
+	          		$('#function16Sol').show();
 	          	if(this.value == "Livro Linguagem C. Luis Damas - Cap. 7. Pág. 171 - 2.1. Devolver o número de caracteres alfabéticos de uma string")
 	          		$('#string21Sol').show();
 	          	if(this.value == "Livro Linguagem C. Luis Damas - Cap. 7. Pág. 171 - 3.1. Receba uma string e retire os caracteres que não se encontram repetidos")
@@ -76,8 +106,14 @@
 	          	if(this.value == "Livro Linguagem C. Luis Damas - Cap. 8. Pág. 200 - 3. Retornar o endereço da última ocorrência de 'ch' em s")
 	          		$('#ponteiros3Sol').show();
 	          	if(this.value == "Livro Linguagem C. Luis Damas - Cap. 8. Pág. 200 - 4. Retornar o endereço de s em que ocorre pela 1ª vez 'substr'. Caso não exista, retornar NULL")
-	          		$('#ponteiros4Sol').show();	          	             	      		   
+	          		$('#ponteiros4Sol').show();	  
+	          	if(this.value == "Livro Linguagem C. Luis Damas - Cap. 8. Pág. 201 - 8. Apaga todos os caracteres maiúsculos em s")
+	          		$('#ponteiros8Sol').show();	 
+	          	if(this.value == "Livro Linguagem C. Luis Damas - Cap. 8. Pág. 201 - 9. Apaga em s1 a primeira ocorrência de s2")
+	          		$('#ponteiros9Sol').show();	          	             	      		   
 	  		});  
+
+	  		alert("Caso tenha escolhido gerar mais de um exercício, a próxima solução está abaixo da primeira!");
 		}
 
 	</script>
@@ -122,6 +158,18 @@
 	    <option id="c01" >CPuzzles - C01 – Print each element in an array of ints, one per line</option>
 	    <option id="c02" >CPuzzles - C02 – Print each element in an array of ints, 10 elements per line</option>
 	    <option id="c03" >CPuzzles - C03 – Fill an array by making each element the same integer x</option>
+	    <option id="c06" >CPuzzles - C06 – Fill an array with random integers in the range Low to High</option>
+	    <option id="f08" >CPuzzles - F08 – What does the following code write to the monitor?</option>
+	    <option id="f12" >CPuzzles - F12 – Review of Call by Value 1 - What does the following code write to the monitor?</option>
+	    <option id="f13" >CPuzzles - F13 – Review of Call by Value 2 - What does the following code write to the monitor?</option>
+	    <option id="f19" >CPuzzles - F19 – The classic swap mistake 1</option>
+	    <option id="f20" >CPuzzles - F20 – The classic swap mistake 2</option>
+	    <option id="g01" >CPuzzles - G01 – Dot Notation</option>
+	    <option id="g03" >CPuzzles - G03 – Call by Value</option>
+	    <option id="g05" >CPuzzles - G05 – Array Declaration</option>
+	    <option id="g06" >CPuzzles - G06 – Function to print an array</option>
+	    <option id="g07" >CPuzzles - G07 – Function to change a struct</option>
+	    <option id="g08" >CPuzzles - G08 – Apply a function to each element of an array</option>
 	  </select>
 	 
 	</form>
@@ -130,10 +178,14 @@
 	<div class="livroSystem caixa" id="exercicios3" style="display: none">
 	<form>
 	  <select multiple class="form-control" id="exercicios3">
+	  	<option id="function4" >Livro Linguagem C. Luis Damas - Cap. 5. Pág. 127 - 4. Devolver valor absoluto de X</option>
+	  	<option id="function16" >Livro Linguagem C. Luis Damas - Cap. 5. Pág. 128 - 16. Verifica se ch é uma das vogais do alfabeto</option>
 	    <option id="string21" >Livro Linguagem C. Luis Damas - Cap. 7. Pág. 171 - 2.1. Devolver o número de caracteres alfabéticos de uma string</option>
 	    <option id="string31" >Livro Linguagem C. Luis Damas - Cap. 7. Pág. 171 - 3.1. Receba uma string e retire os caracteres que não se encontram repetidos</option>
 	    <option id="ponteiros3" >Livro Linguagem C. Luis Damas - Cap. 8. Pág. 200 - 3. Retornar o endereço da última ocorrência de 'ch' em s</option>
 	    <option id="ponteiros4" >Livro Linguagem C. Luis Damas - Cap. 8. Pág. 200 - 4. Retornar o endereço de s em que ocorre pela 1ª vez 'substr'. Caso não exista, retornar NULL</option>
+	    <option id="ponteiros8" >Livro Linguagem C. Luis Damas - Cap. 8. Pág. 201 - 8. Apaga todos os caracteres maiúsculos em s</option>
+	    <option id="ponteiros9" >Livro Linguagem C. Luis Damas - Cap. 8. Pág. 201 - 9. Apaga em s1 a primeira ocorrência de s2</option>
 	  </select>
 	 
 	</form>
@@ -149,12 +201,11 @@
 	</div>
 	</div>
 	
-	<div style="text-align: center;">As soluções aparecerão abaixo.</div>	
+	<div style="text-align: center;"><b>As soluções aparecerão abaixo.</b></div>	
   <div id="areasol" style="display: none">	
   <figure>
   
   <xmp>
-
  //-------------------------Exercício do URI Online Judge - 1002 – Área do Círculo-----------------------------
 
   #include <stdio.h>
@@ -191,7 +242,6 @@
   <figure>
   
   <xmp>
-
  //-------------------------Exercício do URI Online Judge - 1004 – Produto Simples-----------------------------
 
   #include <stdio.h>
@@ -214,7 +264,6 @@
   <figure>
   
   <xmp>
-
 //-----------------------------Exercício do URI Online Judge - 1005 – Média 1 -------------------------------
 
 
@@ -250,7 +299,6 @@
   <figure>
   
   <xmp>
-
 //-----------------------------Exercício do URI Online Judge - 1006 – Média 2 -------------------------------
 
 
@@ -287,7 +335,6 @@
   <figure>
   
   <xmp>
-
 //-----------------------------Exercício do URI Online Judge - 1007 – Diferença-------------------------------
 
 
@@ -313,9 +360,7 @@
   <figure>
   
   <xmp>
-
 //---------------Exercício do CPuzzles - A03 – Print the integers 0, 2, 4 ... 20 one per line------------------
-
 
 
 		#include <stdio.h>
@@ -329,7 +374,7 @@
 		  {
 		    printf("%3d\n", j);
 		  }
-		  system("PAUSE");	
+		  
 		  return 0;
 		}
 
@@ -342,9 +387,7 @@
   <figure>
   
   <xmp>
-
 //---------------Exercício do CPuzzles - A04 – Print the integers from -7 to +7, one per line------------------
-
 
 
 		#include <stdio.h>
@@ -358,7 +401,7 @@
 		  {
 		    printf("%3d\n", j);
 		  }
-		  system("PAUSE");	
+		  
 		  return 0;
 		}
 
@@ -372,9 +415,7 @@
   <figure>
   
   <xmp>
-
 //---------------Exercício do CPuzzles - A06 – Print the ODD integers from 1 to 99, one per line------------------
-
 
 
 		#include <stdio.h>
@@ -388,7 +429,7 @@
 		  {
 		    printf("%3d\n", j);
 		  }
-		  system("PAUSE");	
+		  
 		  return 0;
 		}
 
@@ -402,7 +443,6 @@
   <figure>
   
   <xmp>
-
 //---------------Exercício do CPuzzles - A10 – Print the integers from 0 to 24, five per line------------------
 
 
@@ -418,7 +458,7 @@
 		    printf("%3d", j);
 		    if ( j%5 == 4 ) printf("\n");
 		  }
-		  system("PAUSE");	
+		  
 		  return 0;
 		}
 
@@ -431,7 +471,6 @@
   <figure>
   
   <xmp>
-
 //---------------Exercício do CPuzzles - C01 – Print each element in an array of ints, one per line------------------
 
 
@@ -457,7 +496,7 @@
 		  printArray( x, 10 );
 		    
 		  printf("\n");
-		  system("pause");	
+		  
 		  return 0;
 		}
 
@@ -470,7 +509,6 @@
   <figure>
   
   <xmp>
-
 //---------------Exercício do CPuzzles - C02 – Print each element in an array of ints, 10 elements per line------------------
 
 
@@ -503,10 +541,9 @@
 		  printArray( x, 40 );
 		    
 		  printf("\n");
-		  system("pause");	
+		  
 		  return 0;
 		}
-
 
   </xmp>
   </figure>
@@ -517,7 +554,6 @@
   <figure>
   
   <xmp>
-
 //---------------Exercício do CPuzzles - C03 – Fill an array by making each element the same integer x------------------
 
 
@@ -558,9 +594,534 @@
 		  printArray( x, SIZE );
 		    
 		  printf("\n");
-		  system("PAUSE");	
+		  
 		  return 0;
 		}
+
+  </xmp>
+  </figure>
+  </div>
+
+
+  <div id="c06sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//---------------Exercício do CPuzzles - C06 – Fill an array with random integers in the range Low to High------------------
+
+
+		#include <stdio.h>
+		#include <stdlib.h>
+
+		/* Puzzle C05 -- fill an array with random integers in the range L to H */
+		int randInt( int min, int max );
+		int printArray( int arr[], int size );
+
+		void fillArrayRandom( int arr[], int size, int low, int high )
+		{
+		  int j;
+		  for ( j = 0; j < size; j++ )
+		    arr[j] = randInt( low, high );
+		}
+
+		/* Generate a random integer  min <= r <= max */
+		int randInt( int min, int max )
+		{
+		  return (rand()*(max-min+1))/(RAND_MAX+1) + min ;
+		}
+
+		int main(int argc, char *argv[])
+		{
+		  const int SIZE = 100;
+		  int x[ SIZE ];
+		  
+		  fillArrayRandom( x, SIZE, 0, 100 );
+		  printArray( x, SIZE );
+		    
+		  printf("\n");
+		 
+		  return 0;
+		}
+
+  </xmp>
+  </figure>
+  </div>
+
+
+<div id="f08sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//---------------Exercício do CPuzzles - F08 – What does the following code write to the monitor?------------------
+
+
+	The following code writes:
+	*pa=44 *pb=66
+	a=66 b=66
+
+	Comments:
+	The statement *pa = *pb is performed in two steps (as are all assignment statements):
+
+	Step 1: The expression on the right of the = is evaluated. *pb evaluates to 66.
+	Step 2: The expression on the left of the = determines where to put the 66. The *pa says to follow the pointer in pa, so the 66 is put in the variable a, 
+	        replacing what was there.
+
+
+  </xmp>
+  </figure>
+  </div>
+
+
+  <div id="f12sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//---------------Exercício do CPuzzles - F12 – Review of Call by Value 1 - What does the following code write to the monitor?------------------
+
+
+	The following code writes:
+	a=77
+  	   x=88
+  	   x=123
+	a=77
+
+  </xmp>
+  </figure>
+  </div>
+
+
+  <div id="f13sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//---------------Exercício do CPuzzles - F13 – Review of Call by Value 2 - What does the following code write to the monitor?------------------
+
+
+	The following code writes:
+	
+	a=77
+	   x=77
+	      y=123
+	      y=999
+	   x=123
+	a=77
+
+  </xmp>
+  </figure>
+  </div>
+
+
+  <div id="f19sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//---------------Exercício do CPuzzles - F19 – The classic swap mistake 1------------------
+
+
+	The following code writes:
+	
+	a=44  b=77
+  	   x=44  y=77
+  	   x=77  y=44
+	a=44  b=77
+
+	The values in the parameters of swap are successfully swapped, but this does not affect the values held in the variables a and b of main.
+
+  </xmp>
+  </figure>
+  </div>
+
+
+  <div id="f20sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//---------------Exercício do CPuzzles - F20 – The classic swap mistake 2------------------
+
+
+	#include <stdio.h>
+
+	void swap( int *x, int *y )
+	{
+	  int temp;
+
+	  printf("  *x=%d  *y=%d\n", *x, *y ) ;
+	  temp = *x;
+	  *x = *y;
+	  *y = temp;
+	  printf("  *x=%d  *y=%d\n", *x, *y ) ;
+	}
+
+	void main ( void )
+	{
+	  int a = 44, b = 77 ;
+
+	  printf("a=%d  b=%d\n", a, b ) ;
+	  swap( &a, &b ) ;
+	  printf("a=%d  b=%d\n", a, b ) ;
+	  
+	}
+
+
+	With the proper changes, main and swap coordinate. main passes pointers to its two variables, so now swap can change them. main passes pointers:
+
+	swap( &a, &b )
+
+	and swap follows these pointers:
+
+	temp = *x;
+
+	*x = *y;
+
+	*y = temp;
+
+  </xmp>
+  </figure>
+  </div>
+
+
+ <div id="g01sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//---------------Exercício do CPuzzles - G01 – Dot Notation------------------
+
+
+	#include <stdio.h>
+
+	struct
+	{
+	  int watts;
+	  int lumens;
+	} bulbA;
+
+	int main(int argc, char *argv[])
+	{
+	  /* set values for bulbA */
+	  bulbA.watts = 100;
+	  bulbA.lumens = 1710;
+
+	  /* print values of bulbA */
+	  printf("BulbA: watts = %d\tlumens = %d\n",   bulbA.watts, bulbA.lumens );
+	 
+	  return 0;
+	} 
+	
+
+  </xmp>
+  </figure>
+  </div>
+
+
+  <div id="g03sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//---------------Exercício do CPuzzles - G03 – Call by Value------------------
+
+
+	#include <stdio.h>
+
+	struct Bulb
+	{
+	  int watts;
+	  int lumens;
+	};
+
+	/* function to print a Bulb */
+	void printBulb( struct Bulb b )
+	{
+	  printf("watts = %d\tlumens = %d\n", b.watts, b.lumens );
+	}
+
+	int main(int argc, char *argv[])
+	{
+	  /* declare and initialize two Bulbs */
+	  struct Bulb bulbA, bulbB;
+	  
+	  bulbA.watts = 100; bulbA.lumens = 1710;
+	  bulbB.watts =  60; bulbB.lumens = 1065;
+
+	  /* print values of both Bulbs */
+	  printBulb( bulbA );
+	  printBulb( bulbB );
+	      
+	  return 0;
+	} 
+	
+
+  </xmp>
+  </figure>
+  </div>
+
+  <div id="g05sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//---------------Exercício do CPuzzles - G05 – Array Declaration------------------
+
+
+	#include <stdio.h>
+
+	struct Bulb
+	{
+	  int watts;
+	  int lumens;
+	};
+
+	/* function to print a Bulb */
+	void printBulb( struct Bulb b )
+	{
+	  printf("watts = %d\tlumens = %d\n", b.watts, b.lumens );
+	}
+
+	int main(int argc, char *argv[])
+	{
+	  int j;
+	  
+	  /* declare an array of 10 Bulbs */
+	  struct Bulb lights[10] ;
+	  
+	  /* zero all Bulbs */
+	  for ( j = 0; j < 10; j++ )
+	  {
+	    lights[j].watts = 0; lights[j].lumens = 0;
+	  }
+	    
+	  /* initialize several Bulbs */
+	  lights[0].watts = 100; lights[0].lumens = 1710;
+	  lights[1].watts =  60; lights[1].lumens = 1065;
+	   
+	  /* print values of Bulbs */
+	  for ( j = 0; j < 10; j++ )
+	  {
+	     printf("Bulb %2d: ", j );
+	     printBulb( lights[j] );
+	  }  
+	    
+	  return 0;
+	}
+	
+
+  </xmp>
+  </figure>
+  </div>
+
+ <div id="g06sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//---------------Exercício do CPuzzles - G06 – Function to print an array------------------
+
+
+	#include <stdio.h>
+
+	struct Bulb
+	{
+	  int watts;
+	  int lumens;
+	};
+
+	#define length 10
+
+	/* function to print a Bulb array */
+	void printArray( struct Bulb b[], int size )
+	{
+	  int j;
+	  for ( j = 0; j < size; j++ )
+	    printf("bulb %2d watts = %d\tlumens = %d\n", j, b[j].watts, b[j].lumens );
+	}
+
+	int main(int argc, char *argv[])
+	{
+	  /* declare an array of 10 Bulbs */
+	  struct Bulb lights[length] = { {100,1710}, {60,1065} };
+
+	  printArray(lights, length);
+	    
+	  return 0;
+	} 
+	
+
+  </xmp>
+  </figure>
+  </div> 
+
+  <div id="g07sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//---------------Exercício do CPuzzles - G07 – Function to change a struct------------------
+
+
+	#include <stdio.h>
+
+	struct Bulb
+	{
+	  int watts;
+	  int lumens;
+	};
+
+	/* function to print a Bulb */
+	void printBulb( struct Bulb* b )
+	{
+	  printf("watts = %d\tlumens = %d\n", b->watts, b->lumens );
+	}
+
+	/* function to decrease light output */
+	void dimBulb( struct Bulb* b )
+	{
+	  /* decrease output by 10 percent */
+	  b->lumens = (b->lumens*90)/100;
+	}
+
+	int main(int argc, char *argv[])
+	{
+	  struct Bulb bulbA = {100, 1710 };
+	  
+	  printBulb( &bulbA );         
+	  dimBulb( &bulbA );
+	  printBulb( &bulbA );
+	        
+	  return 0;
+	} 
+	
+
+  </xmp>
+  </figure>
+  </div> 
+
+  <div id="g08sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//---------------Exercício do CPuzzles - G08 – Apply a function to each element of an array------------------
+
+
+	#include <stdio.h>
+
+	struct Bulb
+	{
+	  int watts;
+	  int lumens;
+	};
+
+
+	/* function to print a Bulb array */
+	void printArray( struct Bulb b[], int size )
+	{
+	  int j;
+	  for ( j = 0; j < size; j++ )
+	    printf("bulb %2d watts = %d\tlumens = %d\n", j, b[j].watts, b[j].lumens );
+	}
+
+	/* function to decrease light output */
+	void dimBulb( struct Bulb* b )
+	{
+	  /* decrease output by 10 percent */
+	  b->lumens = (b->lumens*90)/100;
+	}
+
+	int main(int argc, char *argv[])
+	{
+	  int j;
+	  
+	  /* declare and initialize a Bulb array */
+	  #define length 5
+	  struct Bulb lights[length] = { {100,1710}, {60,1065}, {100,1530}, {40,505}, {75,830} };
+
+	  /* print the Bulbs */
+	  printArray(lights, length);
+	  printf("\n");
+
+	  /* decrease light output of each Bulb */
+	  for ( j = 0; j < length; j++ )
+	    dimBulb( &lights[j] );
+	    
+	  /* print the Bulbs */
+	  printArray(lights, length);
+	    
+	  return 0;
+	} 
+	
+
+  </xmp>
+  </figure>
+  </div> 
+
+ <div id="function4Sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//---------------Exercício do Livro Linguagem C. Luis Damas - Cap. 5. Pág. 127 - 4. Devolver valor absoluto de X-------------
+
+
+	#include <stdio.h>
+	#include <stdlib.h>
+
+	int Abs(int x){
+		if(x >= 0)
+			return x;
+		else
+			return -x;
+	}
+
+	int main()
+	{
+	    /* Implemente a seguinte função: 
+	    int Abs(int x), que devolve o valor absoluto de x.
+	    Casos de testes já disponíveis:
+	    */
+	    
+	    int x = 5, y = -5;
+	    
+	    x = Abs(x);
+	    y = Abs(y);
+	    
+	    testUnitario(x,y);
+	    return 0;
+		
+	}
+
+
+  </xmp>
+  </figure>
+  </div>
+
+  <div id="function16Sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//---------------Exercício do Livro Linguagem C. Luis Damas - Cap. 5. Pág. 128 - 16. Verifica se ch é uma das vogais do alfabeto-------------
+
+
+	#include <stdio.h>
+	#include <stdlib.h>
+
+	int isVogal(char ch){
+		if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||
+		   ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U'||)
+		   return 1;
+		else
+		   return 0;
+	}
+
+	int main()
+	{
+	    /* Implemente a seguinte função: 
+	    int isVogal(char ch), que devolve 1 se ch for vogal e 0 caso contrário.
+	    Casos de testes já disponíveis:
+	    */
+	    
+	    int x, y;
+	    
+	    x = isVogal('a');
+	    y = isVogal('b');
+
+	    testUnitario(x,y);
+	    return 0;
+	}
+
 
 
   </xmp>
@@ -572,9 +1133,7 @@
   <figure>
   
   <xmp>
-
 //---------------Exercício do Livro Linguagem C. Luis Damas - Cap. 7. Pág. 171 - 2.1. Devolver o número de caracteres alfabéticos de uma string-------------
-
 
 
 	int strcounta(char *s){
@@ -607,7 +1166,6 @@
   <figure>
   
   <xmp>
-
 //---------------Exercício do Livro Linguagem C. Luis Damas - Cap. 7. Pág. 171 - 3.1. Receba uma string e retire os caracteres que não se encontram repetidos-------------
 
 
@@ -659,7 +1217,6 @@
   <figure>
   
   <xmp>
-
 //---------------Exercício do Livro Linguagem C. Luis Damas - Cap. 8. Pág. 200 - 3. Retornar o endereço da última ocorrência de "ch" em s --------------
 
 
@@ -705,7 +1262,6 @@
   <figure>
   
   <xmp>
-
 //---------------Exercício do Livro Linguagem C. Luis Damas - Cap. 8. Pág. 200 - 4. Retornar o endereço de s em que ocorre pela 1ª vez "substr". --------
 //               Caso não exista, retornar NULL
 
@@ -747,6 +1303,96 @@
   </xmp>
   </figure>
   </div>
+
+
+  <div id="ponteiros8Sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//---------------Exercício do Livro Linguagem C. Luis Damas - Cap. 8. Pág. 201 - 8. Apaga todos os caracteres maiúsculos em s-------------
+
+
+	#include <stdio.h>
+	#include <stdlib.h>
+
+	char * strDelUpper(char *s){
+		char *prim, *ptr;
+		prim = ptr = s;
+
+		while (*s) /*Equivalente a  while(*s!='\0') */
+		{
+			if(!isupper(*s))
+				*ptr++=*s;
+			s++;
+		}
+		*ptr='\0';
+		return prim;
+	}
+
+	int main()
+	{
+	    /* Implemente a seguinte função: 
+	       void strDelUpper(char *s), que apaga todos os caracteres maiúsculos em s.
+	       Caso de teste já disponível:
+	    */
+	    
+	    char s[7] = "AlegriA";
+	    
+	    strDelUpper(s);
+	    
+	    //Mantenha essa função apenas no caso de estar utilizando a plataforma Codeboard
+	    testUnitario(s);
+	    return 0;
+	}
+
+
+  </xmp>
+  </figure>
+  </div>
+
+
+  <div id="ponteiros9Sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//---------------Exercício do Livro Linguagem C. Luis Damas - Cap. 8. Pág. 201 - 9. Apaga em s1 a primeira ocorrência de s2-------------
+
+
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <string.h>
+
+	char * strDelStr(char *s1, char *s2)
+	{
+		char *loc = strstr(s1,s2);
+		if(loc!=NULL) /*Se s2 existir em s1*/
+			strcpy(loc,loc+strlen(s2));
+
+		return s1;
+	}
+
+	int main()
+	{
+	    /* Implemente a seguinte função: 
+	       void strDelStr(char *s1, char *s2), que apaga em s1 a primeira ocorrência de s2
+	       Caso de teste já disponível:
+	    */
+	    
+	    char s1[7] = "alegria";
+	    
+	    strDelStr(s1,"a");
+
+	    //Mantenha essa função apenas no caso de estar utilizando a plataforma Codeboard
+	    testUnitario(s1);
+	    return 0;
+	}
+
+
+
+  </xmp>
+  </figure>
+  </div>
+
   </body>
 </html>
 
