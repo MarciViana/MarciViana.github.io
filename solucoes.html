@@ -49,7 +49,21 @@
 	          	if(this.value == "URI Online Judge - 1006 - Média 2")
 	          		$('#media2sol').show();
 	          	if(this.value == "URI Online Judge - 1007 - Diferença")
-	          		$('#difsol').show();         	             	      		   
+	          		$('#difsol').show(); 
+	          	if(this.value == "URI Online Judge - 1040 - Média 3")
+	          		$('#media3Sol').show(); 
+	          	if(this.value == "URI Online Judge - 1041 - Coordenadas de um Ponto")
+	          		$('#coordenadasSol').show();  
+	          	if(this.value == "URI Online Judge - 1042 - Sort Simples")
+	          		$('#sortSol').show(); 
+	          	if(this.value == "URI Online Judge - 1044 - Múltiplos")
+	          		$('#multiplosSol').show(); 
+	          	if(this.value == "URI Online Judge - 1046 - Tempo de Jogo")
+	          		$('#tempoSol').show();  
+	          	if(this.value == "URI Online Judge - 1061 - Tempo de um Evento")
+	          		$('#tempoEventoSol').show();      
+	          	if(this.value == "URI Online Judge - 1071 - Soma de Ímpares Consecutivos")
+	          		$('#somaImparesSol').show();         	             	      		   
 
 	  		}); 
 			//Soluções de Exercícios CPuzzles
@@ -143,6 +157,14 @@
 	  	<option id="prod" >URI Online Judge - 1004 – Produto Simples</option>
 	    <option id="media1" >URI Online Judge - 1005 - Média 1</option>
 	    <option id="media2" >URI Online Judge - 1006 - Média 2</option>
+	    <option id="dif" >URI Online Judge - 1007 - Diferença</option>
+	    <option id="media3" >URI Online Judge - 1040 - Média 3</option>
+	    <option id="coordenadas" >URI Online Judge - 1041 - Coordenadas de um Ponto</option>
+	    <option id="sort" >URI Online Judge - 1042 - Sort Simples</option>
+	    <option id="multiplos" >URI Online Judge - 1044 - Múltiplos</option>
+	    <option id="tempo" >URI Online Judge - 1046 - Tempo de Jogo</option>
+	    <option id="tempoEvento" >URI Online Judge - 1061 - Tempo de um Evento</option>
+	    <option id="somaImpares" >URI Online Judge - 1071 - Soma de Ímpares Consecutivos</option>
 	  </select>
 	 
 	</form>
@@ -355,6 +377,310 @@
   </xmp>
   </figure>
   </div>
+
+  <div id="media3Sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//-----------------------------Exercício do URI Online Judge - 1040 – Média 3-------------------------------
+
+		#include <stdio.h>
+		int main()
+		{
+		    double a, b, c, d, last, m;
+		    scanf("%lf %lf %lf %lf", &a, &b, &c, &d);
+		    m = (a * 2 + b * 3 + c * 4 + d) / 10;
+		    printf("Media: %.1f\n", m);
+		    if (m >= 7.0){
+		        printf("Aluno aprovado.\n");
+		    }
+		    else if (m >= 5.0)
+		    {
+		        printf("Aluno em exame.\n");
+		        scanf("%lf", &last);
+		        printf("Nota do exame: %.1f\n", last);
+		        if (last + m / 2.0 > 5.0){
+		            printf("Aluno aprovado.\n");
+		        }
+		        else{
+		            printf("Aluno reprovado.\n");
+		        }
+		        printf("Media final: %.1f\n", (last + m ) / 2.0);
+		    }
+		    else{
+		        printf("Aluno reprovado.\n");
+		    }
+		    return 0;
+		}
+
+
+
+  </xmp>
+  </figure>
+  </div>
+
+   <div id="coordenadasSol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//-----------------------------Exercício do URI Online Judge - 1041 – Coordenadas de um Ponto-------------------------------
+
+		#include<stdio.h>
+		int main()
+		{
+		    float a,b;
+		    while(scanf("%f %f",&a,&b)==2)
+		    {
+
+		        if(a==0 && b==0)
+		            printf("Origem\n");
+
+		        else if(b==0)
+		            printf("Eixo X\n");
+
+		        else if(a==0)
+		            printf("Eixo Y\n");
+
+		        else if(a>0 && b>0)
+		            printf("Q1\n");
+
+		        else if(a < 0 && b > 0)
+		            printf("Q2\n");
+
+		        else if(a < 0 && b < 0)
+		            printf("Q3\n");
+		        else
+		            printf("Q4\n");
+
+		    }
+		    return 0;
+		}
+
+
+  </xmp>
+  </figure>
+  </div>
+
+   <div id="sortSol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//-----------------------------Exercício do URI Online Judge - 1042 – Sort Simples-------------------------------
+
+		#include <stdio.h>
+		void printInOrder(int a, int b, int c)
+		{
+		    int min, mid, max;
+		    if(a < b && a < c){
+		        min = a;
+		        if(b < c){
+		            mid = b;
+		            max = c;
+		        }else{
+		            mid = c;
+		            max = b;
+		        }
+		    }else if(b < a && b < c){
+		        min = b;
+		        if(a < c){
+		            mid = a;
+		            max = c;
+		        }else{
+		            mid = c;
+		            max = a;
+		        }
+		    }else{
+		        min = c;
+		        if(a < b){
+		            mid = a;
+		            max = b;
+		        }else{
+		            mid = b;
+		            max = a;
+		        }
+		    }
+		    printf("%d\n%d\n%d\n", min, mid, max);
+		}
+		int main()
+		{
+		    int a, b, c;
+		    scanf("%d %d %d", &a, &b, &c);
+		    printInOrder(a, b, c);
+		    printf("\n%d\n%d\n%d\n", a, b, c);
+		    return 0;
+		}
+
+  </xmp>
+  </figure>
+  </div>
+
+  <div id="multiplosSol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//-----------------------------Exercício do URI Online Judge - 1044 – Múltiplos-------------------------------
+
+		#include<stdio.h>
+
+		int main()
+		{
+		    int A, B;
+		    scanf("%d %d", &A, &B);
+		    if (B % A == 0 || A % B == 0)
+		    {
+		        printf("Sao Multiplos\n");
+		    }
+		    else
+		    {
+		        printf("Nao sao Multiplos\n");
+		    }
+		    return 0;
+		}
+
+  </xmp>
+  </figure>
+  </div>
+
+  <div id="tempoSol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//-----------------------------Exercício do URI Online Judge - 1046 – Tempo de Jogo-------------------------------
+
+		#include <stdio.h>
+
+		int main()
+
+		{
+
+		    int strtTm, endTm, durationTm;
+		    scanf("%d %d", &strtTm, &endTm);
+		    durationTm = endTm - strtTm;
+
+		    if (durationTm < 0)
+		        durationTm = 24 + (endTm - strtTm);
+		    
+
+		    if (strtTm == endTm)
+		        printf("O JOGO DUROU 24 HORA(S)\n");
+
+		    else printf("O JOGO DUROU %d HORA(S)\n", durationTm);
+
+		    return 0;
+
+		}
+
+  </xmp>
+  </figure>
+  </div>
+
+
+  <div id="tempoEventoSol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//-----------------------------Exercício do URI Online Judge - 1061 – Tempo de um Evento-------------------------------
+
+		#include <stdio.h>
+		#include <stdlib.h>
+		#include <math.h>
+
+		int main() {
+
+		/* Pedrinho está organizando um evento em sua Universidade. O evento deverá ser no mês de Abril, iniciando e terminando dentro do mês. 
+		O problema é que Pedrinho quer calcular o tempo que o evento vai durar, uma vez que ele sabe quando inicia e quando termina o evento.
+		Sabendo que o evento pode durar de poucos segundos a vários dias, você deverá ajudar Pedrinho a calcular a duração deste evento.
+		Os valores de teste de data de início e data de fim do evento já foram inicializados. 
+		*/
+		 int dia = 5, diafinal = 9, hora = 8, horafinal = 6, minuto = 12, minutofinal = 13, segundo = 23, segundofinal = 23;
+
+
+		    segundo = segundofinal - segundo;
+		    minuto = minutofinal - minuto;
+		    hora = horafinal - hora;
+		    dia = diafinal - dia;
+
+		    if (segundo < 0){
+		        segundo += 60;
+		        minuto--;
+		    }
+
+		    if (minuto < 0){
+		        minuto += 60;
+		        hora--;
+		    }
+
+		    if (hora < 0){
+		        hora += 24;
+		        dia--;
+		    }
+
+		    printf("%d dia(s)\n", dia);
+		    printf("%d hora(s)\n", hora);
+		    printf("%d minuto(s)\n", minuto);
+		    printf("%d segundo(s)\n", segundo);
+
+
+		    //Mantenha essa função apenas no caso de estar utilizando a plataforma Codeboard
+		    testUnitario(dia,hora,minuto,segundo);
+		    
+		    return 0;
+		}
+
+
+
+  </xmp>
+  </figure>
+  </div>
+
+  <div id="somaImparesSol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//-----------------------------Exercício do URI Online Judge - 1071 – Soma de Ímpares Consecutivos-------------------------------
+
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <math.h>
+
+	int main() {
+
+	  //Dois valores inteiros X e Y foram dados. A seguir, calcule e mostre a soma dos números impares entre eles.
+		
+		 int x = 6, y = -5;
+		 int soma = 0;
+	    
+	     int i;
+	     int min, max;
+	    
+	    
+	     if(x < y){
+	      min = x;
+	      max = y;
+	     }else{
+	      max = x;
+	      min = y;
+	     }
+	    
+	     for(i = (min + 1); i < max; ++i)
+	     {
+	      if(i % 2 == 1 || i % 2 == -1){
+	       soma += i;
+	      }
+	     }
+	    
+	     printf("%d\n", soma);
+
+	    //Mantenha essa função apenas no caso de estar utilizando a plataforma Codeboard
+	    testUnitario(soma);
+	    return 0;
+	}
+
+
+  </xmp>
+  </figure>
+  </div>
+  
   
   <div id="a03sol" style="display: none">	
   <figure>
