@@ -1,0 +1,69 @@
+</!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+	<figure>
+  <figcaption>Códigos Base para a plataforma Codeboard</figcaption>
+  <xmp>
+    //---------------------------------Exercício do URI Online Judge - 1041 – Coordenadas de um Ponto--------------------------------------
+
+	//main.c 
+
+	#include<stdio.h>
+	int main()
+	{
+	    //Dois valores com uma casa decimal (x e y) representam as coordenadas de um ponto em um plano. 
+	    //A seguir, determine qual o quadrante ao qual pertence o ponto, ou se está sobre um dos eixos cartesianos ou na origem (x = y = 0).
+	    //Para cada quadrante, escreva a mensagem "Q1" ou "Q2" ou "Q3" ou Q4.
+	    //Se o ponto estiver na origem, escreva a mensagem “Origem”.
+	    //Se o ponto estiver sobre um dos eixos escreva “Eixo X” ou “Eixo Y”, conforme for a situação.
+	    //A mensagem final deve ser colocada na variável "ch".
+	    
+	    float x=4.5,y=-2.2;
+	    char * ch;
+	    
+
+	    //O aluno deve implementar a solução aqui
+	        
+	        
+	    testUnitario(ch);
+	        
+	    
+	    return 0;
+	}
+
+	//test.c
+
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <math.h>
+
+	void testUnitario(char *s){
+	  
+	    double grade = 0;
+	    int testsPassed = 0;
+	    int testsFailed = 1;
+	    
+	    
+	    if(strcmp(s, "Q4") == 0){
+	        testsPassed++;
+	        testsFailed--;
+	    }
+	    
+	    if(testsPassed == 1)
+	        grade = 1;
+	   
+	   
+	    printf("<!--@test=%.2lf;%d;%d;-->",grade,testsPassed,testsFailed);
+	      
+	  }
+
+
+ 
+  </xmp>
+</figure>
+</body>
+</html>
+

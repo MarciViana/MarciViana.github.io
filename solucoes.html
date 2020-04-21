@@ -53,7 +53,7 @@
 	          	if(this.value == "URI Online Judge - 1040 - Média 3")
 	          		$('#media3Sol').show(); 
 	          	if(this.value == "URI Online Judge - 1041 - Coordenadas de um Ponto")
-	          		$('#coordenadasSol').show();  
+	          		$('#coordenadasURISol').show();  
 	          	if(this.value == "URI Online Judge - 1042 - Sort Simples")
 	          		$('#sortSol').show(); 
 	          	if(this.value == "URI Online Judge - 1044 - Múltiplos")
@@ -249,7 +249,8 @@
 		area2 = pi * raio2 * raio2;
 		area3 = pi * raio3 * raio3;
 		
-		 
+
+		//Mantenha essa função apenas no caso de estar utilizando a plataforma Codeboard 
 		testUnitario(area1, area2, area3);
 		
 		return 0;
@@ -305,8 +306,9 @@
 			double media1 = (3.5 * 5 + 7.5 * 7.1)/(3.5 + 7.5);
 			double media2 = (3.5 * 0 + 7.5 * 7.1)/(3.5 + 7.5);
 			double media3 = (3.5 * 10 + 7.5 * 10)/(3.5 + 7.5);
+
 		   
-		  
+		  	//Mantenha essa função apenas no caso de estar utilizando a plataforma Codeboard
 			testeUnitario(media1,media2,media3);
 		   
 			return 0;
@@ -331,7 +333,7 @@
 
 		int main()
 		{
-			//o aluno deve declarar as variáveis media1, media2 e media3 e implementar o resultado     
+			//o aluno deve declarar as variáveis media1, media2 e media3 e implementar o resultado de cada média     
 			//media 1: A = 5.0 e B = 6.0 e C = 7.0
 			//media 2: A = 5.0 e B = 10.0 e C = 10.0
 			//media 3: A = 10.0 e B = 10.0 e C = 5.0
@@ -340,8 +342,8 @@
 			double media1 = (2*5.0 + 3*6.0 + 5*7.0)/(2+3+5);
 			double media2 = (2*5.0 + 3*10.0 + 5*10.0)/(2+3+5);
 			double media3 = (2*10.0 + 3*10.0 + 5*5.0)/(2+3+5);
+
 			
-		  
 			testeUnitario(media1,media2,media3);
 		   
 			return 0;
@@ -419,7 +421,7 @@
   </figure>
   </div>
 
-   <div id="coordenadasSol" style="display: none">	
+   <div id="coordenadasURISol" style="display: none">	
   <figure>
   
   <xmp>
@@ -428,31 +430,43 @@
 		#include<stdio.h>
 		int main()
 		{
-		    float a,b;
-		    while(scanf("%f %f",&a,&b)==2)
-		    {
+		    //Dois valores com uma casa decimal (x e y) representam as coordenadas de um ponto em um plano. 
+		    //A seguir, determine qual o quadrante ao qual pertence o ponto, ou se está sobre um dos eixos cartesianos ou na origem (x = y = 0).
+		    //Para cada quadrante, escreva a mensagem "Q1" ou "Q2" ou "Q3" ou Q4.
+		    //Se o ponto estiver na origem, escreva a mensagem “Origem”.
+		    //Se o ponto estiver sobre um dos eixos escreva “Eixo X” ou “Eixo Y”, conforme for a situação.
+		    //A mensagem final deve ser colocada na variável "ch".
+		    
+		    float x=4.5,y=-2.2;
+		    char * ch;
+		    
 
-		        if(a==0 && b==0)
-		            printf("Origem\n");
+		        if(x==0 && y==0)
+		            ch="Origem";
 
-		        else if(b==0)
-		            printf("Eixo X\n");
+		        else if(y==0)
+		            ch="Eixo X";
 
-		        else if(a==0)
-		            printf("Eixo Y\n");
+		        else if(x==0)
+		            ch="Eixo Y";
 
-		        else if(a>0 && b>0)
-		            printf("Q1\n");
+		        else if(x > 0 && y > 0)
+		            ch="Q1";
 
-		        else if(a < 0 && b > 0)
-		            printf("Q2\n");
+		        else if(x < 0 && y > 0)
+		            ch="Q2";
 
-		        else if(a < 0 && b < 0)
-		            printf("Q3\n");
+		        else if(x < 0 && y < 0)
+		            ch="Q3";
 		        else
-		            printf("Q4\n");
+		            ch="Q4";
+		        
+		        printf("%s\n",ch);
+		        
 
-		    }
+		        testUnitario(ch);
+		        
+		    
 		    return 0;
 		}
 
@@ -460,6 +474,8 @@
   </xmp>
   </figure>
   </div>
+
+   
 
    <div id="sortSol" style="display: none">	
   <figure>
@@ -621,7 +637,6 @@
 		    printf("%d segundo(s)\n", segundo);
 
 
-		    //Mantenha essa função apenas no caso de estar utilizando a plataforma Codeboard
 		    testUnitario(dia,hora,minuto,segundo);
 		    
 		    return 0;
@@ -671,7 +686,6 @@
 	    
 	     printf("%d\n", soma);
 
-	    //Mantenha essa função apenas no caso de estar utilizando a plataforma Codeboard
 	    testUnitario(soma);
 	    return 0;
 	}
