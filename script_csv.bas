@@ -1,4 +1,3 @@
-
 Sub csv_script()
 cont_student = 0
 mediaPassed = 0
@@ -8,10 +7,17 @@ Sheets.Add(After:=Sheets("Plan1")).Name = "Plan2"
         Worksheets("Plan1").Activate
         user_student = Cells(students, 1).Value
         If (user_student <> Cells(students - 1, 1).Value) Then
+            If (Cells(students, 5).Value = -1) Then
+                Cells(students, 5).Value = 0
+            End If
+            If (Cells(students, 6).Value = -1) Then
+                Cells(students, 6).Value = 0
+            End If
             num_testsPassed = Cells(students, 5).Value
             mediaPassed = mediaPassed + num_testsPassed
             num_testsFailed = Cells(students, 6).Value
             mediaFailed = mediaFailed + num_testsFailed
+          
             test_result = Cells(students, 4).Value
             
             Worksheets("Plan2").Activate
@@ -68,6 +74,3 @@ Sheets.Add(After:=Sheets("Plan1")).Name = "Plan2"
     ColorIndex:=1
     
 End Sub
-
-
-
