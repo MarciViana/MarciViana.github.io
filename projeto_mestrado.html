@@ -86,7 +86,7 @@
 
 	$(document).ready(function(){
 	    $("input[type='radio'][name='plataforma']").click(function(){
-	    	$('#e1','#e2','#e3','#e4','#e5','#e8','#e9','#e13','#e14','#e15','#e16','#e17','#e18','#e19','#e20','#e21','#e22','#e23').show();
+	    	$('#e1','#e2','#e3','#e4','#e5','#e6','#e8','#e9','#e13','#e14','#e15','#e16','#e17','#e18','#e19','#e20','#e21','#e22','#e23').show();
 	        var inputValue = $(this).attr("value");
 	        var targetBox = $("." + inputValue);
 	        $(".caixa").not(targetBox).hide();
@@ -100,7 +100,7 @@
 
 	$(document).ready(function(){
 	    $("input[type='radio'][name='materia']").click(function(){
-	    	$('#c1','#c2','#c3','#c4','#c5','#c6','#c7','#c8','#c9').show();
+	    	$('#c1','#c2','#c3','#c4','#c5','#c6','#c7','#c8','#c9','#c10').show();
 	        var inputValue = $(this).attr("value");
 	        var targetBox = $("." + inputValue);
 	        $(".box").not(targetBox).hide();
@@ -177,6 +177,7 @@
   <input type="radio" name="materia" id="materia6" value="seis" >String - Programação II<br>
   <input type="radio" name="materia" id="materia7" value="sete" >Apontadores - Programação II<br>
   <input type="radio" name="materia" id="materia8" value="oito" >Recursividade - Programação II<br>
+  <input type="radio" name="materia" id="materia10" value="dez" >Ficheiros - Programação II<br>
   <input type="radio" name="materia" id="materia9" value="nove" >Estruturas - Programação II<br>
  
  
@@ -198,7 +199,7 @@
 	  <div class="tres box" id="c3" style="display: none">
 	  	<input type="radio" class="tres" name="plataforma" value="uricodeboard3" id="uricodeboard3" onclick="selecionaPlataforma()"> URI Online Judge e Codeboard <br>
 	  	<input type="radio" class="tres" name="plataforma" value="uri3" id="uri3" onclick="selecionaPlataforma()"> URI Online Judge <br>
-	  	<input type="radio" class="tres" name="plataforma" value="python3" id="python3" onclick="selecionaPlataforma()"> CPuzzles e PythonTutor <br>
+	  	<input type="radio" class="tres" name="plataforma" value="python3" id="python3" onclick="selecionaPlataforma()"> CPuzzles e C Tutor <br>
 	    
 	   
 	  </div>
@@ -209,27 +210,31 @@
 
 	  <div class="cinco box" id="c5" style="display: none">
 	  	<input type="radio" class="cinco" name="plataforma" value="uri5" id="uri5" onclick="selecionaPlataforma()"> URI Online Judge <br>
-	  	<input type="radio" class="cinco" name="plataforma" value="python5" id="python5" onclick="selecionaPlataforma()"> CPuzzles e PythonTutor <br>
+	  	<input type="radio" class="cinco" name="plataforma" value="python5" id="python5" onclick="selecionaPlataforma()"> CPuzzles e C Tutor <br>
 	  </div>
 
 	  <div class="seis box" id="c6" style="display: none">
 	  	<input type="radio" class="seis" name="plataforma" value="uri6" id="uri6" onclick="selecionaPlataforma()"> URI Online Judge <br>
 	  	<input type="radio" class="seis" name="plataforma" value="codeboard6" id="codeboard6" onclick="selecionaPlataforma()"> Codeboard <br>
-		<input type="radio" class="seis" name="plataforma" value="python6" id="python6" onclick="selecionaPlataforma()"> PythonTutor (Exercícios do Livro Linguagem C) <br>
+		<input type="radio" class="seis" name="plataforma" value="python6" id="python6" onclick="selecionaPlataforma()"> C Tutor (Exercícios do Livro Linguagem C) <br>
 	  </div> 
 
 	  <div class="sete box" id="c7" style="display: none">
 	  	<input type="radio" class="sete" name="plataforma" value="codeboard7" id="codeboard7" onclick="selecionaPlataforma()"> Codeboard <br>
-	  	<input type="radio" class="sete" name="plataforma" value="python7" id="python7" onclick="selecionaPlataforma()"> PythonTutor (Exercícios do Livro Linguagem C) <br>
-	  	<input type="radio" class="sete" name="plataforma" value="python72" id="python72" onclick="selecionaPlataforma()"> CPuzzles e PythonTutor <br>
+	  	<input type="radio" class="sete" name="plataforma" value="python7" id="python7" onclick="selecionaPlataforma()"> C Tutor (Exercícios do Livro Linguagem C) <br>
+	  	<input type="radio" class="sete" name="plataforma" value="python72" id="python72" onclick="selecionaPlataforma()"> CPuzzles e C Tutor <br>
 	  </div>
 
 	  <div class="oito box" id="c8" style="display: none">
-	  	<input type="radio" class="oito" name="plataforma" value="python8" id="python8" onclick="selecionaPlataforma()"> PythonTutor (Exercícios do Livro Linguagem C) <br>
+	  	<input type="radio" class="oito" name="plataforma" value="python8" id="python8" onclick="selecionaPlataforma()"> C Tutor (Exercícios do Livro Linguagem C) <br>
 	  </div>
 
 	  <div class="nove box" id="c9" style="display: none">
-	  	<input type="radio" class="nove" name="plataforma" value="python9" id="python9" onclick="selecionaPlataforma()"> CPuzzles e PythonTutor <br>
+	  	<input type="radio" class="nove" name="plataforma" value="python9" id="python9" onclick="selecionaPlataforma()"> CPuzzles e C Tutor <br>
+	  </div>
+
+	  <div class="dez box" id="c10" style="display: none">
+	  	<input type="radio" class="nove" name="plataforma" value="python10" id="python10" onclick="selecionaPlataforma()">C Tutor (Exercícios do Livro Linguagem C) <br>
 	  </div>
  
 </form><br>
@@ -398,6 +403,17 @@
     </select>
 	</div>
 
+	<div class="python10 caixa" id="e6" style="display: none">
+	<select multiple class="form-control" id="e6">
+      <option id="python101">Cap. 10. Pág 234. Escreva um programa que indique se podemos ou não abrir um arquivo. Estimativa: 10 min.</option>  
+      <option id="python102">Cap. 10. Pág 236. Escreva um programa que permita copiar um arquivo para outro. Estimativa: 10 min.</option> 
+      <option id="python103">Cap. 10. Pág 238. Escreva um programa que mostre os alunos com nota >= 5 em um arquivo. Estimativa: 10 min.</option>  
+      <option id="python104">Cap. 10. Pág 251. Escreva um programa que leia um vetor e o guarde em um arquivo binário. Estimativa: 10 min.</option>  
+      <option id="python105">Cap. 10. Pág 256. Escreva um programa que conte o número de caracteres em um arquivo. Estimativa: 10 min.</option>  
+    </select>
+	</div>
+
+
 </form>
 <br>
 
@@ -416,7 +432,7 @@
 
 	<input type="button" value="Gerar Guião URI" id="geraURI" onclick="build_prof_pdf('uri')" class="btn btn-primary" />
 	<input type="button" value="Gerar Guião Codeboard" id="geraCodeboard" onclick="build_prof_pdf('codeboard')" class="btn btn-primary" />
-	<input type="button" value="Gerar Guião Python" id="geraPython" onclick="build_prof_pdf('python')" class="btn btn-primary" />
+	<input type="button" value="Gerar Guião C Tutor" id="geraPython" onclick="build_prof_pdf('python')" class="btn btn-primary" />
 	<a id="geraBasUri" href="script_csv_uri.bas" download>Download URI .bas File</a>
 	<a id="geraBasCodeboard" href="script_csv.bas" download>Download Codeboard .bas File</a>
 	
@@ -426,7 +442,7 @@
 </div>
 <br><br>
 <div style="text-align: center;">
-	<h6>Recomenda-se atualizar a página para uma nova geração de Guiões de Atividade.</h6>
+	<h6>Por favor, atualize a página para uma nova geração de Guiões de Atividade.</h6>
 	<input type="button" value="Atualizar a Página" id="atualizaPag" onclick="atualizaPag()" class="btn btn-primary" />
 </div>
 </div>

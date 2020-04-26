@@ -31,7 +31,7 @@ function selecionaPlataforma(){
   if (document.getElementById("python3").checked||document.getElementById("python5").checked||
     document.getElementById("python6").checked || document.getElementById("python7").checked||
     document.getElementById("python72").checked||document.getElementById("python8").checked ||
-    document.getElementById("python9").checked) {
+    document.getElementById("python9").checked||document.getElementById("python10").checked) {
         
         $('#escolhe').mouseup(function() {
           $('#geraPython').toggle();
@@ -114,8 +114,10 @@ function build_table(doc,numeroGuia)
           doc.text(x, y, linhasCodeboard[i][6]); //apontadores
         if(document.getElementById("materia8").checked )
           doc.text(x, y, linhasCodeboard[i][7]); //recursividade
+        if(document.getElementById("materia10").checked )
+          doc.text(x, y, linhasCodeboard[i][8]); //ficheiros
         if(document.getElementById("materia9").checked )
-          doc.text(x, y, linhasCodeboard[i][8]); //estruturas
+          doc.text(x, y, linhasCodeboard[i][9]); //estruturas
       }
 
       //verifica se é dentro ou fora de sala de aula
@@ -364,6 +366,17 @@ function build_body(doc,tipoGuia,numeroGuia)
               }
               contaExercicios++;
         });
+        $('#e6 option:selected').each(function(){
+               if(tipoGuia == "professor"){
+                if(cont>0)
+                  textB[i] = textB[i] + "\n" + this.value;  
+                else{
+                  textB[i] = textB[i][1] + "\n" + this.value;
+                  cont++;
+                }              
+              }
+              contaExercicios++;
+        });
       }
       var conta = 0;
       //alterações guião python
@@ -405,6 +418,12 @@ function build_body(doc,tipoGuia,numeroGuia)
             }                     
       });
       $('#e22 option:selected').each(function(){             
+            if(conta == 0){
+              textB[i] = textB[i][1]; 
+              conta++;
+            }                     
+      });
+      $('#e6 option:selected').each(function(){             
             if(conta == 0){
               textB[i] = textB[i][1]; 
               conta++;
@@ -570,6 +589,15 @@ function build_body(doc,tipoGuia,numeroGuia)
             }                     
           });
           $('#e22 option:selected').each(function(){             
+            if(conta == 0){
+              if(i == 0)
+                doc.addImage(imgB[i][1], 'JPEG', 60, high + 75, 100, 60);  
+              else
+                doc.addImage(imgB[i][1], 'JPEG', 60, high + 75, 100, 60);  
+              conta++;
+            }                     
+          });
+          $('#e6 option:selected').each(function(){             
             if(conta == 0){
               if(i == 0)
                 doc.addImage(imgB[i][1], 'JPEG', 60, high + 75, 100, 60);  
