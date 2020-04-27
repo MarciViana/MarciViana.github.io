@@ -60,10 +60,24 @@
 	          		$('#multiplosSol').show(); 
 	          	if(this.value == "URI Online Judge - 1046 - Tempo de Jogo")
 	          		$('#tempoSol').show();  
+	          	if(this.value == "URI Online Judge - 1060 - Números Positivos")
+	          		$('#numerosPositivosSol').show();
 	          	if(this.value == "URI Online Judge - 1061 - Tempo de um Evento")
-	          		$('#tempoEventoSol').show();      
+	          		$('#tempoEventoSol').show();    
+	          	if(this.value == "URI Online Judge - 1064 - Positivos e Média")
+	          		$('#positivosMediaSol').show();   
 	          	if(this.value == "URI Online Judge - 1071 - Soma de Ímpares Consecutivos")
-	          		$('#somaImparesSol').show();         	             	      		   
+	          		$('#somaImparesSol').show(); 
+	          	if(this.value == "URI Online Judge - 1072 - Intervalo 2")
+	          		$('#intervalo2Sol').show();  
+	          	if(this.value == "URI Online Judge - 1073 - Quadrado de Pares")
+	          		$('#quadradoParesSol').show();  
+	          	if(this.value == "URI Online Judge - 1132 - Múltiplos de 13")
+	          		$('#multiplos13Sol').show();  
+	          	if(this.value == "URI Online Judge - 1173 - Preenchimento de Vetor I")
+	          		$('#preenchimento1Sol').show(); 
+	          		if(this.value == "URI Online Judge - 1174 - Seleção em Vetor I")
+	          		$('#selecao1Sol').show();         	             	      		   
 
 	  		}); 
 			//Soluções de Exercícios CPuzzles
@@ -163,8 +177,15 @@
 	    <option id="sort" >URI Online Judge - 1042 - Sort Simples</option>
 	    <option id="multiplos" >URI Online Judge - 1044 - Múltiplos</option>
 	    <option id="tempo" >URI Online Judge - 1046 - Tempo de Jogo</option>
+	    <option id="numerosPositivos" >URI Online Judge - 1060 - Números Positivos</option>
 	    <option id="tempoEvento" >URI Online Judge - 1061 - Tempo de um Evento</option>
+	    <option id="positivoseMedia" >URI Online Judge - 1064 - Positivos e Média</option>
 	    <option id="somaImpares" >URI Online Judge - 1071 - Soma de Ímpares Consecutivos</option>
+	    <option id="intervalo2" >URI Online Judge - 1072 - Intervalo 2</option>
+	    <option id="quadradoPares" >URI Online Judge - 1073 - Quadrado de Pares</option>
+	    <option id="multiplos13" >URI Online Judge - 1132 - Múltiplos de 13</option>
+	    <option id="preenchimentoVetor" >URI Online Judge - 1173 - Preenchimento de Vetor I</option>
+	    <option id="selecaoVetor" >URI Online Judge - 1174 - Seleção em Vetor I</option>
 	  </select>
 	 
 	</form>
@@ -590,6 +611,36 @@
   </figure>
   </div>
 
+  <div id="numerosPositivosSol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//-----------------------------Exercício do URI Online Judge - 1060 – Números Positivos-------------------------------
+
+		#include<stdio.h>
+
+		int main()
+		{
+		 double n;
+		 int tmp = 0, i;
+
+		 for (i = 0; i < 6; ++i)
+		 {
+		  scanf("%lf", &n);
+		  if(n > 0){
+		   tmp++;
+		  }
+		 }
+
+		 printf("%i valores positivos\n", tmp);
+
+		 return 0;
+		}
+
+  </xmp>
+  </figure>
+  </div>
+
 
   <div id="tempoEventoSol" style="display: none">	
   <figure>
@@ -648,6 +699,40 @@
   </figure>
   </div>
 
+  <div id="positivosMediaSol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//-----------------------------Exercício do URI Online Judge - 1064 – Positivos e Média-------------------------------
+
+		#include <stdio.h>
+
+		int main(){
+
+		        
+		  float n1,total = 0,average = 0;
+		  int totalNumber = 0;
+		  
+		  for (int i = 1; i <= 6; i++) {
+		   scanf("%f", &n1);
+		   if (n1 > 0) {
+		    totalNumber += 1;
+		    total += n1;
+		   }
+		  }
+		  average = total / totalNumber;
+		  
+		  printf("%d valores positivos\n", totalNumber);
+		  printf("%.1f\n",average);
+		 
+		}
+
+
+
+  </xmp>
+  </figure>
+  </div>
+
   <div id="somaImparesSol" style="display: none">	
   <figure>
   
@@ -687,6 +772,162 @@
 	     printf("%d\n", soma);
 
 	    testUnitario(soma);
+	    return 0;
+	}
+
+
+  </xmp>
+  </figure>
+  </div>
+
+  <div id="intervalo2Sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//-----------------------------Exercício do URI Online Judge - 1072 – Intervalo 2-------------------------------
+
+	#include <stdio.h>
+	int main()
+	{
+	    int x, a, i;
+
+	    int in = 0;
+	    int out = 0;
+
+	    scanf("%d", &x);
+	    for(i = 0; i < x; i++)
+	    {
+	        scanf("%d", &a);
+	        if(a >= 10 && a <= 20){
+	            in++;
+	        }else{
+	            out++;
+	        }
+
+	    }
+	    printf("%d in\n", in);
+	    printf("%d out\n", out);
+
+	    return 0;
+	}
+
+
+  </xmp>
+  </figure>
+  </div>
+
+  <div id="quadradoParesSol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//-----------------------------Exercício do URI Online Judge - 1073 – Quadrado de Pares-------------------------------
+
+	#include <stdio.h>
+	int main()
+	{
+	 int n, i;
+
+	 scanf("%d", &n);
+
+	 for ( i = 1; i <= n; ++i)
+	 {
+	  if(i % 2 == 0){
+	   printf("%d^2 = %d\n", i,(i * i));
+	  }
+	 }
+
+	 return 0;
+	}
+
+
+  </xmp>
+  </figure>
+  </div>
+
+   <div id="multiplos13Sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//-----------------------------Exercício do URI Online Judge - 1132 – Múltiplos de 13-------------------------------
+
+	#include<stdio.h>
+	int main(){
+
+	    int X, Y, i;
+	    scanf("%d%d", &X,&Y);
+	    if (X > Y) {
+	        int total = 0;
+	        for (i = Y; i <= X; i++) {
+	            if (i % 13 != 0) {
+	                total += i;
+	            }
+	        }
+	        printf("%d\n", total);
+	    }else if(X < Y){
+	        int total2 = 0;
+	        for (i = X; i <= Y; i++) {
+	            if (i % 13 != 0) {
+	                total2 +=i;
+	            }
+	        }
+
+	        printf("%d\n", total2);
+	    }
+
+	}
+
+
+  </xmp>
+  </figure>
+  </div>
+
+  <div id="preenchimento1Sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//-----------------------------Exercício do URI Online Judge - 1173 – Preenchimento de Vetor I-------------------------------
+
+	#include <stdio.h>
+
+	int main()
+	{
+	    int N[10], a, V;
+
+	    scanf("%d", &V);
+
+	    for(a=0; a<=9; a++)
+	    {
+	        N[a]=V;
+	        printf("N[%d] = %d\n",a,V);
+	        V*=2;
+	    }
+	    return 0;
+	}
+
+
+  </xmp>
+  </figure>
+  </div>
+
+   <div id="selecao1Sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//-----------------------------Exercício do URI Online Judge - 1174 – Seleção em Vetor I-------------------------------
+
+	#include <stdio.h>
+
+	int main()
+	{
+	    double A[100];
+	    int i;
+	    for(i=0; i<=99; i++)
+	        scanf("%lf", &A[i]);
+	    for(i=0; i<=99; i++)
+	    {
+	        if(A[i]<=10.0)
+	            printf("A[%d] = %.1lf\n",i, A[i]);
+	    }
 	    return 0;
 	}
 
