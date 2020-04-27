@@ -76,8 +76,21 @@
 	          		$('#multiplos13Sol').show();  
 	          	if(this.value == "URI Online Judge - 1173 - Preenchimento de Vetor I")
 	          		$('#preenchimento1Sol').show(); 
-	          		if(this.value == "URI Online Judge - 1174 - Seleção em Vetor I")
-	          		$('#selecao1Sol').show();         	             	      		   
+	          	if(this.value == "URI Online Judge - 1174 - Seleção em Vetor I")
+	          		$('#selecao1Sol').show();   
+	          	if(this.value == "URI Online Judge - 1175 - Troca em Vetor I")
+	          		$('#troca1Sol').show();     
+	          	if(this.value == "URI Online Judge - 1177 - Preenchimento de Vetor II")
+	          		$('#preenchimento2Sol').show();    
+	          	if(this.value == "URI Online Judge - 1238 - Combinador")
+	          		$('#combinadorSol').show(); 
+	          	if(this.value == "URI Online Judge - 1253 - Cifra de César")
+	          		$('#cifraCesarSol').show(); 
+	          	if(this.value == "URI Online Judge - 1257 - Array Hash")
+	          		$('#arrayHashSol').show();  
+	          	if(this.value == "URI Online Judge - 1871 - Zero vale Zero")
+	          		$('#zerovalezeroSol').show();    	             	      		   
+   	             	      		   
 
 	  		}); 
 			//Soluções de Exercícios CPuzzles
@@ -186,6 +199,12 @@
 	    <option id="multiplos13" >URI Online Judge - 1132 - Múltiplos de 13</option>
 	    <option id="preenchimentoVetor" >URI Online Judge - 1173 - Preenchimento de Vetor I</option>
 	    <option id="selecaoVetor" >URI Online Judge - 1174 - Seleção em Vetor I</option>
+	    <option id="troca1" >URI Online Judge - 1175 - Troca em Vetor I</option>
+	    <option id="preenchimentoVetor2" >URI Online Judge - 1177 - Preenchimento de Vetor II</option>
+	    <option id="combinador" >URI Online Judge - 1238 - Combinador</option>
+	    <option id="cifracesar" >URI Online Judge - 1253 - Cifra de César</option>
+	    <option id="arrayHash" >URI Online Judge - 1257 - Array Hash</option>
+	    <option id="zerovalezero" >URI Online Judge - 1871 - Zero vale Zero</option>
 	  </select>
 	 
 	</form>
@@ -936,6 +955,212 @@
   </figure>
   </div>
   
+  <div id="troca1Sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//-----------------------------Exercício do URI Online Judge - 1175 – Troca em Vetor I-------------------------------
+
+	#include<stdio.h>
+
+	int main()
+	{
+	    int i,N[20];
+	    for(i = 19;i >= 0;i--){
+	        scanf("%d",&N[i]);
+	    }
+	    for(i = 0;i < 20;i++){
+	        printf("N[%d] = %d\n",i,N[i]);
+	    }
+	    return 0;
+	}
+
+
+  </xmp>
+  </figure>
+  </div>
+
+  <div id="preenchimento2Sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//-----------------------------Exercício do URI Online Judge - 1177 – Preenchimento de Vetor II-------------------------------
+
+	#include<stdio.h>
+
+	int main()
+	{
+	    int N[1000],n,i,j=0;
+	    scanf("%d",&n);
+	    for(i = 0;i < 1000;i++){
+	        printf("N[%d] = %d\n",i,j);
+	        j++;
+	        if(j==n)j=0;
+	    }
+	    return 0;
+	}
+
+
+  </xmp>
+  </figure>
+  </div>
+
+  <div id="combinadorSol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//-----------------------------Exercício do URI Online Judge - 1238 – Combinador-------------------------------
+
+	#include <stdio.h>
+	#include <string.h>
+
+	int main()
+	{
+	    int N, n, i, j;
+	    char str1[51], str2[51], result[101];
+	    int len1, len2;
+
+	    scanf("%d", &N);
+
+	    for (n = 0; n < N; ++n) {
+	        scanf("%s%s", str1, str2);
+
+	        len1 = strlen(str1);
+	        len2 = strlen(str2);
+
+	        for (i = 0, j = 0; i < len1 && i < len2; ++i, j += 2) {
+	            result[j] = str1[i];
+	            result[j + 1] = str2[i];
+	        }
+
+	        for (; i < len1; ++i, ++j)
+	            result[j] = str1[i];
+
+	        for (; i < len2; ++i, ++j)
+	            result[j] = str2[i];
+
+	        result[j] = '\0';
+
+	        puts(result);
+	    }
+
+	    return 0;
+	}
+
+
+  </xmp>
+  </figure>
+  </div>
+
+  <div id="cifraCesarSol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//-----------------------------Exercício do URI Online Judge - 1253 – Cifra César-------------------------------
+
+	#include <stdio.h>
+	#include <stdlib.h>
+	 
+	int main()
+	{
+	    int i, movimentos = 0, repeticoes = 0, aux = 0;
+	    char palavra[50];
+	    scanf("%d", &repeticoes);
+	    while(repeticoes--){
+	        scanf("%s", palavra);
+	        scanf("%d", &movimentos);
+	        for (i = 0; i < 50; i++){
+	            if (palavra[i] == '\0')
+	                break;
+	            if ((palavra[i] - movimentos) < 65)
+	                aux = (palavra[i] - movimentos) + 26;
+	            else
+	                aux = palavra[i] - movimentos;
+	        printf("%c", aux);
+	        }
+	        printf("\n");
+	    }
+	    return 0;
+	}
+
+
+  </xmp>
+  </figure>
+  </div>
+
+   <div id="arrayHashSol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//-----------------------------Exercício do URI Online Judge - 1257 – Array Hash-------------------------------
+
+	#include<stdio.h>
+	#include<string.h>
+
+	int main()
+	{
+	    int a,b,c,i,d=0,j,sum=0;
+	    char s2[100];
+	    char *pa;
+	    scanf("%d",&a);
+	    
+	    while(a--){
+	            sum=0;
+	        scanf("%d",&c);
+	        for(j = 0;j < c;j++){
+	            scanf("%s",s2);
+	            for(i = 0;i < strlen(s2); i++){
+	                sum+= s2[i]- 65 + i +j ;
+	            }
+	        }
+	        printf("%d\n",sum);
+	    }
+	    return 0;
+	}
+
+
+  </xmp>
+  </figure>
+  </div>
+
+  <div id="zerovalezeroSol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//-----------------------------Exercício do URI Online Judge - 1871 – Zero vale Zero-------------------------------
+
+	#include <stdio.h>
+
+	int main(){
+		int m,n,v[15],i;
+
+		while(scanf("%d %d",&m,&n) && (m!=0 || n!=0))
+		{
+			int soma = m + n;
+
+			//Separa cada dígito do número e coloca em posições do vetor;
+			for(i = 0 ; i < 11 ; i++)
+			{
+				v[i] = soma %10;
+				soma /= 10;
+			}
+
+			//Imprime o vetor caso o valor da posição i não seja 0;
+			//i começa com 10 porque os algarismos foram colocados no vetor de trás
+			//para frente;
+			for(i = 10 ; i >= 0 ; i--){
+				if(v[i] != 0){
+					printf("%d",v[i]);
+				}
+			}
+			printf("\n");
+		}
+	}
+
+
+  </xmp>
+  </figure>
+  </div>
   
   <div id="a03sol" style="display: none">	
   <figure>
