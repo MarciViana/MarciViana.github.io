@@ -151,7 +151,13 @@
 	          	if(this.value == "Livro Linguagem C. Luis Damas - Cap. 8. Pág. 201 - 8. Apaga todos os caracteres maiúsculos em s")
 	          		$('#ponteiros8Sol').show();	 
 	          	if(this.value == "Livro Linguagem C. Luis Damas - Cap. 8. Pág. 201 - 9. Apaga em s1 a primeira ocorrência de s2")
-	          		$('#ponteiros9Sol').show();	          	             	      		   
+	          		$('#ponteiros9Sol').show();	  
+	          	if(this.value == "Livro Linguagem C. Luis Damas - Cap. 9. Pág. 226. 4. Escreva, de forma iterativa e recursiva, a função de Fibonacci")
+	          		$('#recursividade1Sol').show();	    
+	          	if(this.value == "Livro Linguagem C. Luis Damas - Cap. 9. Pág. 226. 5. Escreva, de forma recursiva, uma função que concatena duas strings")
+	          		$('#recursividade2Sol').show();	 
+	          	if(this.value == "Livro Linguagem C. Luis Damas - Cap. 9. Pág. 227. 6. Faça recursivamente uma função que mostra o endereço de 'ch' em uma str")
+	          		$('#recursividade3Sol').show();	      	             	      		   
 	  		});  
 
 	  		alert("Caso tenha escolhido gerar mais de um exercício, a próxima solução está abaixo da primeira!");
@@ -248,6 +254,9 @@
 	    <option id="ponteiros4" >Livro Linguagem C. Luis Damas - Cap. 8. Pág. 200 - 4. Retornar o endereço de s em que ocorre pela 1ª vez 'substr'. Caso não exista, retornar NULL</option>
 	    <option id="ponteiros8" >Livro Linguagem C. Luis Damas - Cap. 8. Pág. 201 - 8. Apaga todos os caracteres maiúsculos em s</option>
 	    <option id="ponteiros9" >Livro Linguagem C. Luis Damas - Cap. 8. Pág. 201 - 9. Apaga em s1 a primeira ocorrência de s2</option>
+	    <option id="recursividade1" >Livro Linguagem C. Luis Damas - Cap. 9. Pág. 226. 4. Escreva, de forma iterativa e recursiva, a função de Fibonacci</option>
+	    <option id="recursividade2" >Livro Linguagem C. Luis Damas - Cap. 9. Pág. 226. 5. Escreva, de forma recursiva, uma função que concatena duas strings</option>
+	    <option id="recursividade3" >Livro Linguagem C. Luis Damas - Cap. 9. Pág. 227. 6. Faça recursivamente uma função que mostra o endereço de 'ch' em uma str</option>
 	  </select>
 	 
 	</form>
@@ -2194,6 +2203,129 @@
 	}
 
 
+
+  </xmp>
+  </figure>
+  </div>
+
+   <div id="recursividade1Sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//---------------Exercício do Livro Linguagem C. Luis Damas - Cap. 9. Pág. 226. 4. Escreva, de forma iterativa e recursiva, a função de Fibonacci-------------
+
+
+	#include <stdio.h>
+	
+	long int Fib_Rec (int n)
+	{
+		if(n < 0)
+			return -1L; //Parâmetro Inválido
+		if (n <= 1)
+			return 1L;
+		else
+			return Fib_Rec(n-1) + Fib_Rec(n-2);
+	}
+
+	long int Fib_Ite (int n)
+	{
+		int i;
+		long n1, n2, tmp;
+
+		if(n < 0)
+			return -1L; //Parâmetro Inválido
+		if (n <= 1)
+			return 1L;
+		for(i = 2; n1=n2=1; i < n; i++)
+		{
+			tmp = n1;
+			n1 = n2;
+			n2 = n1 + tmp;
+		}
+		return n1 + n2;
+	}
+
+	main()
+	{
+		int n;
+
+		do
+		{
+			printf("Introduza um inteiro: ");
+			scanf("%d",&n);
+
+			printf("Fib_Ite (%d) = %ld\n",n, Fib_Ite(n));
+			printf("Fib_Rec (%d) = %ld\n",n, Fib_Rec(n));
+
+		}while (n > 0);
+	}
+
+
+  </xmp>
+  </figure>
+  </div>
+
+
+  <div id="recursividade2Sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//---------------Exercício do Livro Linguagem C. Luis Damas - Cap. 9. Pág. 226. 5. Escreva, de forma recursiva, uma função que concatena duas strings-------------
+
+
+	#include <stdio.h>
+	#include <string.h>
+
+	char *rec_strcat (char *dest, char *orig)
+	{
+		if(*dest == '\0')
+			return strcpy(dest,orig);
+
+		return rec_strcat(dest+1,orig)-1;
+	}
+
+	main()
+	{
+		char s[100];
+		gets(s);
+		puts(rec_strcat(s,"OLA"));
+	}
+
+  </xmp>
+  </figure>
+  </div>
+
+  <div id="recursividade3Sol" style="display: none">	
+  <figure>
+  
+  <xmp>
+//---------------Exercício do Livro Linguagem C. Luis Damas - Cap. 9. Pág. 227. 6. Faça recursivamente uma função que mostra o endereço de 'ch' em uma str-------------
+
+
+	#include <stdio.h>
+	
+	char * strchr (char *str, char ch)
+	{
+		if(*str == '\0')
+			return NULL;
+		else
+			if(*str == ch)
+				return str;
+			else
+				return strchr(str+1, ch);
+	}
+
+	main()
+	{
+		char s[100];
+
+		do
+		{
+			gets(s);
+			puts(strchr(s,'a'));
+
+		}while(*s);
+	}
 
   </xmp>
   </figure>
