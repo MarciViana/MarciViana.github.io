@@ -710,4 +710,6 @@ function build_prof_pdf(numeroGuia)
 
   doc.save('guia_'+numeroGuia+'_'+tipoGuia+'.pdf');
 
+
+
 }
